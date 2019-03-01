@@ -237,10 +237,10 @@
     <Content Include="img\tree.jpg" />
     <Content Include="img\usuario.png" />
     <Content Include="img\women.jpg" />
-    <Content Include="inicio.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="InicioAdminCentro.aspx" />
     <Content Include="InicioAdministrador.aspx" />
-    <Content Include="inicioCliente.aspx" />
+    <Content Include="InicioCliente.aspx" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
     <Content Include="js\front.js" />
     <Content Include="js\gmaps.init.js" />
@@ -389,12 +389,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="inicio.aspx.cs">
-      <DependentUpon>inicio.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="inicio.aspx.designer.cs">
-      <DependentUpon>inicio.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioAdminCentro.aspx.cs">
       <DependentUpon>InicioAdminCentro.aspx</DependentUpon>
@@ -410,12 +410,12 @@
     <Compile Include="InicioAdministrador.aspx.designer.cs">
       <DependentUpon>InicioAdministrador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="inicioCliente.aspx.cs">
-      <DependentUpon>inicioCliente.aspx</DependentUpon>
+    <Compile Include="InicioCliente.aspx.cs">
+      <DependentUpon>InicioCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="inicioCliente.aspx.designer.cs">
-      <DependentUpon>inicioCliente.aspx</DependentUpon>
+    <Compile Include="InicioCliente.aspx.designer.cs">
+      <DependentUpon>InicioCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentro.Master.cs">
       <DependentUpon>PrincipalAdminCentro.Master</DependentUpon>
