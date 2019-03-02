@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="packages.config" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
@@ -416,6 +417,13 @@
     </Compile>
     <Compile Include="InicioCliente.aspx.designer.cs">
       <DependentUpon>InicioCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoMaterial.aspx.cs">
+      <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoMaterial.aspx.designer.cs">
+      <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentro.Master.cs">
       <DependentUpon>PrincipalAdminCentro.Master</DependentUpon>
