@@ -30,6 +30,8 @@ namespace Contexto
         [StringLength(7)]
         public string Color { get; set; }
 
+        public int? Log_Activo { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Det_Transaccion> Det_Transaccion { get; set; }
     }

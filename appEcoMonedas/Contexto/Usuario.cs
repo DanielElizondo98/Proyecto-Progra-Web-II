@@ -42,6 +42,8 @@ namespace Contexto
 
         public int ID_Rol { get; set; }
 
+        public int? Log_Activo { get; set; }
+
         public virtual Billetera Billetera { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

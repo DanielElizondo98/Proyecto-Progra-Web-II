@@ -31,6 +31,8 @@ namespace Contexto
         [StringLength(255)]
         public string ID_Administrador_Centro { get; set; }
 
+        public int? Log_Activo { get; set; }
+
         public virtual Usuario Usuario { get; set; }
 
         public virtual Provincia Provincia { get; set; }

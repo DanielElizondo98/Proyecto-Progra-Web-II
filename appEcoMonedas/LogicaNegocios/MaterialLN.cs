@@ -9,10 +9,16 @@ namespace LogicaNegocios
 {
     public class MaterialLN
     {
+        /// <summary>
+        /// Retorna un query con la lista de materiales que existen en la base de datos
+        /// El parametro define el filtro, 1 retorna los activos, 0 retorna los desactivos y 2 significa traerlos todos
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
         public static IQueryable QueryListaMateriales(int log)
         {
             var db = new BD_EcomonedasContext();
-            IQueryable query = db.Material;
+            IQueryable query = db.Material.Where(x=> x.Log_Activo == log || log == 2);
             return query;
         }
 
