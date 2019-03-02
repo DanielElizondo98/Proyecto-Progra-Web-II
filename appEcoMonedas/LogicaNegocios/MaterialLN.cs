@@ -60,6 +60,7 @@ namespace LogicaNegocios
             miMate.Nombre = nombre;
             miMate.Imagen = imagen;
             miMate.Color = color;
+            miMate.Log_Activo = 1;
 
             if(id.Equals("") || !esNumero)
             {
@@ -69,6 +70,35 @@ namespace LogicaNegocios
             db.SaveChanges();
 
             return true;
+        }
+        /// <summary>
+        /// Método que cambia el estado. Si el estado esta en 0, lo coloca en 1 (Activo)
+        /// Si el estado esta en 1, lo coloca 0 (inactivo) 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool CambiarEstadoMaterial(int id)
+        {
+            if (id > 0)
+            {
+                var db = new BD_EcomonedasContext();
+                Material miMate = new Material();
+
+                miMate = db.Material.Where(x => x.ID == id).First<Material>();
+                if(miMate.Log_Activo == 0)
+                {
+                    miMate.Log_Activo = 1;
+                }else
+                {
+                    miMate.Log_Activo = 0;
+                }
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 

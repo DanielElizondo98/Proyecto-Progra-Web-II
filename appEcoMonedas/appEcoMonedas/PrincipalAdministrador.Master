@@ -29,93 +29,9 @@
     <link rel="stylesheet" href="css/custom.css" />
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/Logo-Ico.png" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <div class="top-bar">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-6 d-md-block d-none">
 
-                    <p style="font-size: 16px">
-                        <img src="img/Iconos/usuario30px.png"/>
-                        Jarod Elizondo Herrera!
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-md-end justify-content-between">
-                        <ul class="list-inline contact-info d-block d-md-none">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul>
-                        <div class="login">
-                            <a href="customer-register.html" class="signup-btn"><i class="fa fa-sign-in"></i>
-                                <span class="d-none d-md-inline-block">Cerrar Sesión</span></a>
-                        </div>
-                        <ul class="social-custom list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-question"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <header class="nav-holder make-sticky">
-        <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-            <div class="container">
-                <a href="index.html" class="navbar-brand home">
-                    <img src="img/logo.png" alt="EcoMonedas logo" class="d-none d-md-inline-block" style="height: 64px; width: 238px;" /><img src="img/logo.png" style="width: 200px;" alt="EcoMonedas logo" class="d-inline-block d-md-none" /><span class="sr-only">Eco-monedas - Ir al Inicio</span></a>
-                <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-                <div id="navigation" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item dropdown active">
-                            <a href="index.html" class="nav-link">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Mantenimientos <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a href="index.html" class="nav-link">Usuarios</a></li>
-                                <li class="dropdown-item"><a href="index.html" class="nav-link">Centros de Acopio</a></li>
-                                <li class="dropdown-item"><a href="index.html" class="nav-link">Materiales</a></li>
-                                <li class="dropdown-item"><a href="index.html" class="nav-link">Cupones</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="index.html" class="nav-link">Reportes</a>
-                        </li>
-                        <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a href="index.html" class="nav-link">Editar Perfil</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Scripts --->
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-    </asp:ContentPlaceHolder>
-
-    <footer class="footer main-footer">
-        <div class="copyrights">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 text-center-md">
-                        <p>© 2019. CR-Developers / Universidad Técnica Nacional | I Cuatrimestre</p>
-                    </div>
-                    <div class="col-lg-8 text-right text-center-md">
-                        <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>
-                        <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -128,5 +44,99 @@
     <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="js/front.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="top-bar">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6 d-md-block d-none">
+
+                        <p style="font-size: 16px">
+                            <img src="img/Iconos/usuario30px.png" />
+                            Jarod Elizondo Herrera!
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-md-end justify-content-between">
+                            <ul class="list-inline contact-info d-block d-md-none">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                            <div class="login">
+                                <a href="customer-register.html" class="signup-btn"><i class="fa fa-sign-in"></i>
+                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></a>
+                            </div>
+                            <ul class="social-custom list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-question"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="nav-holder make-sticky">
+            <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a href="index.html" class="navbar-brand home">
+                        <img src="img/logo.png" alt="EcoMonedas logo" class="d-none d-md-inline-block" style="height: 64px; width: 238px;" /><img src="img/logo.png" style="width: 200px;" alt="EcoMonedas logo" class="d-inline-block d-md-none" /><span class="sr-only">Eco-monedas - Ir al Inicio</span></a>
+                    <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+                    <div id="navigation" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item dropdown active">
+                                <a href="index.html" class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Mantenimientos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Usuarios</a></li>
+                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Centros de Acopio</a></li>
+                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Materiales</a></li>
+                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Cupones</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="index.html" class="nav-link">Reportes</a>
+                            </li>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Editar Perfil</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <ol class="breadcrumb">
+            <asp:SiteMapPath ID="SiteMapPath1" SiteMapProvider="" runat="server"></asp:SiteMapPath>
+        </ol>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="" runat="server" />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer class="footer main-footer">
+            <div class="copyrights">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 text-center-md">
+                            <p>© 2019. CR-Developers / Universidad Técnica Nacional | I Cuatrimestre</p>
+                        </div>
+                        <div class="col-lg-8 text-right text-center-md">
+                            <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>
+                            <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
 </body>
 </html>
