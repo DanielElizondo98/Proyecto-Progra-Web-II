@@ -96,7 +96,11 @@
                                             <Columns>
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                                                 <asp:BoundField DataField="Precio" HeaderText="Precio"></asp:BoundField>
-                                                <asp:BoundField DataField="Color" HeaderText="Color"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Color" ItemStyle-CssClass="bg-ColorMaterialTabla">
+                                                    <ItemTemplate>
+                                                        <asp:Panel ID="Panel1" BackColor='<%# System.Drawing.Color.FromName(Eval("Color").ToString()) %>' Height="100%" Width="100%" runat="server"></asp:Panel>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                                 <asp:CommandField ShowSelectButton="true" HeaderText="Modificar" SelectText="Modificar" />
                                                 <asp:CommandField ShowEditButton="true" HeaderText="Desactivar"  EditText="Desactivar" />
                                             </Columns>

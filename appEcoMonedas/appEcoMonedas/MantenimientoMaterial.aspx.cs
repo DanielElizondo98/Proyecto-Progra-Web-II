@@ -43,13 +43,13 @@ namespace appEcoMonedas
             }
             if (!IsPostBack)
             {
-                CargarListadoMaterialesGrid();
+                CargarListadoMaterialesGrid(1);
             }
         }
 
-        private void CargarListadoMaterialesGrid()
+        private void CargarListadoMaterialesGrid(int estado)
         {
-            grvListado.DataSource = MaterialLN.ObtenerListaMateriales(1).ToList();
+            grvListado.DataSource = MaterialLN.ObtenerListaMateriales(estado).ToList();
             grvListado.DataBind();
         }
 
