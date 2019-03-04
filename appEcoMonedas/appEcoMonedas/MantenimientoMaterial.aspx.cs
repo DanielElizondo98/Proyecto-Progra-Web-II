@@ -31,7 +31,7 @@ namespace appEcoMonedas
                         lblMensaje.Visible = true;
                         break;
                     case "desactiva":
-                        lblMensaje.Text = "Material desactivado satisfactoriamente!";
+                        lblMensaje.Text = "Se ha cambiado el estado del material satisfactoriamente!";
                         lblMensaje.CssClass = "row alert alert-dismissible alert-secondary";
                         lblMensaje.Visible = true;
                         break;
@@ -43,13 +43,15 @@ namespace appEcoMonedas
             }
             if (!IsPostBack)
             {
-                CargarListadoMaterialesGrid(1);
+                Session["estadoCarga"] = 1;
+                CargarListadoMaterialesGrid();
             }
         }
 
-        private void CargarListadoMaterialesGrid(int estado)
+        private void CargarListadoMaterialesGrid()
         {
-            grvListado.DataSource = MaterialLN.ObtenerListaMateriales(estado).ToList();
+            int estadoCargaMaterial = Convert.ToInt32(Session["estadoCarga"]);
+            grvListado.DataSource = MaterialLN.ObtenerListaMateriales(estadoCargaMaterial).ToList();
             grvListado.DataBind();
         }
 
@@ -82,20 +84,25 @@ namespace appEcoMonedas
                     lblMensaje.Visible = true;
                     lblMensaje.Text = ex.Message;
                 }
+                if (VerificaColor()) { 
+                    bool confirmar = MaterialLN.GuardarMaterial(txtPrecio.Text, txtNombre.Text, archivoImagen.FileName, txtColor.Value, hiddenID.Value);
+                    if (confirmar)
+                    {
 
-                bool confirmar = MaterialLN.GuardarMaterial(txtPrecio.Text, txtNombre.Text, archivoImagen.FileName, txtColor.Value, hiddenID.Value);
-                if (confirmar)
-                {
-
-                    // Recargar la pagina
-                    string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                    Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
+                        // Recargar la pagina
+                        string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
+                        Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
                     
-                }
-                else
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se puede agregar un nuevo material";
+                    }
+                }else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede agregar un nuevo material";
+                    lblMensaje.Text = "El color seleccionado, ya le pertenece a un material";
                 }
             }
             else
@@ -106,10 +113,25 @@ namespace appEcoMonedas
             }
         }
 
+        private bool VerificaColor()
+        {
+            int estadoCargaMaterial = Convert.ToInt32(2);
+
+            Material mat = MaterialLN.ObtenerListaMateriales(estadoCargaMaterial).Where(x => x.Color.Equals(txtColor.Value)).FirstOrDefault<Material>();
+            if(mat == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiaMensaje();
-            txtColor.Value = "#000000";
+            txtColor.Value = "#ffff";
             txtNombre.Text = "";
             txtPrecio.Text = "";
             imgMaterial.ImageUrl = "#";
@@ -128,7 +150,10 @@ namespace appEcoMonedas
             txtPrecio.Text = mat.Precio.ToString();
             txtColor.Value = mat.Color;
             imgMaterial.ImageUrl = "~/imagenes/material/" + mat.Imagen;
+            imgMaterial.CssClass = "col-12 img-fluid img-thumbnail Imagen_Mante_Material";
+            divImagenMaterial.Attributes.Add("style", "background: " + mat.Color);
             hiddenID.Value = mat.ID.ToString();
+            CargarListadoMaterialesGrid();
         }
         private void limpiaMensaje()
         {
@@ -193,6 +218,27 @@ namespace appEcoMonedas
                 }
 
             }
+        }
+
+        protected void chkCargarInactivos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Session["estadoCarga"] != null)
+            {
+                int estadoCarga = Convert.ToInt32(Session["estadoCarga"]);
+                if (estadoCarga == 1)
+                {
+                    Session["estadoCarga"] = 0;
+                }
+                else
+                {
+                    Session["estadoCarga"] = 1;
+                }
+            }else
+            {
+                Session["estadoCarga"] = 1;
+                chkCargarInactivos.Checked = false;
+            }
+            CargarListadoMaterialesGrid();
         }
     }
 }
