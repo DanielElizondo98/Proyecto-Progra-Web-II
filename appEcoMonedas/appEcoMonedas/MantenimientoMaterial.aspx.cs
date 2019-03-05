@@ -30,7 +30,7 @@ namespace appEcoMonedas
                         lblMensaje.CssClass = "row alert alert-dismissible alert-info";
                         lblMensaje.Visible = true;
                         break;
-                    case "desactiva":
+                    case "estado":
                         lblMensaje.Text = "Se ha cambiado el estado del material satisfactoriamente!";
                         lblMensaje.CssClass = "row alert alert-dismissible alert-secondary";
                         lblMensaje.Visible = true;
@@ -128,16 +128,6 @@ namespace appEcoMonedas
             }
         }
 
-        protected void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiaMensaje();
-            txtColor.Value = "#ffff";
-            txtNombre.Text = "";
-            txtPrecio.Text = "";
-            imgMaterial.ImageUrl = "#";
-            hiddenID.Value = "";
-        }
-
         protected void grvListado_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiaMensaje();
@@ -173,7 +163,7 @@ namespace appEcoMonedas
                     bool confirmacion = MaterialLN.CambiarEstadoMaterial(id);
                     if (confirmacion)
                     {
-                        string accion = "desactiva";
+                        string accion = "estado";
                         Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
                     }
                     else
@@ -202,7 +192,7 @@ namespace appEcoMonedas
                     bool confirmacion = MaterialLN.CambiarEstadoMaterial(id);
                     if (confirmacion)
                     {
-                        string accion = "desactiva";
+                        string accion = "estado";
                         Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
                     }
                     else

@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="js/filtroTablas.js"></script>
+    <script src="js/Custom.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
@@ -52,7 +53,7 @@
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblColor" CssClass="col-12" runat="server" Text="Color Distintivo"></asp:Label>
-                                <input id="txtColor" runat="server" type="color" class="w-100" />
+                                <input id="txtColor" runat="server" type="color" onchange="javascript:Pintar(this.value);" class="w-100" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Debe seleccionar el color distintivo del material" ControlToValidate="txtColor" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group row">
@@ -67,8 +68,7 @@
                                 <asp:HiddenField ID="hiddenID" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <asp:Button ID="btnLimpiar" CssClass="btn btn-secondary" runat="server"
-                                    Text="Limpiar" OnClick="btnLimpiar_Click" />
+                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript:limpiar()" />
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="table-responsive" style="height: 36.5em !important;">
+                                    <div class="table-responsive" style="max-height: 36.5em !important;">
                                         <asp:GridView ID="grvListado" runat="server"
                                             CssClass="table table-hover table-list-search" GridLines="none"
                                             AutoGenerateColumns="false" DataKeyNames="ID"
