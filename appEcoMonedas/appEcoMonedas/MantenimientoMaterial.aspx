@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="js/filtroTablas.js"></script>
+    <script src="js/Custom.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
@@ -52,12 +53,14 @@
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblColor" CssClass="col-12" runat="server" Text="Color Distintivo"></asp:Label>
-                                <input id="txtColor" runat="server" type="color" class="w-100" />
+                                <input id="txtColor" runat="server" type="color" onchange="javascript:Pintar(this.value);" class="w-100" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Debe seleccionar el color distintivo del material" ControlToValidate="txtColor" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group row">
-                                <label for="archivoImagen" class="control-label col-12">Imagen</label>
-                                <asp:Image ID="imgMaterial" CssClass="col-12 img-fluid img-thumbnail" AlternateText="Imagen Material" Height="16em" runat="server" />
+                                <asp:Label ID="lblArchivoImagen" CssClass="col-12 mb-1" runat="server" Text="Imagen del Material"></asp:Label>
+                                <div class="p-3 mb-3" id="divImagenMaterial" runat="server">
+                                    <asp:Image ID="imgMaterial" CssClass="col-12" AlternateText="Imagen Material" runat="server" />
+                                </div>
                                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Debe seleccionar la imagen del material" ControlToValidate="archivoImagen" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
@@ -65,8 +68,7 @@
                                 <asp:HiddenField ID="hiddenID" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <asp:Button ID="btnLimpiar" CssClass="btn btn-secondary" runat="server"
-                                    Text="Limpiar" OnClick="btnLimpiar_Click" />
+                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript:limpiar()" />
                             </div>
                         </div>
                     </div>
@@ -80,15 +82,21 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="row mb-3">
-                                <div class="col-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12">
                                     <div class="input-group">
                                         <input class="form-control" id="system-search" name="q" placeholder="Filtrar por..." />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="form-group form-check">
+                                        <asp:Label ID="lblBuscarInactivos" CssClass="form-check-label" AssociatedControlID="chkCargarInactivos" runat="server" Text="Cargar Inactivos"></asp:Label>
+                                        <asp:CheckBox ID="chkCargarInactivos" CssClass="form-check-inline" OnCheckedChanged="chkCargarInactivos_CheckedChanged" AutoPostBack="true" runat="server" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="table-responsive" style="height: 36.5em !important;">
+                                    <div class="table-responsive" style="max-height: 36.5em !important;">
                                         <asp:GridView ID="grvListado" runat="server"
                                             CssClass="table table-hover table-list-search" GridLines="none"
                                             AutoGenerateColumns="false" DataKeyNames="ID"
@@ -96,9 +104,18 @@
                                             <Columns>
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                                                 <asp:BoundField DataField="Precio" HeaderText="Precio"></asp:BoundField>
-                                                <asp:BoundField DataField="Color" HeaderText="Color"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Color" ItemStyle-CssClass="bg-ColorMaterialTabla">
+                                                    <ItemTemplate>
+                                                        <asp:Panel ID="Panel1" BackColor='<%# System.Drawing.Color.FromName(Eval("Color").ToString()) %>' Height="100%" Width="100%" runat="server"></asp:Panel>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Estado">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Convert.ToInt32(Eval("Log_Activo"))==0? "Inactivo":"Activo" %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:CommandField ShowEditButton="true" HeaderText="Cambiar el Estado" EditText="Cambiar Estado" />
                                                 <asp:CommandField ShowSelectButton="true" HeaderText="Modificar" SelectText="Modificar" />
-                                                <asp:CommandField ShowEditButton="true" HeaderText="Desactivar"  EditText="Desactivar" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>

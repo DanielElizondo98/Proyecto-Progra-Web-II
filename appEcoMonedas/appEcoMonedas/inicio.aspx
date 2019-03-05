@@ -82,6 +82,9 @@
                                 <a href="inicio.aspx" class="nav-link">¿Qué Reciclamos?</a>
                             </li>
                             <li class="nav-item dropdown">
+                                <a href="inicio.aspx" class="nav-link">Nuestros Centros de Acopio</a>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a href="inicio.aspx" class="nav-link">Contáctenos</a>
                             </li>
                         </ul>

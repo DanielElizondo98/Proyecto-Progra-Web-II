@@ -15,7 +15,7 @@
             var inputText = $(that).val().toLowerCase();
             if (inputText != '') {
                 $('.search-query-sf').remove();
-                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Buscando : "'
                     + $(that).val()
                     + '"</strong></td></tr>');
             }
@@ -35,7 +35,7 @@
         });
         //all tr elements are hidden
         if (tableRowsClass.children(':visible').length == 0) {
-            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No se encontraron coincidencias.</td></tr>');
         }
     });
 });

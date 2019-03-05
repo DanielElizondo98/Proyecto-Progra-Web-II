@@ -60,7 +60,7 @@ namespace LogicaNegocios
             miMate.Nombre = nombre;
             miMate.Imagen = imagen;
             miMate.Color = color;
-            miMate.Log_Activo = 1;
+            miMate.Log_Activo = miMate.Log_Activo == null? 1: miMate.Log_Activo;
 
             if(id.Equals("") || !esNumero)
             {
