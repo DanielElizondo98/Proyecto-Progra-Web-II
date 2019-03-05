@@ -92,14 +92,14 @@
                     <div id="navigation" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item dropdown active">
-                                <a href="index.html" class="nav-link">Inicio</a>
+                                <a href="Inicio.aspx" class="nav-link">Inicio</a>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Mantenimientos <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Usuarios</a></li>
-                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Centros de Acopio</a></li>
-                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Materiales</a></li>
-                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Cupones</a></li>
+                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Usuarios</a></li>
+                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Centros de Acopio</a></li>
+                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Materiales</a></li>
+                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Cupones</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -107,7 +107,7 @@
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="index.html" class="nav-link">Editar Perfil</a></li>
+                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Editar Perfil</a></li>
                                 </ul>
                             </li>
                         </ul>
