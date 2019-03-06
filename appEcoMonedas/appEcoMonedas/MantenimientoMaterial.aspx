@@ -68,7 +68,7 @@
                                 <asp:HiddenField ID="hiddenID" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript:limpiar()" />
+                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript: limpiarManteMaterial();" />
                             </div>
                         </div>
                     </div>

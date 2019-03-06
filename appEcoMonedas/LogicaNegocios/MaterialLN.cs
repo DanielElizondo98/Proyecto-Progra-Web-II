@@ -30,7 +30,6 @@ namespace LogicaNegocios
         public static IEnumerable<Material> ObtenerListaMateriales(int log)
         {
             //recordar el where para solo los activos
-            var db = new BD_EcomonedasContext();
             IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.QueryListaMateriales(log);
             return lista;
         }

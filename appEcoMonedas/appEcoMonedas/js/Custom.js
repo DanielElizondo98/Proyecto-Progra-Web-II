@@ -2,7 +2,7 @@
     document.getElementById('divImagenMaterial').style.background = color;
 }
 
-function limpiar() {
+function limpiarManteMaterial() {
     document.getElementById('txtNombre').value = "";
     document.getElementById('txtPrecio').value = "";
     document.getElementById('txtColor').value = "#fff";
@@ -10,4 +10,8 @@ function limpiar() {
     document.getElementById('archivoImagen').value = "";
     document.getElementById('hiddenID').value = "";
     document.getElementById('imgMaterial').src = "#";
+}
+
+function limpiarManteUsuario() {
+    
 }
