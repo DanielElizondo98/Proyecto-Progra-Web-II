@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\filtroTablas.js" />
+    <Content Include="MantenimientoCentro.aspx" />
+    <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="packages.config" />
     <Content Include="vendor\jquery.cookie\component.json" />
@@ -424,6 +426,20 @@
     <Compile Include="InicioCliente.aspx.designer.cs">
       <DependentUpon>InicioCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoCentro.aspx.cs">
+      <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCentro.aspx.designer.cs">
+      <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCupon.aspx.cs">
+      <DependentUpon>MantenimientoCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCupon.aspx.designer.cs">
+      <DependentUpon>MantenimientoCupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MantenimientoMaterial.aspx.cs">
       <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -465,6 +481,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="imagenes\cupon\" />
     <Folder Include="imagenes\material\" />
   </ItemGroup>
   <PropertyGroup>

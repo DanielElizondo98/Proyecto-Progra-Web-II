@@ -6,7 +6,7 @@
       <siteMapNode url="" title="Usuarios"  description="" />
       <siteMapNode url="" title="Centros de Acopio"  description="" />
       <siteMapNode url="MantenimientoMaterial.aspx" title="Materiales"  description="" />
-      <siteMapNode url="" title="Cupones"  description="" />
+      <siteMapNode url="MantenimientoCupon.aspx" title="Cupones"  description="" />
     </siteMapNode>
     <siteMapNode url="" title="Reportes"  description="" />
     <siteMapNode url="" title="Perfil"  description="">
