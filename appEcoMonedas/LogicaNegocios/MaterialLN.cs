@@ -30,7 +30,6 @@ namespace LogicaNegocios
         public static IEnumerable<Material> ObtenerListaMateriales(int log)
         {
             //recordar el where para solo los activos
-            var db = new BD_EcomonedasContext();
             IEnumerable<Material> lista = (IEnumerable<Material>)MaterialLN.QueryListaMateriales(log);
             return lista;
         }
@@ -60,7 +59,7 @@ namespace LogicaNegocios
             miMate.Nombre = nombre;
             miMate.Imagen = imagen;
             miMate.Color = color;
-            miMate.Log_Activo = 1;
+            miMate.Log_Activo = miMate.Log_Activo == null? 1: miMate.Log_Activo;
 
             if(id.Equals("") || !esNumero)
             {

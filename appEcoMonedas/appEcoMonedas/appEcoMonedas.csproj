@@ -70,10 +70,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\Custom.js" />
     <Content Include="js\filtroTablas.js" />
     <Content Include="MantenimientoCentro.aspx" />
     <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
+    <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
@@ -446,6 +448,13 @@
     </Compile>
     <Compile Include="MantenimientoMaterial.aspx.designer.cs">
       <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentro.Master.cs">
       <DependentUpon>PrincipalAdminCentro.Master</DependentUpon>
