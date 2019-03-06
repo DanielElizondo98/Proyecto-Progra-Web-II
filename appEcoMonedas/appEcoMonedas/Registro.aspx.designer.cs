@@ -10,6 +10,6 @@
 namespace appEcoMonedas {
     
     
-    public partial class Inicio {
+    public partial class Registro {
     }
 }
