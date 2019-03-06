@@ -261,7 +261,7 @@ p.lead {
 .heading h1:after, .panel-heading h1:after, .heading h2:after, .panel-heading h2:after, .heading h3:after, .panel-heading h3:after, .heading h4:after, .panel-heading h4:after, .heading h5:after, .panel-heading h5:after, .heading h6:after, .panel-heading h6:after {
   content: " ";
   display: block;
-  width: 100px;
+  width: 100%;
   height: 2px;
   margin-top: .6rem;
   background: #4fbfa8;

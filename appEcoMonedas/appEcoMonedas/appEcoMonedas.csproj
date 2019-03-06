@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -66,7 +70,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\Custom.js" />
+    <Content Include="js\filtroTablas.js" />
     <Content Include="MantenimientoMaterial.aspx" />
+    <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
@@ -115,6 +122,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\custom.css" />
@@ -425,6 +433,13 @@
     <Compile Include="MantenimientoMaterial.aspx.designer.cs">
       <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoUsuario.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalAdminCentro.Master.cs">
       <DependentUpon>PrincipalAdminCentro.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -457,6 +472,9 @@
       <Project>{54dd03c5-8f93-4279-833b-96b4721b43dd}</Project>
       <Name>LogicaNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imagenes\material\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
