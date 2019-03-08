@@ -76,8 +76,12 @@
     <Content Include="fonts\dark-dashboard.svg" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
+    <Content Include="img\ecoBag.png" />
+    <Content Include="img\programmer.png" />
     <Content Include="js\Custom.js" />
     <Content Include="js\filtroTablas.js" />
+    <Content Include="MantenimientoCentro.aspx" />
+    <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
@@ -442,6 +446,19 @@
     </Compile>
     <Compile Include="InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    <Compile Include="MantenimientoCentro.aspx.cs">
+      <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCentro.aspx.designer.cs">
+      <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCupon.aspx.cs">
+      <DependentUpon>MantenimientoCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCupon.aspx.designer.cs">
+      <DependentUpon>MantenimientoCupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoMaterial.aspx.cs">
       <DependentUpon>MantenimientoMaterial.aspx</DependentUpon>
@@ -505,6 +522,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="imagenes\cupon\" />
     <Folder Include="imagenes\material\" />
   </ItemGroup>
   <PropertyGroup>

@@ -212,5 +212,24 @@ namespace LogicaNegocios
             }
             return contrasenia;
         }
+
+
+        public static IEnumerable<Usuario> ListaAdminAcopioLibres()
+        {
+            IEnumerable<Usuario> lista = ObtenerListaUsuariosRol(2, 2);
+            List<Usuario> libres = new List<Usuario>();
+            foreach (var admin in lista)
+            {
+                IEnumerable<Centro> listCentros= CentroLN.ObtenerCentroXIdAdmin(admin.Correo);
+                if (listCentros.ToList().Count<1 && admin.Log_Activo==1)
+                {
+                    libres.Add(admin);
+                }
+            }
+            return libres;
+        }
+
+
+
     }
 }
