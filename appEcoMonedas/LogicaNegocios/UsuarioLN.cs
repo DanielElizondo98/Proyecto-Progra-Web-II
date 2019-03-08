@@ -59,7 +59,7 @@ namespace LogicaNegocios
         {
             var db = new BD_EcomonedasContext();
             bool esNuevo = false;
-            Usuario miUsuario = new Usuario();
+            Usuario miUsuario;
 
             miUsuario = db.Usuario.Where(x => x.Correo.Equals(correo)).FirstOrDefault();
            if(miUsuario == null)
@@ -136,7 +136,7 @@ namespace LogicaNegocios
 
                 return true;
             }
-            catch (EntryPointNotFoundException ex)
+            catch (EntryPointNotFoundException)
             {
 
                 throw;
@@ -172,6 +172,13 @@ namespace LogicaNegocios
                 return false;
             }
         }
+        public static Usuario AutenticarUsuario(String correo, String contrasenia)
+        {
+            var db = new BD_EcomonedasContext();
+            Usuario us = db.Usuario.Where(x => x.Correo.Equals(correo) && x.Contrasenia.Equals(contrasenia)).FirstOrDefault<Usuario>();
+            return us;
+        }
+
         private static String GenerarContrasenia()
         {
             String abecedarioMayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

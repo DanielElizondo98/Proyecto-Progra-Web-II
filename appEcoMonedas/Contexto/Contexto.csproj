@@ -55,6 +55,7 @@
     <Compile Include="Billetera.cs" />
     <Compile Include="Canje.cs" />
     <Compile Include="Centro.cs" />
+    <Compile Include="Color.cs" />
     <Compile Include="Cupon.cs" />
     <Compile Include="Det_Transaccion.cs" />
     <Compile Include="Enc_Transaccion.cs" />

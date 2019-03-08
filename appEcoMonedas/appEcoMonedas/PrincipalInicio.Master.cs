@@ -8,31 +8,31 @@ using System.Web.UI.WebControls;
 
 namespace appEcoMonedas
 {
-    public partial class PrincipalAdminCentro : System.Web.UI.MasterPage
+    public partial class PrincipalInicio : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario us = (Usuario)Session["Usuario"];
             if (us != null)
             {
-                if(us.ID_Rol != 2)
+                if (us.ID_Rol == 1)
                 {
-                    if (us.ID_Rol == 1)
+                    Response.Redirect("InicioAdministrador.aspx");
+                }
+                else
+                {
+                    if (us.ID_Rol == 2)
                     {
-                        Response.Redirect("InicioAdministrador.aspx");
+                        Response.Redirect("InicioAdminCentro.aspx");
                     }
                     else
                     {
-                        if(us.ID_Rol == 3)
+                        if (us.ID_Rol == 3)
                         {
                             Response.Redirect("InicioCliente.aspx");
                         }
                     }
                 }
-            }
-            else
-            {
-                Response.Redirect("Inicio.aspx");
             }
         }
     }

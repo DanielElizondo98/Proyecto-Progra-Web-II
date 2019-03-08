@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorLN.cs" />
     <Compile Include="CentroLN.cs" />
     <Compile Include="CuponLN.cs" />
     <Compile Include="MaterialLN.cs" />

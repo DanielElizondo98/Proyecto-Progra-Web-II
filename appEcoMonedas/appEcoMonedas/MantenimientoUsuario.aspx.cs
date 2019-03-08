@@ -193,7 +193,7 @@ namespace appEcoMonedas
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede agregar un nuevo material";
+                    lblMensaje.Text = "No se pudo guardar un nuevo usuario";
                 }
             }
             else
