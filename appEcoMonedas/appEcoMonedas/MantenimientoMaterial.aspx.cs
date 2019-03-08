@@ -138,7 +138,7 @@ namespace appEcoMonedas
                    Where(p => p.ID == id).FirstOrDefault<Material>();
             txtNombre.Text = mat.Nombre;
             txtPrecio.Text = mat.Precio.ToString();
-            txtColor.Value = mat.Color;
+            txtColor.Value = mat.ID_Color;
             imgMaterial.ImageUrl = "~/imagenes/material/" + mat.Imagen;
             imgMaterial.CssClass = "col-12 img-fluid img-thumbnail Imagen_Mante_Material";
             divImagenMaterial.Attributes.Add("style", "background: " + mat.Color);

@@ -115,10 +115,6 @@
                 </div>
             </div>
         </header>
-        <ol class="breadcrumb">
-            <asp:SiteMapPath ID="SiteMapPath1" SiteMapProvider="" runat="server"></asp:SiteMapPath>
-        </ol>
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" SiteMapProvider="" runat="server" />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" ClientIDMode="Static" runat="server">
         </asp:ContentPlaceHolder>
 

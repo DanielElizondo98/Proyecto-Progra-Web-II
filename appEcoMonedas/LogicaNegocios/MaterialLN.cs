@@ -58,7 +58,7 @@ namespace LogicaNegocios
             miMate.Precio = Convert.ToDouble(precio);
             miMate.Nombre = nombre;
             miMate.Imagen = imagen;
-            miMate.Color = color;
+            miMate.ID_Color = color;
             miMate.Log_Activo = miMate.Log_Activo == null? 1: miMate.Log_Activo;
 
             if(id.Equals("") || !esNumero)

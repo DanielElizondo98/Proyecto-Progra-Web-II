@@ -8,7 +8,7 @@
     <main>
         <div class="container border-top pt-5">
             <div class="col-12 mb-4 text-center">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-dan" Visible="false" Text=""></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
             </div>
             <div class="row mb-3">
                 <div class="col-lg-4 col-md-4 col-sm-12">
@@ -65,7 +65,7 @@
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblDireccion" runat="server" Text="Dirección. (Es una breve descripción de la ubicacion donde vive)"></asp:Label>
-                                <asp:TextBox ID="txtDireccion" CssClass="form-control" ToolTip="Dirección" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDireccion" CssClass="form-control" TextMode="MultiLine" Rows="3" ToolTip="Dirección" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* La direccion del usuario es requerido" ControlToValidate="txtDireccion" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group row">

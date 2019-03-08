@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace appEcoMonedas
 {
-    public partial class Registro : System.Web.UI.Page
+    public partial class InicioSesion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,33 +37,45 @@ namespace appEcoMonedas
             }
         }
 
-        protected void cvConfirmarContrasenia_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = args.Value.Equals(txtContrasenia.Text);
-        }
-
-        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             try
             {
-                Usuario us = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
-                if (us == null)
+                Usuario us = UsuarioLN.AutenticarUsuario(txtCorreo.Text, txtContrasenia.Text);
+                if (us != null)
                 {
-                    bool confirmacion = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtContrasenia.Text, txtDireccion.Text, txtTelefono.Text, "3", txtCorreo.Text);
-                    if (confirmacion)
+                    if(us.ID_Rol == 1)
                     {
-                        Response.Redirect("InicioCliente.aspx");
+                        Session["Usuario"] = us;
+                        Response.Redirect("InicioAdministrador.aspx");
                     }
                     else
                     {
-                        lblMensaje.Visible = true;
-                        lblMensaje.Text = "Ha ocurrido un error en el registro";
+                        if(us.ID_Rol == 2)
+                        {
+                            Session["Usuario"] = us;
+                            Response.Redirect("InicioAdminCentro.aspx");
+                        }
+                        else
+                        {
+                            if(us.ID_Rol == 3)
+                            {
+                                Session["Usuario"] = us;
+                                Response.Redirect("InicioCliente.aspx");
+                            }
+                            else
+                            {
+                                Session["Usuario"] = null;
+                                lblMensaje.Visible = true;
+                                lblMensaje.Text = "Ha ocurrido un error autenticando la cuenta";
+                            }
+                        }
                     }
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "Ya existe un usuario registrado con el correo " + txtCorreo.Text;
+                    lblMensaje.Text = "El correo electrónico o la contraseña no coinciden con ninguna cuenta";
                 }
             }
             catch (Exception ex)
