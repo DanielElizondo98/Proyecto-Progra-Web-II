@@ -229,7 +229,7 @@
                         <div data-animate="fadeInUp" class="col-md-3">
                             <div class="team-member">
                                 <div class="image">
-                                    <img src="img/Sharon.jpg" alt="" class="img-fluid rounded-circle"/></div>
+                                    <img src="img/programmer.png" alt="" class="img-fluid rounded-circle"/></div>
                                 <h3>Sharon Sequeira González</h3>
                                 <p class="role">Programadora</p>
                                 <ul class="social list-inline">

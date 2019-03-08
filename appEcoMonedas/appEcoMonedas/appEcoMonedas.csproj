@@ -70,6 +70,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\ecoBag.png" />
+    <Content Include="img\programmer.png" />
     <Content Include="js\Custom.js" />
     <Content Include="js\filtroTablas.js" />
     <Content Include="MantenimientoCentro.aspx" />
