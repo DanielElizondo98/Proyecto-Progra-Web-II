@@ -42,13 +42,16 @@ namespace appEcoMonedas
             }
             if (!IsPostBack)
             {
+                Session["estadoCarga"] = 1;
+                
                 CargarListadoCuponesGrid();
             }
         }
 
         public void CargarListadoCuponesGrid()
         {
-            grvListado.DataSource = CuponLN.ObtenerListaCupones(1).ToList();
+            int estadoCargaCentro = Convert.ToInt32(Session["estadoCarga"]);
+            grvListado.DataSource = CuponLN.ObtenerListaCupones(estadoCargaCentro).ToList();
             grvListado.DataBind();
         }
 
@@ -162,6 +165,28 @@ namespace appEcoMonedas
                 }
 
             }
+        }
+
+        protected void chkCargarInactivos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Session["estadoCarga"] != null)
+            {
+                int estadoCarga = Convert.ToInt32(Session["estadoCarga"]);
+                if (estadoCarga == 1)
+                {
+                    Session["estadoCarga"] = 0;
+                }
+                else
+                {
+                    Session["estadoCarga"] = 1;
+                }
+            }
+            else
+            {
+                Session["estadoCarga"] = 1;
+                chkCargarInactivos.Checked = false;
+            }
+            CargarListadoCuponesGrid();
         }
     }
 }

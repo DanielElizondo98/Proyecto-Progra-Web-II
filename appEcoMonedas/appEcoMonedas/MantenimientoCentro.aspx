@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrincipalAdministrador.Master" AutoEventWireup="true" CodeBehind="MantenimientoCentro.aspx.cs" Inherits="appEcoMonedas.MantenimientoCentro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="js/filtroTablas.js"></script>
+    <script src="js/Custom.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
@@ -32,8 +34,8 @@
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
                                 <asp:DropDownList ID="ddlProvincias"
                                     runat="server"
-                                    CssClass="form-control" ItemType="Contexto.Provincia"
-                                    SelectMethod="ListaProvincias" DataTextField="Descripcion"
+                                    CssClass="form-control"
+                                    DataTextField="Descripcion"
                                     DataValueField="ID">
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Debe seleccionar la provincia a la que pertenece el centro de acopio" ControlToValidate="ddlProvincias" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -47,8 +49,8 @@
                                 <asp:Label ID="lblAdminAcopio" runat="server" Text="Administrador de Centro de Acopio"></asp:Label>
                                 <asp:DropDownList ID="ddlAdminsAcopio"
                                     runat="server"
-                                    CssClass="form-control" ItemType="Contexto.Usuario"
-                                    SelectMethod="ListaAdminsAcopio" DataTextField="Nombre"
+                                    CssClass="form-control" 
+                                    DataTextField="Correo"
                                     DataValueField="Correo">
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Debe seleccionar el administrador del centro de acopio" ControlToValidate="ddlAdminsAcopio" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -74,9 +76,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="row mb-3">
-                                <div class="col-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12">
                                     <div class="input-group">
                                         <input class="form-control" id="system-search" name="q" placeholder="Filtrar por..." />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="form-group form-check">
+                                        <asp:Label ID="lblBuscarInactivos" CssClass="form-check-label" AssociatedControlID="chkCargarInactivos" runat="server" Text="Cargar Inactivos"></asp:Label>
+                                        <asp:CheckBox ID="chkCargarInactivos" CssClass="form-check-inline" OnCheckedChanged="chkCargarInactivos_CheckedChanged" AutoPostBack="true" runat="server" />
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +101,7 @@
                                                 <asp:BoundField DataField="Provincia.Descripcion" HeaderText="Provincia"></asp:BoundField>
                                                 <asp:BoundField DataField="Otras_Senias" HeaderText="Otras señas"></asp:BoundField>
                                                 <asp:CommandField ShowSelectButton="true" HeaderText="Modificar" SelectText="Modificar" />
-                                                <asp:CommandField ShowEditButton="true" HeaderText="Desactivar" EditText="Desactivar" />
+                                                <asp:CommandField ShowEditButton="true" HeaderText="Cambiar el Estado" EditText="Cambiar Estado" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>
