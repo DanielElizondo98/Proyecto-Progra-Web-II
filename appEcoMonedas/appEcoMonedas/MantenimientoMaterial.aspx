@@ -68,7 +68,7 @@
                                     </Triggers>
                                 </asp:UpdatePanel>
                                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
-                                <asp:CustomValidator ID="cvVerificaArchivo" ValidateRequestMode="Enabled" runat="server" ErrorMessage="* Debe seleccionar una imagen para el material" ControlToValidate="archivoImagen" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidateEmptyText="true" OnServerValidate="cvVerificaArchivo_ServerValidate"></asp:CustomValidator>
+                                <asp:RequiredFieldValidator ID="rqvArchivoImagen" runat="server" ErrorMessage="* Debe ingresar el precio del material" ControlToValidate="archivoImagen" Enabled="true" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group row">
                                 <asp:HiddenField ID="hiddenID" runat="server" />

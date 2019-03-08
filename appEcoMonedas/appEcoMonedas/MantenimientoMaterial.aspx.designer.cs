@@ -157,13 +157,13 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.WebControls.FileUpload archivoImagen;
         
         /// <summary>
-        /// Control cvVerificaArchivo.
+        /// Control rqvArchivoImagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvVerificaArchivo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvArchivoImagen;
         
         /// <summary>
         /// Control hiddenID.
