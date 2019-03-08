@@ -8,7 +8,7 @@
     <main>
         <div class="container border-top pt-5">
             <div class="col-12 mb-4 text-center">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-dan" Visible="false" Text=""></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
@@ -53,22 +53,29 @@
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblColor" CssClass="col-12" runat="server" Text="Color Distintivo"></asp:Label>
-                                <input id="txtColor" runat="server" type="color" onchange="javascript:Pintar(this.value);" class="w-100" />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Debe seleccionar el color distintivo del material" ControlToValidate="txtColor" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:DropDownList ID="ddlColores" DataTextField="Nombre" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="ddlColores_SelectedIndexChanged" CssClass="form-control w-75" runat="server"></asp:DropDownList>
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblArchivoImagen" CssClass="col-12 mb-1" runat="server" Text="Imagen del Material"></asp:Label>
-                                <div class="p-3 mb-3" id="divImagenMaterial" runat="server">
-                                    <asp:Image ID="imgMaterial" CssClass="col-12" AlternateText="Imagen Material" runat="server" />
-                                </div>
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        <div class="p-3" id="divImagenMaterial" runat="server">
+                                            <asp:Image ID="imgMaterial" CssClass="col-12" AlternateText="Imagen Material" runat="server" />
+                                        </div>
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="ddlColores" EventName="SelectedIndexChanged" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
                                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Debe seleccionar la imagen del material" ControlToValidate="archivoImagen" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:CustomValidator ID="cvVerificaArchivo" ValidateRequestMode="Enabled" runat="server" ErrorMessage="* Debe seleccionar una imagen para el material" ControlToValidate="archivoImagen" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" ValidateEmptyText="true" OnServerValidate="cvVerificaArchivo_ServerValidate"></asp:CustomValidator>
                             </div>
                             <div class="form-group row">
                                 <asp:HiddenField ID="hiddenID" runat="server" />
-                                <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
+                                <asp:Button ID="btnGuardar" CausesValidation="true" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript: limpiarManteMaterial();" />
+                                <asp:Button ID="btnLimpia" CausesValidation="false" CssClass="btn btn-secondary" runat="server"
+                                    Text="Limpiar" OnClick="btnLimpia_Click" />
                             </div>
                         </div>
                     </div>
@@ -106,7 +113,7 @@
                                                 <asp:BoundField DataField="Precio" HeaderText="Precio"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Color" ItemStyle-CssClass="bg-ColorMaterialTabla">
                                                     <ItemTemplate>
-                                                        <asp:Panel ID="Panel1" BackColor='<%# System.Drawing.Color.FromName(Eval("Color").ToString()) %>' Height="100%" Width="100%" runat="server"></asp:Panel>
+                                                        <asp:Panel ID="Panel1" BackColor='<%# System.Drawing.ColorTranslator.FromHtml(Eval("ID_Color").ToString()) %>' Height="100%" Width="100%" runat="server"></asp:Panel>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Estado">

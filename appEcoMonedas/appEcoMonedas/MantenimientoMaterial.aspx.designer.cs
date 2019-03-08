@@ -103,22 +103,13 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.WebControls.Label lblColor;
         
         /// <summary>
-        /// Control txtColor.
+        /// Control ddlColores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtColor;
-        
-        /// <summary>
-        /// Control RequiredFieldValidator3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlColores;
         
         /// <summary>
         /// Control lblArchivoImagen.
@@ -128,6 +119,15 @@ namespace appEcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblArchivoImagen;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// Control divImagenMaterial.
@@ -157,13 +157,13 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.WebControls.FileUpload archivoImagen;
         
         /// <summary>
-        /// Control RequiredFieldValidator4.
+        /// Control cvVerificaArchivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.CustomValidator cvVerificaArchivo;
         
         /// <summary>
         /// Control hiddenID.
@@ -182,6 +182,15 @@ namespace appEcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
+        
+        /// <summary>
+        /// Control btnLimpia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpia;
         
         /// <summary>
         /// Control lblBuscarInactivos.

@@ -136,7 +136,7 @@ namespace LogicaNegocios
 
                 return true;
             }
-            catch (EntryPointNotFoundException ex)
+            catch (EntryPointNotFoundException)
             {
 
                 throw;

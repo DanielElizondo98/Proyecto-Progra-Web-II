@@ -12,7 +12,7 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario us = (Usuario)Session["Usuario"];
+            /*Usuario us = (Usuario)Session["Usuario"];
             if (us != null)
             {
                 if (us.ID_Rol != 1)
@@ -33,7 +33,7 @@ namespace appEcoMonedas
             else
             {
                 Response.Redirect("Inicio.aspx");
-            }
+            }*/
         }
     }
 }

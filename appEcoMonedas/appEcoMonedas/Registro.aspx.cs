@@ -13,28 +13,7 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario us = (Usuario)Session["Usuario"];
-            if (us != null)
-            {
-                if (us.ID_Rol == 1)
-                {
-                    Response.Redirect("InicioAdministrador.aspx");
-                }
-                else
-                {
-                    if (us.ID_Rol == 2)
-                    {
-                        Response.Redirect("InicioAdminCentro.aspx");
-                    }
-                    else
-                    {
-                        if (us.ID_Rol == 3)
-                        {
-                            Response.Redirect("InicioCliente.aspx");
-                        }
-                    }
-                }
-            }
+            
         }
 
         protected void cvConfirmarContrasenia_ServerValidate(object source, ServerValidateEventArgs args)
@@ -52,6 +31,7 @@ namespace appEcoMonedas
                     bool confirmacion = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtContrasenia.Text, txtDireccion.Text, txtTelefono.Text, "3", txtCorreo.Text);
                     if (confirmacion)
                     {
+                        Session["Usuario"] = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
                         Response.Redirect("InicioCliente.aspx");
                     }
                     else

@@ -5,11 +5,11 @@
 function limpiarManteMaterial() {
     document.getElementById('txtNombre').value = "";
     document.getElementById('txtPrecio').value = "";
-    document.getElementById('txtColor').value = "#fff";
+    document.getElementById('ddlColores').selectedIndex = 0;
     document.getElementById('divImagenMaterial').style.background = "#fff";
     document.getElementById('archivoImagen').value = "";
     document.getElementById('hiddenID').value = "";
-    document.getElementById('imgMaterial').src = "#";
+    document.getElementById('imgMaterial').removeAttribute("src");
 }
 
 function limpiarManteUsuario() {
