@@ -446,6 +446,7 @@
     </Compile>
     <Compile Include="InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MantenimientoCentro.aspx.cs">
       <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
