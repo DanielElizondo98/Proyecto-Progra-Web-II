@@ -72,7 +72,8 @@ namespace appEcoMonedas
             if (Convert.ToInt32(ddlFiltroTipoUsuario.SelectedValue) == 3)
             {
                 CambiarEstadoControles(false);
-            }else
+            }
+            else
             {
                 CambiarEstadoControles(true);
             }
@@ -179,27 +180,41 @@ namespace appEcoMonedas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(ddlRol.SelectedValue)==2)
+            if (Convert.ToInt32(ddlRol.SelectedValue) == 2)
             {
-                bool confirmar = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, txtTelefono.Text, ddlRol.SelectedValue, chkGenerarContrasenia.Checked, txtCorreo.Text);
-                if (confirmar)
+                //validar que no exista el usuario
+
+                Usuario us = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
+                if (us == null)
                 {
+                    bool confirmar = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtDireccion.Text, txtTelefono.Text, ddlRol.SelectedValue, chkGenerarContrasenia.Checked, txtCorreo.Text);
+                    if (confirmar)
+                    {
 
-                    // Recargar la pagina
-                    string accion = (hiddenCorreo.Value == "") ? "nuevo" : "actu";
-                    Response.Redirect("MantenimientoUsuario.aspx?accion=" + accion);
+                        // Recargar la pagina
+                        string accion = (hiddenCorreo.Value == "") ? "nuevo" : "actu";
+                        Response.Redirect("MantenimientoUsuario.aspx?accion=" + accion);
 
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se pudo guardar un nuevo usuario";
+                        return;
+                    }
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se pudo guardar un nuevo usuario";
+                    lblMensaje.Text = "Ya existe un usuario registrado con el correo " + txtCorreo.Text;
+                    return;
                 }
             }
             else
             {
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "Lo sentimos, solo tiene autorizado agregar usuario del tipo \"Administrador del Centro de Acopio\", agradecemos su comprención!";
+                return;
             }
         }
     }

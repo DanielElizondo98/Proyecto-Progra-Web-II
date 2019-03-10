@@ -81,6 +81,9 @@
     <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="packages.config" />
+    <Content Include="PerfilAdminCentro.aspx" />
+    <Content Include="PerfilAdministrador.aspx" />
+    <Content Include="PerfilCliente.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
@@ -456,6 +459,27 @@
     </Compile>
     <Compile Include="MantenimientoUsuario.aspx.designer.cs">
       <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilAdminCentro.aspx.cs">
+      <DependentUpon>PerfilAdminCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdminCentro.aspx.designer.cs">
+      <DependentUpon>PerfilAdminCentro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilAdministrador.aspx.cs">
+      <DependentUpon>PerfilAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdministrador.aspx.designer.cs">
+      <DependentUpon>PerfilAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilCliente.aspx.cs">
+      <DependentUpon>PerfilCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilCliente.aspx.designer.cs">
+      <DependentUpon>PerfilCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalAdminCentro.Master.cs">
       <DependentUpon>PrincipalAdminCentro.Master</DependentUpon>

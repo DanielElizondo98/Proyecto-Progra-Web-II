@@ -28,12 +28,21 @@ namespace appEcoMonedas
                             Response.Redirect("InicioAdminCentro.aspx");
                         }
                     }
+                }else
+                {
+                    lblNombreUsuario.Text = String.Format("Bienvenido {0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
                 }
             }
             else
             {
                 Response.Redirect("Inicio.aspx");
             }
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

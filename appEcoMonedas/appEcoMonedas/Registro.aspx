@@ -94,17 +94,6 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2 col-sm-12">
                             <div class="form-group input-group">
-                                <label class="control-label col-sm-3">Direccion <span class="text-danger">*</span></label>
-                                <div class="col-md-8 col-sm-9">
-                                    <asp:TextBox ID="txtDireccion" CssClass="form-control" placeholder="Ingrese su dirección de residencia" TextMode="MultiLine" Rows="3" ToolTip="Dirección" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Debe indicar la dirección" ControlToValidate="txtDireccion" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2 col-sm-12">
-                            <div class="form-group input-group">
                                 <label class="control-label col-sm-3">N° de teléfono. <span class="text-danger">*</span></label>
                                 <div class="col-md-8 col-sm-8">
                                     <div class="form-group input-group">
@@ -120,6 +109,17 @@
                                         ControlToValidate="txtTelefono"
                                         SetFocusOnError="true" ForeColor="Red" Display="Dynamic"
                                         ValidationExpression="^\d{8}$"></asp:RegularExpressionValidator>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2 col-sm-12">
+                            <div class="form-group input-group">
+                                <label class="control-label col-sm-3">Direccion <span class="text-danger">*</span></label>
+                                <div class="col-md-8 col-sm-9">
+                                    <asp:TextBox ID="txtDireccion" CssClass="form-control" placeholder="Ingrese su dirección de residencia" TextMode="MultiLine" Rows="3" ToolTip="Dirección" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Debe indicar la dirección" ControlToValidate="txtDireccion" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>

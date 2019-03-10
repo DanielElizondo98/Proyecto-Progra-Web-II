@@ -65,42 +65,42 @@ namespace appEcoMonedas
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             limpiaMensaje();
-            Boolean archivoOK = false;
-            String fileName = "";
-            if (archivoImagen.HasFile)
-            {
-                String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
-                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-                for (int i = 0; i < allowedExtensions.Length; i++)
-                {
-                    if (fileExtension == allowedExtensions[i])
-                    {
-                        archivoOK = true;
-                    }
-                }
-                if (archivoOK)
-                {
-                    try
-                    {
-                        String path = Server.MapPath("~/imagenes/");
-                        archivoImagen.PostedFile.SaveAs(path + "material/" + archivoImagen.FileName);
-                        fileName = archivoImagen.FileName;
-                    }
-                    catch (Exception ex)
-                    {
-                        lblMensaje.Visible = true;
-                        lblMensaje.Text = ex.Message;
-                    }
-                }
-                else
-                {
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
-                    return;
-                }
-            }
             if (VerificaColor())
             {
+                Boolean archivoOK = false;
+                String fileName = "";
+                if (archivoImagen.HasFile)
+                {
+                    String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
+                    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                    for (int i = 0; i < allowedExtensions.Length; i++)
+                    {
+                        if (fileExtension == allowedExtensions[i])
+                        {
+                            archivoOK = true;
+                        }
+                    }
+                    if (archivoOK)
+                    {
+                        try
+                        {
+                            String path = Server.MapPath("~/imagenes/");
+                            archivoImagen.PostedFile.SaveAs(path + "material/" + archivoImagen.FileName);
+                            fileName = archivoImagen.FileName;
+                        }
+                        catch (Exception ex)
+                        {
+                            lblMensaje.Visible = true;
+                            lblMensaje.Text = ex.Message;
+                        }
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
+                        return;
+                    }
+                }
 
                 bool confirmar = MaterialLN.GuardarMaterial(txtPrecio.Text, txtNombre.Text, ddlColores.SelectedValue, fileName, hiddenID.Value);
                 if (confirmar)
@@ -123,61 +123,6 @@ namespace appEcoMonedas
                 lblMensaje.Visible = true;
                 lblMensaje.Text = "El color seleccionado, ya le pertenece a un material";
             }
-            /*Boolean archivoOK = false;
-            String path = Server.MapPath("~/imagenes/");
-            if (archivoImagen.HasFile)
-            {
-                String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
-                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-                for (int i = 0; i < allowedExtensions.Length; i++)
-                {
-                    if (fileExtension == allowedExtensions[i])
-                    {
-                        archivoOK = true;
-                    }
-                }
-            }
-
-            if (archivoOK)
-            {
-                try
-                {
-                    archivoImagen.PostedFile.SaveAs(path + "material/" + archivoImagen.FileName);
-                }
-                catch (Exception ex)
-                {
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = ex.Message;
-                }
-                if (VerificaColor())
-                {
-                    bool confirmar = MaterialLN.GuardarMaterial(txtPrecio.Text, txtNombre.Text, archivoImagen.FileName, ddlColores.SelectedValue, hiddenID.Value);
-                    if (confirmar)
-                    {
-
-                        // Recargar la pagina
-                        string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                        rqvArchivoImagen.Enabled = true;
-                        Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
-
-                    }
-                    else
-                    {
-                        lblMensaje.Visible = true;
-                        lblMensaje.Text = "No se puede agregar un nuevo material";
-                    }
-                }
-                else
-                {
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = "El color seleccionado, ya le pertenece a un material";
-                }
-            }
-            else
-            {
-                lblMensaje.Visible = true;
-                lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
-            }*/
         }
 
         private bool VerificaColor()
@@ -191,7 +136,8 @@ namespace appEcoMonedas
             }
             else
             {
-                if (mat.ID == Convert.ToInt32(hiddenID.Value))
+                int idCarga = hiddenID.Value.Equals("") ? 0 : Convert.ToInt32(hiddenID.Value);
+                if (mat.ID == idCarga)
                 {
                     return true;
                 }
@@ -325,10 +271,64 @@ namespace appEcoMonedas
             rqvArchivoImagen.Enabled = true;
         }
 
-        private void Guardar()
+        /*private void Guardar()
         {
+            Boolean archivoOK = false;
+            String path = Server.MapPath("~/imagenes/");
+            if (archivoImagen.HasFile)
+            {
+                String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
+                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                for (int i = 0; i < allowedExtensions.Length; i++)
+                {
+                    if (fileExtension == allowedExtensions[i])
+                    {
+                        archivoOK = true;
+                    }
+                }
+            }
 
-        }
+            if (archivoOK)
+            {
+                try
+                {
+                    archivoImagen.PostedFile.SaveAs(path + "material/" + archivoImagen.FileName);
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = ex.Message;
+                }
+                if (VerificaColor())
+                {
+                    bool confirmar = MaterialLN.GuardarMaterial(txtPrecio.Text, txtNombre.Text, archivoImagen.FileName, ddlColores.SelectedValue, hiddenID.Value);
+                    if (confirmar)
+                    {
+
+                        // Recargar la pagina
+                        string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
+                        rqvArchivoImagen.Enabled = true;
+                        Response.Redirect("MantenimientoMaterial.aspx?accion=" + accion);
+
+                    }
+                    else
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "No se puede agregar un nuevo material";
+                    }
+                }
+                else
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "El color seleccionado, ya le pertenece a un material";
+                }
+            }
+            else
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
+            }
+        }*/
 
         /*protected void cvVerificaArchivo_ServerValidate(object source, ServerValidateEventArgs args)
         {

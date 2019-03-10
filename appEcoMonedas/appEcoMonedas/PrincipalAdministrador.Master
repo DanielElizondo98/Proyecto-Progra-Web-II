@@ -57,8 +57,8 @@
                     <div class="col-md-6 d-md-block d-none">
 
                         <p style="font-size: 16px">
-                            <img src="img/Iconos/usuario30px.png" />
-                            Jarod Elizondo Herrera!
+                            <i class="fa fa-user-circle"></i>
+                            <asp:Label ID="lblNombreUsuario" runat="server" Text="Bienvenido!"></asp:Label>
                         </p>
                     </div>
                     <div class="col-md-6">
@@ -68,8 +68,8 @@
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                             <div class="login">
-                                <a href="customer-register.html" class="signup-btn"><i class="fa fa-sign-in"></i>
-                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></a>
+                                <asp:LinkButton ID="btnCerrarSesion" CssClass="signup-btn" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
+                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></asp:LinkButton>
                             </div>
                             <ul class="social-custom list-inline">
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -86,7 +86,7 @@
         <header class="nav-holder make-sticky">
             <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a href="index.html" class="navbar-brand home">
+                    <a href="InicioAdministrador.aspx" class="navbar-brand home">
                         <img src="img/logo.png" alt="EcoMonedas logo" class="d-none d-md-inline-block" style="height: 64px; width: 238px;" /><img src="img/logo.png" style="width: 200px;" alt="EcoMonedas logo" class="d-inline-block d-md-none" /><span class="sr-only">Eco-monedas - Ir al Inicio</span></a>
                     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
                     <div id="navigation" class="navbar-collapse collapse">
@@ -103,11 +103,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="index.html" class="nav-link">Reportes</a>
+                                <a href="InicioAdministrador.aspx" class="nav-link">Reportes</a>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="Inicio.aspx" class="nav-link">Editar Perfil</a></li>
+                                    <li class="dropdown-item"><a href="PerfilAdministrador.aspx" class="nav-link">Editar Perfil</a></li>
                                 </ul>
                             </li>
                         </ul>
