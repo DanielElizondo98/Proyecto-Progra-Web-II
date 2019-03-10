@@ -51,8 +51,11 @@
   <ItemGroup>
     <Compile Include="ColorLN.cs" />
     <Compile Include="CorreoLN.cs" />
+    <Compile Include="CentroLN.cs" />
+    <Compile Include="CuponLN.cs" />
     <Compile Include="MaterialLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinciaLN.cs" />
     <Compile Include="RolLN.cs" />
     <Compile Include="UsuarioLN.cs" />
   </ItemGroup>
