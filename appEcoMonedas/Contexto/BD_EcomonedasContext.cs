@@ -15,6 +15,7 @@ namespace Contexto
         public virtual DbSet<Billetera> Billetera { get; set; }
         public virtual DbSet<Canje> Canje { get; set; }
         public virtual DbSet<Centro> Centro { get; set; }
+        public virtual DbSet<Color> Color { get; set; }
         public virtual DbSet<Cupon> Cupon { get; set; }
         public virtual DbSet<Det_Transaccion> Det_Transaccion { get; set; }
         public virtual DbSet<Enc_Transaccion> Enc_Transaccion { get; set; }
@@ -30,6 +31,12 @@ namespace Contexto
                 .HasMany(e => e.Enc_Transaccion)
                 .WithRequired(e => e.Centro)
                 .HasForeignKey(e => e.ID_Centro)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Color>()
+                .HasMany(e => e.Material)
+                .WithRequired(e => e.Color)
+                .HasForeignKey(e => e.ID_Color)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Cupon>()
