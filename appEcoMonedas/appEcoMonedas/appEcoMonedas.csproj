@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\font.css" />
+    <Content Include="css\MaterialCSS.css" />
     <Content Include="fonts\dark-dashboard.svg" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
@@ -84,6 +85,7 @@
     <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="MantenimientoUsuario.aspx" />
+    <Content Include="MaterialesRecibidos.aspx" />
     <Content Include="packages.config" />
     <Content Include="PerfilAdminCentro.aspx" />
     <Content Include="PerfilAdministrador.aspx" />
@@ -477,6 +479,13 @@
     </Compile>
     <Compile Include="MantenimientoUsuario.aspx.designer.cs">
       <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialesRecibidos.aspx.cs">
+      <DependentUpon>MaterialesRecibidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialesRecibidos.aspx.designer.cs">
+      <DependentUpon>MaterialesRecibidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="PerfilAdminCentro.aspx.cs">
       <DependentUpon>PerfilAdminCentro.aspx</DependentUpon>
