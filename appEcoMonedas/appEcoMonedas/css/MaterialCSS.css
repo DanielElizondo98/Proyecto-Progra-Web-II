@@ -1,0 +1,60 @@
+﻿.matNegro {
+    background: #000000 !important;
+    color: white !important;
+}
+
+.matCeleste {
+    background: #00BFFF !important;
+    color: white !important;
+}
+
+.matAzul {
+    background: #0404b4 !important;
+    color: white !important;
+}
+
+.matVerde {
+    background: #3ADF00 !important;
+    color: white !important;
+}
+
+.matTurquesa {
+    background: #3ec0c0 !important;
+    color: white !important;
+}
+
+.matCafe {
+    background: #61380B !important;
+    color: white !important;
+}
+
+.matVioleta {
+    background: #a901DB !important;
+    color: white !important;
+}
+
+.matGris {
+    background: #BDBDBD !important;
+    color: white !important;
+}
+
+.matRojo {
+    background: #DF0101 !important;
+    color: white !important;
+}
+
+.matNaranja {
+    background: #FF8000 !important;
+    color: white !important;
+}
+
+.matAmarillo {
+    background: #FFFF00 !important;
+    color: black !important;
+}
+
+.matBlanco {
+    background: #ffffff !important;
+    color: white !important;
+    border: 1px solid black;
+}

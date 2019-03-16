@@ -44,7 +44,7 @@ namespace LogicaNegocios
         }
 
 
-        public static bool GuardarCentro(String nombre, string idProvincia, String otrasSenias, String idAdmin,string id="")
+        public static bool GuardarCentro(String nombre, string idProvincia, String otrasSenias, String idAdmin, string id = "")
         {
             try
             {
@@ -73,7 +73,7 @@ namespace LogicaNegocios
 
                 return true;
             }
-            catch (EntryPointNotFoundException ex)
+            catch (EntryPointNotFoundException)
             {
 
                 throw;
