@@ -72,9 +72,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Carrito.aspx" />
     <Content Include="css\font.css" />
     <Content Include="css\MaterialCSS.css" />
     <Content Include="fonts\dark-dashboard.svg" />
+    <Content Include="imagenes\Varias\Eliminar.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -85,6 +87,7 @@
     <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
     <Content Include="MantenimientoUsuario.aspx" />
+    <Content Include="Materiales.aspx" />
     <Content Include="MaterialesRecibidos.aspx" />
     <Content Include="packages.config" />
     <Content Include="PerfilAdminCentro.aspx" />
@@ -417,6 +420,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoLN\Carrito.cs" />
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -479,6 +490,13 @@
     </Compile>
     <Compile Include="MantenimientoUsuario.aspx.designer.cs">
       <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materiales.aspx.cs">
+      <DependentUpon>Materiales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materiales.aspx.designer.cs">
+      <DependentUpon>Materiales.aspx</DependentUpon>
     </Compile>
     <Compile Include="MaterialesRecibidos.aspx.cs">
       <DependentUpon>MaterialesRecibidos.aspx</DependentUpon>

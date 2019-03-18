@@ -131,7 +131,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="table-responsive" style="max-height: 36.5em !important;">
+                                    <div class="table-responsive" style="max-height: 36.5em !important; overflow: auto;">
                                         <asp:GridView ID="grvListado" runat="server"
                                             CssClass="table table-hover table-list-search" GridLines="none"
                                             AutoGenerateColumns="false" DataKeyNames="Correo" ItemType="Contexto.Usuario"

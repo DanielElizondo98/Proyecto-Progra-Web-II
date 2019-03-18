@@ -10,61 +10,16 @@
 namespace appEcoMonedas {
     
     
-    public partial class PrincipalAdminCentro {
+    public partial class Carrito {
         
         /// <summary>
-        /// Control theme.
+        /// Control CantActual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink theme;
-        
-        /// <summary>
-        /// Control head.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// Control lblNombreUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
-        
-        /// <summary>
-        /// Control btnCerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCerrarSesion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CantActual;
         
         /// <summary>
         /// Control UpdatePanel1.
@@ -76,57 +31,84 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control CantMatMenu.
+        /// Control grvCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CantMatMenu;
+        protected global::System.Web.UI.WebControls.GridView grvCarrito;
         
         /// <summary>
-        /// Control CantidadMat.
+        /// Control LabelTotalText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CantidadMat;
+        protected global::System.Web.UI.WebControls.Label LabelTotalText;
         
         /// <summary>
-        /// Control TotalCant.
+        /// Control lblTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalCant;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// Control lvMateriales.
+        /// Control btnConfirmaCanje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvMateriales;
+        protected global::System.Web.UI.WebControls.LinkButton btnConfirmaCanje;
         
         /// <summary>
-        /// Control btnCarrito.
+        /// Control UpdatePanel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnCarrito;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control lblCentroDeAcopio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lblCentroDeAcopio;
+        
+        /// <summary>
+        /// Control lblNombreAdminCentro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreAdminCentro;
+        
+        /// <summary>
+        /// Control lblSubtotalCanje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubtotalCanje;
+        
+        /// <summary>
+        /// Control lblTotalCanje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalCanje;
     }
 }

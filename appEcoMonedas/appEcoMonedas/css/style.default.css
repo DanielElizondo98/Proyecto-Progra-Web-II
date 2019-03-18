@@ -1740,7 +1740,7 @@ header.nav-holder.sticky {
 }
 
 .product .text h3 {
-  min-height: 63px;
+  min-height: 30px;
 }
 
 .product .price {
@@ -1768,6 +1768,14 @@ header.nav-holder.sticky {
 }
 
 .product a {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+  text-decoration: none !important;
+  margin-top: 15px;
+}
+
+.product .aClass {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #333;
@@ -2095,7 +2103,7 @@ ul ul a.nav-link {
 
 .ribbon::after {
   content: '';
-  border-top: 15px solid #308372;
+  border-top: 15px solid black;
   border-left: 15px solid transparent;
   border-right: 0 solid transparent;
   position: absolute;

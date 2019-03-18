@@ -38,7 +38,27 @@ namespace appEcoMonedas
             {
                 Response.Redirect("Inicio.aspx");
             }
+            if (!IsPostBack)
+            {
+                listaCarrito();
+                LlenarCarritoMenu();
+            }
         }
+
+        public void LlenarCarritoMenu()
+        {
+            CantidadMat.InnerText = Convert.ToString(CarritoLN.Carrito.Instancia.totalCantidad());
+            TotalCant.InnerText = Convert.ToString(CarritoLN.Carrito.Instancia.GetTotal());
+            CantMatMenu.InnerText = Convert.ToString(CarritoLN.Carrito.Instancia.totalCantidad());
+        }
+
+        public void listaCarrito()
+        {
+            List<CarritoCompras> items = CarritoLN.Carrito.Instancia.materiales;
+            lvMateriales.DataSource = items;
+            lvMateriales.DataBind();
+        }
+
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
