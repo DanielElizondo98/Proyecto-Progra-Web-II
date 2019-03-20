@@ -41,6 +41,18 @@ namespace LogicaNegocios
             Usuario us = db.Usuario.Where(x => x.Correo.Equals(correo)).FirstOrDefault<Usuario>();
             return us;
         }
+        /// <summary>
+        /// Obtiene un usuario por su campo identificador (El correo, su rol, y su estado)
+        /// </summary>
+        /// <param name="correo"></param>
+        /// <returns></returns>
+
+        public static Usuario ObtenerUsuario(String correo, int ID_Rol, int logEstado)
+        {
+            var db = new BD_EcomonedasContext();
+            Usuario us = db.Usuario.Where(x => x.Correo.Equals(correo) && x.ID_Rol == ID_Rol && x.Log_Activo == logEstado).FirstOrDefault<Usuario>();
+            return us;
+        }
         //Falta el autenticar
 
         /// <summary>

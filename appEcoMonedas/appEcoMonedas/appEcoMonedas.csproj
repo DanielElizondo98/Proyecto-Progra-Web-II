@@ -93,6 +93,7 @@
     <Content Include="PerfilAdminCentro.aspx" />
     <Content Include="PerfilAdministrador.aspx" />
     <Content Include="PerfilCliente.aspx" />
+    <Content Include="ProcesarCanje.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
@@ -553,6 +554,13 @@
     </Compile>
     <Compile Include="PrincipalInicio.Master.designer.cs">
       <DependentUpon>PrincipalInicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesarCanje.aspx.cs">
+      <DependentUpon>ProcesarCanje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcesarCanje.aspx.designer.cs">
+      <DependentUpon>ProcesarCanje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">

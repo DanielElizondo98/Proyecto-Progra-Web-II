@@ -63,6 +63,7 @@ namespace appEcoMonedas
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
+            CarritoLN.Carrito.Instancia.eliminarCarrito();
             Response.Redirect("Inicio.aspx");
         }
     }

@@ -86,7 +86,7 @@
                         <div class="box-footer d-flex justify-content-between align-items-center">
                             <div class="row">
                                 <div class="col-12">
-                                    <asp:LinkButton ID="btnConfirmaCanje" CssClass="btn btn-template-outlined" ValidationGroup="validaCanje" runat="server">Confirmar el canje <i class="fa fa-chevron-right"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="btnConfirmaCanje" CssClass="btn btn-primary" OnClick="btnConfirmaCanje_Click" ValidationGroup="validaCanje" runat="server">Confirmar el canje <i class="fa fa-chevron-right"></i></asp:LinkButton>
                                 </div>
                             </div>
                         </div>

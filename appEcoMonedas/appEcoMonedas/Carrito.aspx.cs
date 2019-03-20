@@ -19,19 +19,29 @@ namespace appEcoMonedas
                 llenarListaCarrito();
                 LlenarDatosResumenCanje();
             }
+            if(CarritoLN.Carrito.Instancia.materiales.Count == 0)
+            {
+                btnConfirmaCanje.Enabled = false;
+            }else
+            {
+                btnConfirmaCanje.Enabled = true;
+            }
         }
 
         private void LlenarDatosResumenCanje()
         {
-            lblTotal.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
-            CantActual.InnerText = CarritoLN.Carrito.Instancia.totalCantidad().ToString();
-
-            //Resumen del canje
             Usuario us = (Usuario)Session["Usuario"];
-            lblCentroDeAcopio.Text = CentroLN.ObtenerCentroAdminCentro( us.Correo).Nombre;
-            lblNombreAdminCentro.Text = String.Format("{0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
-            lblSubtotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
-            lblTotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+            if(us != null)
+            {
+                lblTotal.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                CantActual.InnerText = CarritoLN.Carrito.Instancia.totalCantidad().ToString();
+
+                //Resumen del canje
+                lblCentroDeAcopio.Text = CentroLN.ObtenerCentroAdminCentro(us.Correo).Nombre;
+                lblNombreAdminCentro.Text = String.Format("{0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
+                lblSubtotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                lblTotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+            }
         }
 
         private void llenarListaCarrito()
@@ -67,6 +77,11 @@ namespace appEcoMonedas
                 master.listaCarrito();
                 LlenarDatosResumenCanje();
             }
+        }
+
+        protected void btnConfirmaCanje_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProcesarCanje.aspx");
         }
     }
 }

@@ -92,7 +92,7 @@
                                 <asp:HiddenField ID="hiddenCorreo" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript: limpiarManteUsuario();" />
+                                <asp:LinkButton ID="btnLimpia" runat="server" CssClass="btn btn-secondary" OnClick="btnLimpia_Click">Limpiar</asp:LinkButton>
                             </div>
                         </div>
                     </div>

@@ -28,11 +28,15 @@ namespace appEcoMonedas
                 Usuario us = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
                 if (us == null)
                 {
-                    bool confirmacion = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtContrasenia.Text, txtDireccion.Text, txtTelefono.Text, "3", txtCorreo.Text);
-                    if (confirmacion)
+                    bool confirmacionUs = UsuarioLN.GuardarUsuario(txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtContrasenia.Text, txtDireccion.Text, txtTelefono.Text, "3", txtCorreo.Text);
+                    if (confirmacionUs)
                     {
-                        Session["Usuario"] = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
-                        Response.Redirect("InicioCliente.aspx");
+                        bool confirmacionBilletera = BilleteraLN.GuardarBilletera("0", "0", "0", txtCorreo.Text);
+                        if (confirmacionBilletera)
+                        {
+                            Session["Usuario"] = UsuarioLN.ObtenerUsuario(txtCorreo.Text);
+                            Response.Redirect("InicioCliente.aspx");
+                        }
                     }
                     else
                     {
