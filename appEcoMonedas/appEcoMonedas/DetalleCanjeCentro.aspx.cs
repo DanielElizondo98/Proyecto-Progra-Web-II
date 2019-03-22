@@ -46,6 +46,12 @@ namespace appEcoMonedas
                 lblNombreCentro.Text = enc.Centro.Nombre;
                 lblAdminCentro.Text = enc.Centro.ID_Administrador_Centro;
                 lblDireccionCentro.Text =enc.Centro.Provincia.Descripcion + ". " + enc.Centro.Otras_Senias;
+
+                //Lista de materiales
+                grvListaMateriales.DataSource = enc.Det_Transaccion;
+                grvListaMateriales.DataBind();
+
+                lblTotal.Text = enc.Total_Ecomonedas.ToString();
             }
             else
             {

@@ -43,7 +43,7 @@ namespace LogicaNegocios
 
                 ServidorSMTP.Send(correo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new ApplicationException("El correo electronico no existe o esta mal digitado por favor verificar");
             }

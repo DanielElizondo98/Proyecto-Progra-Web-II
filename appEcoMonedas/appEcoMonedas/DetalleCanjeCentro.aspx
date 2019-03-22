@@ -26,53 +26,51 @@
                         <div class="col-md-6 text-left">
                             <h3 class="text-uppercase">Cliente</h3>
                             <p>
-                                Nombre: <asp:Label ID="lblClienteCanje" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
-                                Teléfono: <asp:Label ID="lblTelCliente" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
-                                Correo: <asp:HyperLink ID="hlnkCorreoCliente" CssClass="text-muted h5 text-primary" runat="server"></asp:HyperLink><br />
+                                Nombre:
+                                <asp:Label ID="lblClienteCanje" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
+                                Teléfono:
+                                <asp:Label ID="lblTelCliente" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
+                                Correo:
+                                <asp:HyperLink ID="hlnkCorreoCliente" CssClass="text-muted h5 text-primary" runat="server"></asp:HyperLink><br />
                             </p>
                         </div>
                         <div class="col-md-6 text-right">
                             <h3 class="text-uppercase">Centro de Acopio</h3>
                             <p>
-                                Nombre: <asp:Label ID="lblNombreCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
-                                Administrador: <asp:Label ID="lblAdminCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
-                                Direccion: <asp:Label ID="lblDireccionCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
+                                Nombre:
+                                <asp:Label ID="lblNombreCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
+                                Administrador:
+                                <asp:Label ID="lblAdminCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
+                                Direccion:
+                                <asp:Label ID="lblDireccionCentro" CssClass="text-muted h5" runat="server" Text=""></asp:Label><br />
                             </p>
                         </div>
                     </div>
-                    <div class="box" style="margin: 0px 0 !important;">
+                    <div class="box" style="margin: 0px 0 !important; padding-bottom: 50px;">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="border-top-0">Product</th>
-                                        <th class="border-top-0">Quantity</th>
-                                        <th class="border-top-0">Unit price</th>
-                                        <th class="border-top-0">Discount</th>
-                                        <th class="border-top-0">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="#">
-                                            <img src="img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid" /></a></td>
-                                        <td><a href="#">White Blouse Armani</a></td>
-                                        <td>2</td>
-                                        <td>$123.00</td>
-                                        <td>$0.00</td>
-                                        <td>$246.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">
-                                            <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid" /></a></td>
-                                        <td><a href="#">Black Blouse Armani</a></td>
-                                        <td>1</td>
-                                        <td>$200.00</td>
-                                        <td>$0.00</td>
-                                        <td>$200.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <asp:GridView ID="grvListaMateriales" runat="server"
+                                AutoGenerateColumns="false" DataKeyNames="ID"
+                                GridLines="none" CellPadding="4"
+                                CssClass="table">
+                                <Columns>
+                                    <asp:BoundField DataField="Material.Nombre" HeaderText="Material"></asp:BoundField>
+
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Image ID="Image1" runat="server" BorderWidth="5" BorderColor='<%# System.Drawing.ColorTranslator.FromHtml(Eval("Material.ID_Color").ToString()) %>' CssClass="img-fluid image1 p-1" ImageUrl='<%# Eval("Material.Imagen", "~/imagenes/material/{0}")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="Cantidad" HeaderText="Cantidad"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Precio Unitario" DataField="Material.Precio" DataFormatString="{0:N2} EcoMonedas"></asp:BoundField>
+                                    <asp:BoundField DataField="Sub_Total" DataFormatString="{0:N2}" HeaderText="Total"></asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                        <div class="float-right mb-3">
+                            <strong>
+                                <asp:Label ID="LabelTotalText" runat="server" Text="Total de EcoMonedas generadas: "></asp:Label>
+                                <asp:Label ID="lblTotal" runat="server" Text="" Width="150px"></asp:Label>
+                            </strong>
                         </div>
                     </div>
                 </div>
