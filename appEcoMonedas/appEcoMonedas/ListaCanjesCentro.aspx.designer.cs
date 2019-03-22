@@ -10,7 +10,16 @@
 namespace appEcoMonedas {
     
     
-    public partial class Materiales {
+    public partial class ListaCanjesCentro {
+        
+        /// <summary>
+        /// Control lblNombreCentroCabecera.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreCentroCabecera;
         
         /// <summary>
         /// Control lblMensaje.
@@ -22,12 +31,21 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// Control lvMateriales.
+        /// Control lblNombreCentroInformacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvMateriales;
+        protected global::System.Web.UI.WebControls.Label lblNombreCentroInformacion;
+        
+        /// <summary>
+        /// Control grvCanjes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvCanjes;
     }
 }

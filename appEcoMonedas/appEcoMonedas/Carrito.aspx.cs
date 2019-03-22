@@ -81,7 +81,19 @@ namespace appEcoMonedas
 
         protected void btnConfirmaCanje_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ProcesarCanje.aspx");
+            lblMensaje.Text = "";
+            lblMensaje.Visible = false;
+            Usuario us = (Usuario)Session["Usuario"];
+            Centro centro = CentroLN.ObtenerCentroAdminCentro(us.Correo);
+
+            if (centro.Log_Activo != 0)
+            {
+                Response.Redirect("ProcesarCanje.aspx?permiso=aceptado");
+            }else
+            {
+                lblMensaje.Text = "Lo sentimos, el centro de acopio: \"" + centro.Nombre + "\" se encuentra en estos momentos inactivo, por lo que no podrá realizar canjes hasta que vuelva a ser habilitado, agradecemos su compresión";
+                lblMensaje.Visible = true;
+            }
         }
     }
 }

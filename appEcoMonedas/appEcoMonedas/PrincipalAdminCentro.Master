@@ -136,11 +136,16 @@
                             <li class="nav-item dropdown active">
                                 <a href="InicioAdminCentro.aspx" class="nav-link">Inicio</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="Materiales.aspx" class="nav-link">Canje de Materiales</a>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Materiales <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="Materiales.aspx" class="nav-link">Lista de Materiales</a></li>
+                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">Canjes Realizados</a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="InicioAdminCentro.aspx" class="nav-link">Reportes</a>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Reportes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">EcoMonedas Generadas</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">

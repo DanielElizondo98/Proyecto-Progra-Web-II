@@ -9,7 +9,7 @@ namespace LogicaNegocios
 {
     public class TransaccionMaterialLN
     {
-        public static bool registrarTransaccion(string ID_Cliente, string ID_Centro, List<CarritoCompras> carritoItems)
+        public static int registrarTransaccion(string ID_Cliente, string ID_Centro, List<CarritoCompras> carritoItems)
         {
             var db = new BD_EcomonedasContext();
             //Enc_Transaccion
@@ -41,7 +41,32 @@ namespace LogicaNegocios
             }
             //pensar método en la billetera
             BilleteraLN.AumentarEcomonedas(ID_Cliente, miEncabezado.Total_Ecomonedas.ToString());
-            return true;
+            return miEncabezado.ID;
+        }
+
+        public static IQueryable ListaCanjes()
+        {
+            var db = new BD_EcomonedasContext();
+            IQueryable query = db.Enc_Transaccion;
+            return query;
+        }
+
+        public static IEnumerable<Enc_Transaccion> ListaCanjesCentro(int ID_Centro = 0)
+        {
+            var db = new BD_EcomonedasContext();
+            if (ID_Centro > 0)
+            {
+                var query = db.Enc_Transaccion.Where(x => x.ID_Centro == ID_Centro);
+                return ((IEnumerable<Enc_Transaccion>)query);
+            }
+            return null;
+        }
+
+        public static Enc_Transaccion ObtenerEncabezadoID(int ID_Encabezado)
+        {
+            var db = new BD_EcomonedasContext();
+            Enc_Transaccion enc = db.Enc_Transaccion.Where(x => x.ID == ID_Encabezado).FirstOrDefault<Enc_Transaccion>();
+            return enc;
         }
     }
 }

@@ -28,15 +28,29 @@ namespace appEcoMonedas
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            ListViewItem item = (ListViewItem)(sender as Control).NamingContainer;
+            lblMensaje.Text = "";
+            lblMensaje.Visible = false;
+            Usuario us = (Usuario)Session["Usuario"];
+            Centro centro = CentroLN.ObtenerCentroAdminCentro(us.Correo);
 
-            HiddenField hfMaterialID = (HiddenField)item.FindControl("hfMaterialID");
+            if(centro.Log_Activo != 0)
+            {
+                ListViewItem item = (ListViewItem)(sender as Control).NamingContainer;
 
-            int id = Convert.ToInt32(hfMaterialID.Value);
-            CarritoLN.Carrito.Instancia.AgregarItem(id);
-            PrincipalAdminCentro master = Page.Master as PrincipalAdminCentro;
-            master.LlenarCarritoMenu();
-            master.listaCarrito();
+                HiddenField hfMaterialID = (HiddenField)item.FindControl("hfMaterialID");
+
+                int id = Convert.ToInt32(hfMaterialID.Value);
+                CarritoLN.Carrito.Instancia.AgregarItem(id);
+                PrincipalAdminCentro master = Page.Master as PrincipalAdminCentro;
+                master.LlenarCarritoMenu();
+                master.listaCarrito();
+            }
+            else
+            {
+                lblMensaje.Text = "Lo sentimos, el centro de acopio: \"" + centro.Nombre + "\" se encuentra en estos momentos inactivo, por lo que no podrá realizar canjes hasta que vuelva a ser habilitado, agradecemos su compresión";
+                lblMensaje.Visible = true; 
+            }
+            
         }
 
     }

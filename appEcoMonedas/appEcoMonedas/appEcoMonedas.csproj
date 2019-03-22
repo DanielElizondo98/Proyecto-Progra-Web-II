@@ -75,6 +75,7 @@
     <Content Include="Carrito.aspx" />
     <Content Include="css\font.css" />
     <Content Include="css\MaterialCSS.css" />
+    <Content Include="DetalleCanjeCentro.aspx" />
     <Content Include="fonts\dark-dashboard.svg" />
     <Content Include="imagenes\Varias\Eliminar.png" />
     <Content Include="Inicio.aspx" />
@@ -83,6 +84,7 @@
     <Content Include="img\programmer.png" />
     <Content Include="js\Custom.js" />
     <Content Include="js\filtroTablas.js" />
+    <Content Include="ListaCanjesCentro.aspx" />
     <Content Include="MantenimientoCentro.aspx" />
     <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
@@ -429,6 +431,13 @@
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoLN\Carrito.cs" />
+    <Compile Include="DetalleCanjeCentro.aspx.cs">
+      <DependentUpon>DetalleCanjeCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleCanjeCentro.aspx.designer.cs">
+      <DependentUpon>DetalleCanjeCentro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -463,6 +472,13 @@
     </Compile>
     <Compile Include="InicioSesion.aspx.designer.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCanjesCentro.aspx.cs">
+      <DependentUpon>ListaCanjesCentro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCanjesCentro.aspx.designer.cs">
+      <DependentUpon>ListaCanjesCentro.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoCentro.aspx.cs">
       <DependentUpon>MantenimientoCentro.aspx</DependentUpon>

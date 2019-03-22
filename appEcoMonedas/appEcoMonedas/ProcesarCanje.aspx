@@ -102,7 +102,7 @@
                                     <asp:BoundField HeaderText="Precio Unitario" DataField="precioUnitario" DataFormatString="{0:N2} EcoMonedas"></asp:BoundField>
                                     <asp:TemplateField HeaderText="Total">
                                         <ItemTemplate>
-                                            <asp:Label ID="lblTotal" runat="server" Text='<%#: String.Format("{0:c}", ((Convert.ToDouble(Eval("cantidad"))) *  Convert.ToDouble(Eval("precioUnitario"))))%>'></asp:Label>
+                                            <asp:Label ID="lblTotal" runat="server" Text='<%#: String.Format("{0:N2}", ((Convert.ToDouble(Eval("cantidad"))) *  Convert.ToDouble(Eval("precioUnitario"))))%>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

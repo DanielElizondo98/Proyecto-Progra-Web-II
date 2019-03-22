@@ -17,6 +17,7 @@
     <div id="content">
         <div class="container">
             <div class="row bar">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="col-12 alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
                 <div class="col-md-12">
                     <p class="text-muted lead text-center">Listado de los materiales que podés ingresar en nuestros centros de acopio.</p>
                     <div class="products-big">

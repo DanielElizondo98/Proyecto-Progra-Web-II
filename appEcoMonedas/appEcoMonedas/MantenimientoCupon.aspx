@@ -8,7 +8,7 @@
     <main>
         <div class="container border-top pt-5">
             <div class="col-12 mb-4 text-center">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-dan" Visible="false" Text=""></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
             </div>
 
             <div class="row">

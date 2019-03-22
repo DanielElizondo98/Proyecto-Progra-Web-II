@@ -6,6 +6,7 @@
     <div id="heading-breadcrumbs">
         <div class="container">
             <div class="row d-flex align-items-center flex-wrap">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="col-12 alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
                 <div class="col-md-7">
                     <h1 class="h2">Carrito de compra</h1>
                 </div>
@@ -68,7 +69,7 @@
                                             <asp:BoundField HeaderText="Precio Unitario" DataField="precioUnitario" DataFormatString="{0:N2} EcoMonedas"></asp:BoundField>
                                             <asp:TemplateField HeaderText="Total">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblTotal" runat="server" Text='<%#: String.Format("{0:c}", ((Convert.ToDouble(Eval("cantidad"))) *  Convert.ToDouble(Eval("precioUnitario"))))%>'></asp:Label>
+                                                    <asp:Label ID="lblTotal" runat="server" Text='<%#: String.Format("{0:N2}", ((Convert.ToDouble(Eval("cantidad"))) *  Convert.ToDouble(Eval("precioUnitario"))))%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:CommandField ShowDeleteButton="true" ButtonType="Image" DeleteImageUrl="imagenes/Varias/Eliminar.png" />
