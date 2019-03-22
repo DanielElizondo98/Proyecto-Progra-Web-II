@@ -271,6 +271,12 @@ namespace appEcoMonedas
             rqvArchivoImagen.Enabled = true;
         }
 
+        protected void grvListado_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+                e.Row.TableSection = TableRowSection.TableHeader;
+        }
+
         /*private void Guardar()
         {
             Boolean archivoOK = false;

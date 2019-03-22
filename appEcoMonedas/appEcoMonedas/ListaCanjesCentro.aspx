@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrincipalAdminCentro.Master" AutoEventWireup="true" CodeBehind="ListaCanjesCentro.aspx.cs" Inherits="appEcoMonedas.ListaCanjesCentro" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="js/filtroTablas.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="heading-breadcrumbs">
@@ -23,12 +25,19 @@
                             <br />
                             Contiene el cliente y el administrador que la realizó, la fecha entre otros valores.</span>
                     </p>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" id="system-search" name="q" placeholder="Filtrar por..." />
+                            </div>
+                        </div>
+                    </div>
                     <div class="box mt-0 mb-lg-0">
                         <div class="table-responsive">
                             <asp:GridView ID="grvCanjes" runat="server"
                                 AutoGenerateColumns="false" DataKeyNames="ID"
-                                GridLines="none" CellPadding="4"
-                                CssClass="table table-hover">
+                                GridLines="none" CellPadding="4" OnRowDataBound="grvCanjes_RowDataBound"
+                                CssClass="table table-hover table-list-search">
 
                                 <Columns>
                                     <asp:BoundField HeaderText="Canje" DataField="ID" DataFormatString="#{0}"></asp:BoundField>
@@ -52,8 +61,8 @@
                         </div>
                         <div class="panel-body">
                             <ul class="nav nav-pills flex-column text-sm">
-                                <li class="nav-item"><a href="ListaCanjesCentro.aspx" class="nav-link active"><i class="fa fa-files-o"></i>    Canjes</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-leaf"></i>    EcoMonedas Generadas</a></li>
+                                <li class="nav-item"><a href="ListaCanjesCentro.aspx" class="nav-link active"><i class="fa fa-files-o"></i>Canjes</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-leaf"></i>EcoMonedas Generadas</a></li>
                             </ul>
                         </div>
                     </div>

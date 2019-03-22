@@ -40,17 +40,24 @@ namespace appEcoMonedas
                 lblNombreCentroInformacion.Text = centro.Nombre;
 
                 IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID);
-                if(lista != null)
+                if (lista != null)
                 {
                     grvCanjes.DataSource = lista.ToList();
                     grvCanjes.DataBind();
-                }else
+                }
+                else
                 {
                     lblMensaje.CssClass = "col-12 alert alert-dismissible alert-warning";
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "Aún no se han realizado canjes en " + centro.Nombre;
                 }
             }
+        }
+
+        protected void grvCanjes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+                e.Row.TableSection = TableRowSection.TableHeader;
         }
     }
 }

@@ -133,7 +133,7 @@
                                 <div class="col-12">
                                     <div class="table-responsive" style="max-height: 36.5em !important; overflow: auto;">
                                         <asp:GridView ID="grvListado" runat="server"
-                                            CssClass="table table-hover table-list-search" GridLines="none"
+                                            CssClass="table table-hover table-list-search" GridLines="none" OnRowDataBound="grvListado_RowDataBound"
                                             AutoGenerateColumns="false" DataKeyNames="Correo" ItemType="Contexto.Usuario"
                                             OnSelectedIndexChanged="grvListado_SelectedIndexChanged" OnRowEditing="grvListado_RowEditing" ShowHeaderWhenEmpty="true">
 
