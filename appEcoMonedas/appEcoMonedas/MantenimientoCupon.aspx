@@ -8,7 +8,7 @@
     <main>
         <div class="container border-top pt-5">
             <div class="col-12 mb-4 text-center">
-                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-dan" Visible="false" Text=""></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" CssClass="row alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
             </div>
 
             <div class="row">
@@ -98,10 +98,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="table-responsive" style="height: 36.5em !important;">
+                                    <div class="table-responsive" style="height: 36.5em !important; overflow: auto;">
                                         <asp:GridView ID="grvListado" runat="server"
                                             CssClass="table table-hover table-list-search" GridLines="none"
-                                            AutoGenerateColumns="false" DataKeyNames="ID"
+                                            AutoGenerateColumns="false" DataKeyNames="ID" OnRowDataBound="grvListado_RowDataBound"
                                             OnSelectedIndexChanged="grvListado_SelectedIndexChanged" OnRowEditing="grvListado_RowEditing" ShowHeaderWhenEmpty="true">
                                             <Columns>
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>

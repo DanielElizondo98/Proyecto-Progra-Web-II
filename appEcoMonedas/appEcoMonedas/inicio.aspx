@@ -113,7 +113,7 @@
             </div>
             <h3 class="text-uppercase">¿Deseas ser parte de esta iniciativa?</h3>
             <p class="lead">Llena el siguiente formulario con tus datos personales, y listo.</p>
-            <p class="text-center"><a href="inicio.aspx" class="btn btn-template-outlined-white btn-lg">Formulario</a></p>
+            <p class="text-center"><a href="Registro.aspx" class="btn btn-template-outlined-white btn-lg">Formulario</a></p>
         </div>
     </section>
     <section class="bar no-mb">

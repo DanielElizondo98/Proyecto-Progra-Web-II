@@ -22,6 +22,9 @@ namespace Contexto
         [StringLength(100)]
         public string Nombre { get; set; }
 
+        [StringLength(100)]
+        public string ClaseCss { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Material> Material { get; set; }
     }
