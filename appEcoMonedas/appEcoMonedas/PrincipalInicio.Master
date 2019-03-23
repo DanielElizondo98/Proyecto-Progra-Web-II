@@ -23,6 +23,7 @@
     <!-- owl carousel-->
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css" />
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css" />
+    <a href="PrincipalInicio.Master">PrincipalInicio.Master</a>
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.default.css" id="theme" />
     <!-- Custom stylesheet - for your changes-->
@@ -51,9 +52,9 @@
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                             <div class="login">
-                                <a href="customer-register.html" class="signup-btn"><i class="fa fa-sign-in"></i>
+                                <a href="InicioSesion.aspx" class="signup-btn"><i class="fa fa-sign-in"></i>
                                     <span class="d-none d-md-inline-block">Iniciar Sesión</span></a>
-                                <a href="customer-register.html" class="signup-btn"><i class="fa fa-user"></i>
+                                <a href="Registro.aspx" class="signup-btn"><i class="fa fa-user"></i>
                                     <span class="d-none d-md-inline-block">Registrarse</span></a>
                             </div>
                             <ul class="social-custom list-inline">
