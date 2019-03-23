@@ -10,123 +10,114 @@
 namespace appEcoMonedas {
     
     
-    public partial class PrincipalAdminCentro {
+    public partial class DetalleCanjeCentro {
         
         /// <summary>
-        /// Control theme.
+        /// Control lblCanjeNumeroCabecera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink theme;
+        protected global::System.Web.UI.WebControls.Label lblCanjeNumeroCabecera;
         
         /// <summary>
-        /// Control head.
+        /// Control lblCanjeNumeroInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblCanjeNumeroInfo;
         
         /// <summary>
-        /// Control form1.
+        /// Control lblFechaCanjeInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblFechaCanjeInfo;
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control lblClienteCanje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label lblClienteCanje;
         
         /// <summary>
-        /// Control lblNombreUsuario.
+        /// Control lblTelCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label lblTelCliente;
         
         /// <summary>
-        /// Control btnCerrarSesion.
+        /// Control hlnkCorreoCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCerrarSesion;
+        protected global::System.Web.UI.WebControls.HyperLink hlnkCorreoCliente;
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control lblNombreCentro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label lblNombreCentro;
         
         /// <summary>
-        /// Control CantMatMenu.
+        /// Control lblAdminCentro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CantMatMenu;
+        protected global::System.Web.UI.WebControls.Label lblAdminCentro;
         
         /// <summary>
-        /// Control CantidadMat.
+        /// Control lblDireccionCentro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CantidadMat;
+        protected global::System.Web.UI.WebControls.Label lblDireccionCentro;
         
         /// <summary>
-        /// Control TotalCant.
+        /// Control grvListaMateriales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalCant;
+        protected global::System.Web.UI.WebControls.GridView grvListaMateriales;
         
         /// <summary>
-        /// Control lvMateriales.
+        /// Control LabelTotalText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvMateriales;
+        protected global::System.Web.UI.WebControls.Label LabelTotalText;
         
         /// <summary>
-        /// Control btnCarrito.
+        /// Control lblTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnCarrito;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
     }
 }
