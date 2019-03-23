@@ -92,7 +92,7 @@
                                 <asp:HiddenField ID="hiddenCorreo" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <input id="btnLimpia" type="button" value="Limpiar" class="btn btn-secondary" onclick="javascript: limpiarManteUsuario();" />
+                                <asp:LinkButton ID="btnLimpia" runat="server" CssClass="btn btn-secondary" OnClick="btnLimpia_Click">Limpiar</asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -131,9 +131,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="table-responsive" style="max-height: 36.5em !important;">
+                                    <div class="table-responsive" style="max-height: 36.5em !important; overflow: auto;">
                                         <asp:GridView ID="grvListado" runat="server"
-                                            CssClass="table table-hover table-list-search" GridLines="none"
+                                            CssClass="table table-hover table-list-search" GridLines="none" OnRowDataBound="grvListado_RowDataBound"
                                             AutoGenerateColumns="false" DataKeyNames="Correo" ItemType="Contexto.Usuario"
                                             OnSelectedIndexChanged="grvListado_SelectedIndexChanged" OnRowEditing="grvListado_RowEditing" ShowHeaderWhenEmpty="true">
 

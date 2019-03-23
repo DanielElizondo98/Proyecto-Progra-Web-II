@@ -12,7 +12,7 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*Usuario us = (Usuario)Session["Usuario"];
+            Usuario us = (Usuario)Session["Usuario"];
             if (us != null)
             {
                 if (us.ID_Rol != 1)
@@ -29,11 +29,21 @@ namespace appEcoMonedas
                         }
                     }
                 }
+                else
+                {
+                    lblNombreUsuario.Text = String.Format("Bienvenido {0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
+                }
             }
             else
             {
                 Response.Redirect("Inicio.aspx");
-            }*/
+            }
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

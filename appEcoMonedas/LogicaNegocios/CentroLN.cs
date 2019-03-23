@@ -39,12 +39,12 @@ namespace LogicaNegocios
         public static IEnumerable<Centro> ObtenerCentroXIdAdmin(string idAdmin)
         {
             IEnumerable<Centro> query = (IEnumerable<Centro>)CentroLN.QueryListaCentros(2);
-            IEnumerable<Centro> lista = query.Where(x =>  x.ID_Administrador_Centro == idAdmin);
+            IEnumerable<Centro> lista = query.Where(x => x.ID_Administrador_Centro == idAdmin);
             return lista;
         }
 
 
-        public static bool GuardarCentro(String nombre, string idProvincia, String otrasSenias, String idAdmin,string id="")
+        public static bool GuardarCentro(String nombre, string idProvincia, String otrasSenias, String idAdmin, string id = "")
         {
             try
             {
@@ -73,7 +73,7 @@ namespace LogicaNegocios
 
                 return true;
             }
-            catch (EntryPointNotFoundException ex)
+            catch (EntryPointNotFoundException)
             {
 
                 throw;
@@ -105,6 +105,13 @@ namespace LogicaNegocios
             }
         }
 
+
+        public static Centro ObtenerCentroAdminCentro(String IDAdminCentro)
+        {
+            var db = new BD_EcomonedasContext();
+            Centro mat = db.Centro.Where(x => x.ID_Administrador_Centro.Equals(IDAdminCentro)).First<Centro>();
+            return mat;
+        }
 
     }
 }

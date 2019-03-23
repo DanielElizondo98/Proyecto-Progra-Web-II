@@ -54,6 +54,7 @@
     <Compile Include="BD_EcomonedasContext.cs" />
     <Compile Include="Billetera.cs" />
     <Compile Include="Canje.cs" />
+    <Compile Include="CarritoCompras.cs" />
     <Compile Include="Centro.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="Cupon.cs" />

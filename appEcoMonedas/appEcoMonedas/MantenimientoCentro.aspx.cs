@@ -169,5 +169,10 @@ namespace appEcoMonedas
             CargarListadoCentrosGrid();
         }
 
+        protected void grvListado_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+                e.Row.TableSection = TableRowSection.TableHeader;
+        }
     }
 }

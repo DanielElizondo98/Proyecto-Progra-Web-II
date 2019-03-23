@@ -27,8 +27,24 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme" />
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css" />
+    <link href="css/MaterialCSS.css" rel="stylesheet" />
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/Logo-Ico.png" />
+
+    <!-- Scripts --->
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
+    <script src="vendor/jquery.counterup/jquery.counterup.min.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
+    <script src="js/front.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -42,19 +58,17 @@
                     <div class="col-md-6 d-md-block d-none">
 
                         <p style="font-size: 16px">
-                            <img src="img/Iconos/usuario30px.png" />
-                            Jarod Elizondo Herrera!
+                            <i class="fa fa-user-circle"></i>
+                            <asp:Label ID="lblNombreUsuario" runat="server" Text="Bienvenido!"></asp:Label>
                         </p>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-md-end justify-content-between">
                             <ul class="list-inline contact-info d-block d-md-none">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                             <div class="login">
-                                <a href="customer-register.html" class="signup-btn"><i class="fa fa-sign-in"></i>
-                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></a>
+                                <asp:LinkButton ID="btnCerrarSesion" CssClass="signup-btn" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
+                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></asp:LinkButton>
                             </div>
                             <ul class="social-custom list-inline">
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -63,6 +77,63 @@
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-question"></i></a></li>
                             </ul>
+                            <div class="dropdown2">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-pill badge-danger" runat="server" id="CantMatMenu"></span>
+                                        </button>
+
+                                        <div class="dropdown-menu">
+                                            <div class="row total-header-section">
+                                                <div class="col-lg-6 col-sm-6 col-6">
+                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="CantidadMat" runat="server" class="badge badge-pill badge-danger">Cantidad</span>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                                    <p>Total: <span class="text-info" id="TotalCant" runat="server"></span></p>
+                                                </div>
+                                            </div>
+                                            <asp:ListView ID="lvMateriales" runat="server"
+                                                DataKeyNames="IDMaterial" GroupItemCount="100"
+                                                ItemType="Contexto.CarritoCompras">
+                                                <EmptyDataTemplate>
+                                                    <div class="row">
+                                                        <div class="text-center">
+                                                            No hay materiales en el carrito
+                                                        </div>
+                                                    </div>
+                                                </EmptyDataTemplate>
+                                                <EmptyItemTemplate>
+                                                    <div class="row">
+                                                    </div>
+                                                </EmptyItemTemplate>
+                                                <GroupTemplate>
+                                                    <div class="container" style="max-height: 290px; overflow: auto;">
+                                                        <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                                                    </div>
+                                                </GroupTemplate>
+                                                <ItemTemplate>
+                                                    <div class="row cart-detail">
+                                                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                            <asp:Image ID="Image1" runat="server" CssClass="img-fluid image1" ImageUrl='<%# Eval("material.Imagen", "~/imagenes/material/{0}")%>' />
+                                                        </div>
+                                                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                                            <p><%#:Item.material.Nombre%></p>
+                                                            <span class="price text-info"><%#:String.Format("‎{0:N2} Ecomonedas", Item.material.Precio)%></span>
+                                                            <span class="count">Cantidad <%#:Item.cantidad %></span>
+                                                        </div>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:ListView>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                                    <asp:HyperLink ID="btnCarrito" CssClass="btn btn-primary btn-block" runat="server" NavigateUrl="~/Carrito.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Ir Al Carrito</asp:HyperLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,27 +142,29 @@
         <header class="nav-holder make-sticky">
             <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a href="index.aspx" class="navbar-brand home">
+                    <a href="InicioAdminCentro.aspx" class="navbar-brand home">
                         <img src="img/logo.png" alt="EcoMonedas logo" class="d-none d-md-inline-block" style="height: 64px; width: 238px;" /><img src="img/logo.png" style="width: 200px;" alt="Ecomonedas logo" class="d-inline-block d-md-none" /><span class="sr-only">Eco-monedas - Ir al Inicio</span></a>
                     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
 
                     <div id="navigation" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item dropdown active">
-                                <a href="index.aspx" class="nav-link">Inicio</a>
+                                <a href="InicioAdminCentro.aspx" class="nav-link">Inicio</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="index.aspx" class="nav-link">¿Qué Reciclamos?</a>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Materiales <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="Materiales.aspx" class="nav-link">Lista de Materiales</a></li>
+                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">Canjes Realizados</a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="index.aspx" class="nav-link">Canje de Materiales</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="index.aspx" class="nav-link">Reportes</a>
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Reportes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">EcoMonedas Generadas</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="index.aspx" class="nav-link">Editar Perfil</a></li>
+                                    <li class="dropdown-item"><a href="PerfilAdminCentro.aspx" class="nav-link">Editar Perfil</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -116,18 +189,6 @@
                 </div>
             </div>
         </footer>
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/popper.js/umd/popper.min.js"> </script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-        <script src="vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
-        <script src="vendor/jquery.counterup/jquery.counterup.min.js"> </script>
-        <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-        <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-        <script src="js/jquery.parallax-1.1.3.js"></script>
-        <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-        <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
-        <script src="js/front.js"></script>
     </form>
 </body>
 </html>
