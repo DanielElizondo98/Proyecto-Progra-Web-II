@@ -43,6 +43,31 @@ namespace LogicaNegocios
             return lista;
         }
 
+        public static IEnumerable<Centro> ObtenerCentroProvincia(String CodProvincia)
+        {
+            try
+            {
+                int idProv = 0;
+                bool esNumero = int.TryParse(CodProvincia, out idProv);
+
+                if (esNumero || idProv > 0)
+                {
+                    var db = new BD_EcomonedasContext();
+                    IEnumerable<Centro> lista = (IEnumerable<Centro>)db.Centro.Where(x => x.ID_Provincia == idProv);
+                    return lista;
+
+                }
+                else
+                {
+                    throw (new Exception("Ha ocurrido un error"));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception("Ha ocurrido un error \nMás información: " + ex.Message ));
+            }
+        }
+
 
         public static bool GuardarCentro(String nombre, string idProvincia, String otrasSenias, String idAdmin, string id = "")
         {

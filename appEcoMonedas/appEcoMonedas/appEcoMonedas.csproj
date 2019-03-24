@@ -84,7 +84,15 @@
     <Content Include="imagenes\Provincias\Provincia5.png" />
     <Content Include="imagenes\Provincias\Provincia6.png" />
     <Content Include="imagenes\Provincias\Provincia7.png" />
+    <Content Include="imagenes\Varias\BannerCentrosAcopio.png" />
+    <Content Include="imagenes\Varias\Centro.png" />
     <Content Include="imagenes\Varias\Eliminar.png" />
+    <Content Include="img\Iconos\cadena_reciclado_g.gif" />
+    <Content Include="img\Iconos\CategoriaReciclaje.png" />
+    <Content Include="img\Iconos\NoImagen.png" />
+    <Content Include="img\Iconos\Reciclaje.jpg" />
+    <Content Include="img\Iconos\VidaReciclaje.gif" />
+    <Content Include="img\Iconos\ReciclajeBackground.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -98,6 +106,7 @@
     <Content Include="MantenimientoUsuario.aspx" />
     <Content Include="Materiales.aspx" />
     <Content Include="MaterialesRecibidos.aspx" />
+    <Content Include="NuestrosCentrosAcopio.aspx" />
     <Content Include="packages.config" />
     <Content Include="PerfilAdminCentro.aspx" />
     <Content Include="PerfilAdministrador.aspx" />
@@ -528,6 +537,13 @@
     </Compile>
     <Compile Include="MaterialesRecibidos.aspx.designer.cs">
       <DependentUpon>MaterialesRecibidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuestrosCentrosAcopio.aspx.cs">
+      <DependentUpon>NuestrosCentrosAcopio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuestrosCentrosAcopio.aspx.designer.cs">
+      <DependentUpon>NuestrosCentrosAcopio.aspx</DependentUpon>
     </Compile>
     <Compile Include="PerfilAdminCentro.aspx.cs">
       <DependentUpon>PerfilAdminCentro.aspx</DependentUpon>
