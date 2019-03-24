@@ -77,6 +77,13 @@
     <Content Include="css\MaterialCSS.css" />
     <Content Include="DetalleCanjeCentro.aspx" />
     <Content Include="fonts\dark-dashboard.svg" />
+    <Content Include="imagenes\Provincias\Provincia1.png" />
+    <Content Include="imagenes\Provincias\Provincia2.png" />
+    <Content Include="imagenes\Provincias\Provincia3.png" />
+    <Content Include="imagenes\Provincias\Provincia4.png" />
+    <Content Include="imagenes\Provincias\Provincia5.png" />
+    <Content Include="imagenes\Provincias\Provincia6.png" />
+    <Content Include="imagenes\Provincias\Provincia7.png" />
     <Content Include="imagenes\Varias\Eliminar.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
