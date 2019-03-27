@@ -13,7 +13,23 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string accion = Request.QueryString["error"];
+            if (accion != "")
+            {
+                lblMensaje.Visible = true;
+                switch (accion)
+                {
+                    case "NoCentro":
+                        lblMensaje.Text = "De momento no tiene acceso al sistema, debido a que aún no se le ha asignado ningún centro de acopio!";
+                        lblMensaje.CssClass = "row alert alert-dismissible alert-danger";
+                        lblMensaje.Visible = true;
+                        break;
+                    default:
+                        lblMensaje.Visible = false;
+                        lblMensaje.Text = "";
+                        break;
+                }
+            }
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -32,8 +48,16 @@ namespace appEcoMonedas
                     {
                         if(us.ID_Rol == 2)
                         {
-                            Session["Usuario"] = us;
-                            Response.Redirect("InicioAdminCentro.aspx");
+                            Centro centroAdmin = CentroLN.ObtenerCentroAdminCentro(us.Correo);
+                            if (centroAdmin != null)
+                            {
+                                Session["Usuario"] = us;
+                                Response.Redirect("InicioAdminCentro.aspx");
+                            }
+                            else
+                            {
+                                Response.Redirect("InicioSesion.aspx?error=NoCentro");
+                            }
                         }
                         else
                         {

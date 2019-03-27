@@ -45,7 +45,7 @@ namespace LogicaNegocios
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("El correo electronico no existe o esta mal digitado por favor verificar");
+                throw new ApplicationException("El correo electronico no existe o esta mal digitado por favor verificar.\nMás información: " + ex.Message);
             }
         }
     }
