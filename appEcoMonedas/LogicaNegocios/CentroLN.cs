@@ -134,7 +134,7 @@ namespace LogicaNegocios
         public static Centro ObtenerCentroAdminCentro(String IDAdminCentro)
         {
             var db = new BD_EcomonedasContext();
-            Centro mat = db.Centro.Where(x => x.ID_Administrador_Centro.Equals(IDAdminCentro)).First<Centro>();
+            Centro mat = db.Centro.Where(x => x.ID_Administrador_Centro.Equals(IDAdminCentro)).FirstOrDefault<Centro>();
             return mat;
         }
 
