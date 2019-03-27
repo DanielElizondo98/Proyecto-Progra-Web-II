@@ -99,9 +99,9 @@ namespace LogicaNegocios
                     CorreoLN.enviar_Correo(miUsuario.Correo,
                     String.Format(("Bienvenido {0} {1} {2}\nEcoMonedas te da la bienvenida y te felicita por formar parte de esta noble iniciativa.\nEsperamos que la experiencia sea de tu agrado\n\nAdjunto te agregamos tus datos de usuario, para el ingreso a la aplicación\nCorreo que establesiste: {3}\nContraseña generada: {4}. (Si gustas al ingresar podés cambiar esta contraseña)"), miUsuario.Nombre, miUsuario.Apellido1, miUsuario.Apellido2, miUsuario.Correo, miUsuario.Contrasenia), "Bienvenido al programa EcoMonedas");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-
+                    throw;
                 }
             }
 
