@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row d-flex align-items-center flex-wrap">
                 <div class="col-md-7">
-                    <h1 class="h2">Listado de Cupones</h1>
+                    <h1 class="h2">Listado de Cupone</h1>
                 </div>
                 <div class="col-md-5">
                 </div>
