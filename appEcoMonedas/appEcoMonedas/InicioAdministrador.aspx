@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="background: url('img/reciclajeparalax.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
+    <div style="background: url('img/Iconos/ReciclajeBackground.png') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
         <div class="dark-mask mask-primary"></div>
         <div class="container">
             <div class="row mb-small">
