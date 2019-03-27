@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section style="background: url('img/tree.jpg') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
+    <section style="background: url('img/Iconos/ReciclajeBackground.png') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
         <div class="container">
             <!-- Carousel Start-->
             <div class="home-carousel">
