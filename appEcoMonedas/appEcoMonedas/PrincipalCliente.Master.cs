@@ -28,7 +28,8 @@ namespace appEcoMonedas
                             Response.Redirect("InicioAdminCentro.aspx");
                         }
                     }
-                }else
+                }
+                else
                 {
                     lblNombreUsuario.Text = String.Format("Bienvenido {0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
                 }
