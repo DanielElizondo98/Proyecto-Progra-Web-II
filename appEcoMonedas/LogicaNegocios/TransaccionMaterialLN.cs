@@ -51,15 +51,24 @@ namespace LogicaNegocios
             return query;
         }
 
-        public static IEnumerable<Enc_Transaccion> ListaCanjesCentro(int ID_Centro = 0)
+        public static IEnumerable<Enc_Transaccion> ListaCanjesCentro(int ID_Centro = 0, String ID_Cliente = "")
         {
             var db = new BD_EcomonedasContext();
             if (ID_Centro > 0)
             {
                 var query = db.Enc_Transaccion.Where(x => x.ID_Centro == ID_Centro);
                 return ((IEnumerable<Enc_Transaccion>)query);
+            }else
+            {
+                if (!ID_Cliente.Trim().Equals(""))
+                {
+                    var query = db.Enc_Transaccion.Where(x => x.ID_Cliente.Equals(ID_Cliente));
+                    return ((IEnumerable<Enc_Transaccion>)query);
+                }else
+                {
+                    return null;
+                }
             }
-            return null;
         }
 
         public static Enc_Transaccion ObtenerEncabezadoID(int ID_Encabezado)

@@ -39,7 +39,7 @@ namespace appEcoMonedas
                 lblNombreCentroCabecera.Text = centro.Nombre;
                 lblNombreCentroInformacion.Text = centro.Nombre;
 
-                IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID);
+                IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID, "");
                 if (lista != null)
                 {
                     grvCanjes.DataSource = lista.ToList();

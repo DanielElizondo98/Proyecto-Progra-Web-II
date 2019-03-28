@@ -16,7 +16,7 @@
                                     <img src="img/template-homepage.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
-                                    <h1>Multipurpose responsive theme</h1>
+                                    <h1>Contador de Cupones</h1>
                                     <p>
                                         Business. Corporate. Agency.<br />
                                         Portfolio. Blog. E-commerce.
@@ -30,7 +30,7 @@
                                     <img src="img/template-mac.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
-                                    <h2>46 HTML pages full of features</h2>
+                                    <h2>Contador de centro de acopio</h2>
                                     <ul class="list-unstyled">
                                         <li>Sliders and carousels</li>
                                         <li>4 Header variations</li>
@@ -46,12 +46,11 @@
                                     <img src="img/template-easy-customize.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
-                                    <h1>Design</h1>
+                                    <h1>Nuestro cooperadores</h1>
                                     <ul class="list-unstyled">
-                                        <li>Clean and elegant design</li>
-                                        <li>Full width and boxed mode</li>
-                                        <li>Easily readable Roboto font and awesome icons</li>
-                                        <li>7 preprepared colour variations</li>
+                                        <li>Esta inciativa cuenta con mas de 100 empresas</li>
+                                        <li>como supermecados, salones de belleza, centros comerciales, entro otros,</li>
+                                        <li>que cooperan con esta inciativa EcoMonedas.</li>
                                     </ul>
                                 </div>
                             </div>

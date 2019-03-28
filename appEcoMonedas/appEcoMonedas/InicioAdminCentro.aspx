@@ -13,12 +13,12 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-homepage.png" alt="" class="img-fluid"/>
+                                    <img src="img/template-homepage.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
                                     <h1>Multipurpose responsive theme</h1>
                                     <p>
-                                        Business. Corporate. Agency.<br/>
+                                        Business. Corporate. Agency.<br />
                                         Portfolio. Blog. E-commerce.
                                     </p>
                                 </div>
@@ -27,7 +27,7 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7 text-center">
-                                    <img src="img/template-mac.png" alt="" class="img-fluid"/>
+                                    <img src="img/template-mac.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
                                     <h2>46 HTML pages full of features</h2>
@@ -43,7 +43,7 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-easy-customize.png" alt="" class="img-fluid"/>
+                                    <img src="img/template-easy-customize.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
                                     <h1>Design</h1>
@@ -59,7 +59,7 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-easy-code.png" alt="" class="img-fluid"/>
+                                    <img src="img/template-easy-code.png" alt="" class="img-fluid" />
                                 </div>
                                 <div class="col-md-5">
                                     <h1>Easy to customize</h1>
@@ -76,34 +76,38 @@
             <!-- Carousel End-->
         </div>
     </section>
-    <section class="bar bg-gray no-mb padding-big text-md-center">
-        <div class="container">
+
+    <section class="bar no-mb no-padding-bottom">
+        <div data-animate="fadeInUp" class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="text-uppercase">¿Qué es el proyecto Eco-Monedas?</h2>
-                    <p class="lead mb-small">Un proyecto amigable con el ambiente</p>
-                    <p class="mb-small"><strong>Eco-monedas es una iniciativa que busca promover el reciclaje, de forma adecuada, con el fin de ayudar al medio ambiente, recibiendo a cambio una bonificación por una buena acción</strong></p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="img/template-easy-customize.png" alt="" class="img-fluid"/>
+                <div class="col-md-12">
+                    <div class="heading text-center">
+                        <h2>Descripción del Centro de Acopio</h2>
+                    </div>
+                    <div class="row portfolio-showcase">
+                        <div class="col-md-6">
+                            <div class="image">
+                                <asp:Image ID="Image2" runat="server" CssClass="img-fluid image1" ImageUrl="imagenes/Varias/BannerCentrosAcopio.png" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 px-5">
+                            <h3 class="text-primary"><asp:Label ID="lblNombreCentro" runat="server" Text=""></asp:Label></h3>
+                            <p class="lead">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-user"></i> Administrador <asp:Label ID="lblNombreAdminCentro" CssClass="text-muted" runat="server" Text=""></asp:Label></li>
+                                    <li><i class="fa fa fa-map-marker"></i> Ubicación: <asp:Label ID="lblProvinciaCentro" CssClass="text-muted"  runat="server" Text=""></asp:Label> </li>
+                                    <li class="text-muted"><i class="fa fa-map-o"></i> <asp:Label ID="lblOtrasSenias" CssClass="text-muted" runat="server" Text=""></asp:Label></li>
+                                    <li><i class="fa fa fa-map-marker fa fa-money"></i> Cantidad EcoMonedas Generadas: <asp:Label ID="lblTotalEcoMonedasGeneradas" CssClass="text-muted" runat="server" Text=""></asp:Label> <i class="fa fa-leaf"></i>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="bar no-mb color-white padding-big text-md-center bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="img/template-easy-code.png" alt="" class="img-fluid"/>
-                </div>
-                <div class="col-md-6">
-                    <h2 class="text-uppercase">¿Cómo nació el programa Eco-Monedas?</h2>
-                    <p class="lead mb-small">Menos desechos, ganancia para todos</p>
-                    <p class="mb-small"><strong>Nació como solución, ante la creciente problemática relacionada con el exceso de desechos inorgánicos, y el abstencionismo de los costarricense en lo que a materia de reciclaje se refiere.</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="bar bg-gray">
         <div class="container">
             <div class="heading text-center">
