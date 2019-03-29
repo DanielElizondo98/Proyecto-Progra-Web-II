@@ -10,7 +10,7 @@ namespace LogicaNegocios
     public class CuponLN
     {
         /// <summary>
-        /// Retorna un query con la lista de cupones que existen en la base de datos
+        /// Retorna un query con la lista de cupones que existen en la base de datos 
         /// El parametro define el filtro, 1 retorna los activos, 0 retorna los desactivos y 2 significa traerlos todos
         /// </summary>
         /// <param name="log"></param>
@@ -23,7 +23,7 @@ namespace LogicaNegocios
         }
 
         /// <summary>
-        /// Obtiene la lista completa de los cupones en la base de datos
+        /// Obtiene la lista completa de los cupones en la base de datos 
         /// </summary>
         /// <param name="log"></param>
         /// <returns></returns>
