@@ -13,7 +13,10 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
 
         public IEnumerable<Cupon> ListadoCupones()
@@ -24,7 +27,11 @@ namespace appEcoMonedas
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
+            ListViewItem item = (ListViewItem)(sender as Control).NamingContainer;
+            HiddenField idCupon = (HiddenField)item.FindControl("hfCuponID");
+            int id = Convert.ToInt32(idCupon.Value);
 
+            Session["idCuponComprar"]= id;
         }
         
     }

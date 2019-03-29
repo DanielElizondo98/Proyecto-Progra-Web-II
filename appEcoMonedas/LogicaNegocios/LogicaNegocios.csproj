@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BilleteraLN.cs" />
+    <Compile Include="CanjeLN.cs" />
     <Compile Include="ColorLN.cs" />
     <Compile Include="CorreoLN.cs" />
     <Compile Include="CentroLN.cs" />

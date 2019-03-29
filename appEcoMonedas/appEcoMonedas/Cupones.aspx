@@ -7,10 +7,8 @@
     <div id="heading-breadcrumbs">
         <div class="container">
             <div class="row d-flex align-items-center flex-wrap">
-                <div class="col-md-7">
-                    <h1 class="h2">Listado de Cupone</h1>
-                </div>
-                <div class="col-md-5">
+                <div class="col-md-12">
+                    <h1 class="h2">Listado de Cupones</h1>
                 </div>
             </div>
         </div>
@@ -54,9 +52,15 @@
                                             <p class="author-category"><%#:String.Format("‎{0:N2} Ecomonedas", Item.Precio_Canje)%></p>
                                         </div>
                                         <p class="intro"><%#:Item.Descripcion%></p>
+
+
+
                                         <p class="text-right">
                                             <asp:HiddenField ID="hfCuponID" Value='<%# Eval("ID")%>' runat="server" />
-                                            <asp:LinkButton runat="server" ID="btnCanjear" CssClass="btn btn-template-outlined" OnClick="btnCanjear_Click">Canjear Cupón</asp:LinkButton>
+                                            <asp:HyperLink ID="HyperLink1"
+                                                runat="server"
+                                                CssClass="btn btn-template-outlined"
+                                                NavigateUrl='<%# Eval("ID","~/CanjeCupon.aspx?id={0}")%>'>Canjear este Cupón</asp:HyperLink>
                                         </p>
                                     </div>
                                 </div>
