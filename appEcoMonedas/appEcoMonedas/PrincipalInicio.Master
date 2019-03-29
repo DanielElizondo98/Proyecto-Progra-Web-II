@@ -23,6 +23,7 @@
     <!-- owl carousel-->
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css" />
     <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css" />
+    <a href="PrincipalInicio.Master">PrincipalInicio.Master</a>
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.default.css" id="theme" />
     <!-- Custom stylesheet - for your changes-->
