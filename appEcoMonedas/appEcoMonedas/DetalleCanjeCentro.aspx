@@ -82,7 +82,6 @@
                         <div class="panel-body">
                             <ul class="nav nav-pills flex-column text-sm">
                                 <li class="nav-item"><a href="ListaCanjesCentro.aspx" class="nav-link active"><i class="fa fa-files-o"></i>Canjes</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-leaf"></i>EcoMonedas Generadas</a></li>
                             </ul>
                         </div>
                     </div>
