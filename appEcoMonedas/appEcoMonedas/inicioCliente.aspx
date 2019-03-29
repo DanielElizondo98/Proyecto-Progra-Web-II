@@ -18,7 +18,7 @@
                                 <div class="col-md-5">
                                     <h1>Multipurpose responsive theme</h1>
                                     <p>
-                                        Business. Corporate. Agency.<br />
+                                        Business. Corporate..<br />
                                         Portfolio. Blog. E-commerce.
                                     </p>
                                 </div>

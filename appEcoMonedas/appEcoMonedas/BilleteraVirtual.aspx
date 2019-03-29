@@ -22,7 +22,7 @@
                         <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-money"></i></div>
                         <h4>
                             <asp:Label runat="server" ID="lblGeneradas" CssClass="h1 counter"></asp:Label><br />
-                            Ecomonedas Generadas</h4>
+                            Ecomonedas Generada</h4>
                         <p class="lead mb-0">Las Ecomonedas Generadas son todas las ganancias que se han recibico debido al intercambio de materiales de reciclaje.</p>
                     </div>
                 </div>

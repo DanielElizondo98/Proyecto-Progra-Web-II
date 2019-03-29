@@ -24,11 +24,6 @@
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                 <asp:TextBox ID="txtNombre" CssClass="form-control" ToolTip="Nombre del Centro de Acopio" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Debe ingresar el nombre del centro de acopio" ControlToValidate="txtNombre" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
-                                    runat="server"
-                                    ErrorMessage="El nombre solo puede contener letras"
-                                    ControlToValidate="txtNombre"
-                                    ValidationExpression="[ A-Za-zñÑäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ-]+"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group row mb-4">
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
