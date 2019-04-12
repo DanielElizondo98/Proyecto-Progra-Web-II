@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace appEcoMonedas
 {
-    public partial class ListaCanjesCentro : System.Web.UI.Page
+    public partial class ListaCanjesUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace appEcoMonedas
             if (us != null)
             {
 
-                if (us.ID_Rol != 2)
+                if (us.ID_Rol != 3)
                 {
                     if (us.ID_Rol == 1)
                     {
@@ -44,30 +44,26 @@ namespace appEcoMonedas
                     }
                     else
                     {
-                        if (us.ID_Rol == 3)
+                        if (us.ID_Rol == 2)
                         {
-                            Response.Redirect("InicioCliente.aspx");
+                            Response.Redirect("InicioAdminCentro.aspx");
                         }
                     }
                 }
                 else
                 {
-
-                    Centro centro = CentroLN.ObtenerCentroAdminCentro(us.Correo);
-                    lblNombreCentroCabecera.Text = centro.Nombre;
-                    lblNombreCentroInformacion.Text = centro.Nombre;
-
-                    IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID, "");
+                    IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(0, us.Correo);
                     if (lista != null)
                     {
                         grvCanjes.DataSource = lista.ToList();
                         grvCanjes.DataBind();
+                        lblTotalGenerado.Text = lista.Sum(x => x.Total_Ecomonedas).ToString();
                     }
                     else
                     {
                         lblMensaje.CssClass = "col-12 alert alert-dismissible alert-warning";
                         lblMensaje.Visible = true;
-                        lblMensaje.Text = "Aún no se han realizado canjes en " + centro.Nombre;
+                        lblMensaje.Text = "Aún no se han realizado canjes en su cuenta ";
                     }
                 }
             }
@@ -77,6 +73,12 @@ namespace appEcoMonedas
         {
             if (e.Row.RowType == DataControlRowType.Header)
                 e.Row.TableSection = TableRowSection.TableHeader;
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Inicio.aspx");
         }
     }
 }
