@@ -157,11 +157,6 @@
                                     <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">Canjes Realizados</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Reportes <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">EcoMonedas Generadas</a></li>
-                                </ul>
-                            </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="PerfilAdminCentro.aspx" class="nav-link">Editar Perfil</a></li>

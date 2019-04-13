@@ -22,6 +22,7 @@ namespace Contexto
 
         public int ID_Centro { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
 
         public double? Total_Ecomonedas { get; set; }

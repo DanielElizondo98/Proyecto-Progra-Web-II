@@ -52,6 +52,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -122,6 +123,7 @@
     <Content Include="PerfilCliente.aspx" />
     <Content Include="ProcesarCanje.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="ReporteEcomonedasGeneradas.aspx" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
     <Content Include="vendor\jquery.counterup\counterup.jquery.json" />
@@ -652,6 +654,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEcomonedasGeneradas.aspx.cs">
+      <DependentUpon>ReporteEcomonedasGeneradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteEcomonedasGeneradas.aspx.designer.cs">
+      <DependentUpon>ReporteEcomonedasGeneradas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

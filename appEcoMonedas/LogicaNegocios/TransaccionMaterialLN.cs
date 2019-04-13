@@ -1,5 +1,6 @@
 ﻿using Contexto;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,13 +59,13 @@ namespace LogicaNegocios
             {
                 var query = db.Enc_Transaccion.Where(x => x.ID_Centro == ID_Centro);
                 return ((IEnumerable<Enc_Transaccion>)query);
-            }else
+            } else
             {
                 if (!ID_Cliente.Trim().Equals(""))
                 {
                     var query = db.Enc_Transaccion.Where(x => x.ID_Cliente.Equals(ID_Cliente));
                     return ((IEnumerable<Enc_Transaccion>)query);
-                }else
+                } else
                 {
                     return null;
                 }
@@ -77,5 +78,6 @@ namespace LogicaNegocios
             Enc_Transaccion enc = db.Enc_Transaccion.Where(x => x.ID == ID_Encabezado).FirstOrDefault<Enc_Transaccion>();
             return enc;
         }
+        
     }
 }
