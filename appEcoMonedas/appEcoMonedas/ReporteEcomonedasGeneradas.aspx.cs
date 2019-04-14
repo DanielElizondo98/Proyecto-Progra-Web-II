@@ -13,5 +13,10 @@ namespace appEcoMonedas
         {
 
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ReportViewer1.LocalReport.Refresh();
+        }
     }
 }
