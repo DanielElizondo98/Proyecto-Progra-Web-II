@@ -23,13 +23,13 @@ namespace appEcoMonedas
         public void LlenaDatosUsuario()
         {
             lblfecha.Text += DateTime.Today.ToShortDateString();
-            if (Session["Usuario"] != null)
+            Usuario usu = (Usuario)Session["Usuario"];
+            if (usu != null)
             {
                 //llena los datos del usuario
-                Usuario usu = (Usuario)Session["Usuario"];
                 Billetera billetera = BilleteraLN.ObtenerBilletera(usu.Correo);
                 Session["Billetera"] = billetera;
-
+                //System.Drawing.Image img = System.Drawing.Image.FromFile(imgCupon.ImageUrl);
                 lblNombreUsuario.Text = usu.Nombre + " " + usu.Apellido1 + " " + usu.Apellido2;
                 txtCorreo.Text = usu.Correo;
                 txtDireccion.Text = usu.Direccion;
@@ -79,7 +79,7 @@ namespace appEcoMonedas
                                                                 (bille.Ecomonedas_Gastadas + cup.Precio_Canje).ToString(),
                                                                 (bille.Ecomonedas_Disponible - cup.Precio_Canje).ToString(), usu.Correo);
 
-                                lblMensaje.Text = "El Canje se ha realizado correctamente, para más detalles consulte su historial de Canjes.";
+                                lblMensaje.Text = "El canje se ha realizado correctamente, para más detalles consulte su historial de canjes.";
                                 lblMensaje.CssClass = "alert alert-dismissible alert-info";
                                 lblMensaje.Visible = true;
                             }

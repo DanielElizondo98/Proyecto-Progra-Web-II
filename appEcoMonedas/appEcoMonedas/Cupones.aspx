@@ -88,13 +88,11 @@
                             <h3 class="h4 panel-title">Buscar</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="search">
-                                <div class="input-group">
-                                    <input type="text" placeholder="Buscar" class="form-control"><span class="input-group-btn">
-                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
+                            <div class="input-group">
+                                <input type="text" placeholder="Buscar" class="form-control" /><span class="input-group-btn">
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

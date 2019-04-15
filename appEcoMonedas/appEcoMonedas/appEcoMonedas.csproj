@@ -102,6 +102,7 @@
     <Content Include="img\Iconos\VidaReciclaje.gif" />
     <Content Include="img\Iconos\ReciclajeBackground.png" />
     <Content Include="img\no-image-icon-15.png" />
+    <Content Include="img\texture.jpg" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -678,6 +679,7 @@
     <Folder Include="imagenes\material\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CuponCanjeado.rdlc" />
     <EmbeddedResource Include="ReporteEcomonedasGeneradas.rdlc" />
   </ItemGroup>
   <PropertyGroup>
