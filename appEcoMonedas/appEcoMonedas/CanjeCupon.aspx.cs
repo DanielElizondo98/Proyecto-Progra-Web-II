@@ -30,6 +30,7 @@ namespace appEcoMonedas
                 Billetera billetera = BilleteraLN.ObtenerBilletera(usu.Correo);
                 Session["Billetera"] = billetera;
                 //System.Drawing.Image img = System.Drawing.Image.FromFile(imgCupon.ImageUrl);
+                //Probar con un DataBinding o con un prerender
                 lblNombreUsuario.Text = usu.Nombre + " " + usu.Apellido1 + " " + usu.Apellido2;
                 txtCorreo.Text = usu.Correo;
                 txtDireccion.Text = usu.Direccion;
