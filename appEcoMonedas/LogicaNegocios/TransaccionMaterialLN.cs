@@ -1,5 +1,6 @@
 ﻿using Contexto;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,13 +59,13 @@ namespace LogicaNegocios
             {
                 var query = db.Enc_Transaccion.Where(x => x.ID_Centro == ID_Centro);
                 return ((IEnumerable<Enc_Transaccion>)query);
-            }else
+            } else
             {
                 if (!ID_Cliente.Trim().Equals(""))
                 {
                     var query = db.Enc_Transaccion.Where(x => x.ID_Cliente.Equals(ID_Cliente));
                     return ((IEnumerable<Enc_Transaccion>)query);
-                }else
+                } else
                 {
                     return null;
                 }
@@ -77,5 +78,33 @@ namespace LogicaNegocios
             Enc_Transaccion enc = db.Enc_Transaccion.Where(x => x.ID == ID_Encabezado).FirstOrDefault<Enc_Transaccion>();
             return enc;
         }
+
+        public static List<ReporteEcomonedasGeneradas> ListaReporteEcomonedasGeneradas(String fechaMin, String fechaMax)
+        {
+            //Evalua si se estan enviando fechas o hileras vacias
+            //Si esta vacía toma la fecha actual
+            //Si trae una fecha, la convierte y toma esta fecha establecida
+            DateTime FechaInicio = fechaMin.Trim().Equals("") ? DateTime.Now : Convert.ToDateTime(fechaMin);
+            DateTime FechaFin = fechaMax.Trim().Equals("") ? DateTime.Now : Convert.ToDateTime(fechaMax);
+
+            var db = new BD_EcomonedasContext();
+
+            //Select del cual se sacan los datos deseados
+            //Utilizando la clase ReporteEcomonedasGeneradas
+            //La cual contiene el monto total de ecomonedas y el nombre del centro que las generó
+            var query = from et in db.Enc_Transaccion
+                        join c in db.Centro on et.ID_Centro equals c.ID
+                        where et.Fecha >= FechaInicio.Date && et.Fecha <= FechaFin.Date
+                        group et by new { c.Nombre } into grupo
+                        select new ReporteEcomonedasGeneradas
+                        {
+                            TotalEcomonedas = grupo.Sum(x => x.Total_Ecomonedas),
+                            NombreCentro = grupo.Key.Nombre
+                        };
+            //Convierte la sentencia select a una lista.
+            var lista = query.ToList();
+            return lista;
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Contexto;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -129,14 +130,11 @@ namespace LogicaNegocios
                 return false;
             }
         }
-
-
         public static Centro ObtenerCentroAdminCentro(String IDAdminCentro)
         {
             var db = new BD_EcomonedasContext();
             Centro mat = db.Centro.Where(x => x.ID_Administrador_Centro.Equals(IDAdminCentro)).FirstOrDefault<Centro>();
             return mat;
         }
-
     }
 }

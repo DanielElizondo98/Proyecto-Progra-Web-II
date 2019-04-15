@@ -20,7 +20,8 @@
                         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>
                     </div>
                 </div><br />
-
+                <asp:Image ID="imgCupon" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("Imagen", "~/imagenes/cupon/{0}")%>' />
+                                        
                 <div class="col-lg-8" id="divInfo">
 
                     <div class="panel-heading">
