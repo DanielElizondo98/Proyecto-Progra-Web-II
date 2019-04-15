@@ -9,14 +9,14 @@ namespace LogicaNegocios
 {
     public class CanjeLN
     {
-        public static IQueryable QueryListaCanjesxUsuario(int idCliente)
+        public static IQueryable QueryListaCanjesxUsuario(string idCliente)
         {
             var db = new BD_EcomonedasContext();
             IQueryable query = db.Canje.Where(x => x.ID_Cliente.Equals(idCliente));
             return query;
         }
 
-        public static IEnumerable<Canje> ObtenerListaCanjexUsuario(int idCliente)
+        public static IEnumerable<Canje> ObtenerListaCanjexUsuario(string idCliente)
         {
             //recordar el where para solo los activos
             var db = new BD_EcomonedasContext();
