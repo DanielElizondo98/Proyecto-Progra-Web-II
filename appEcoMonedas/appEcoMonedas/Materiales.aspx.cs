@@ -15,10 +15,10 @@ namespace appEcoMonedas
         {
         }
 
-        private void CargarListaCarrito()
+        /*private void CargarListaCarrito()
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         public IEnumerable<Material> listadoMateriales()
         {

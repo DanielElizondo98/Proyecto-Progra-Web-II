@@ -26,21 +26,48 @@ namespace LogicaNegocios
 
         public static bool GuardarCanje(string idCliente, string idCupon, DateTime fecha)
         {
-            var db = new BD_EcomonedasContext();
+            try
+            {
+                var db = new BD_EcomonedasContext();
 
-            Canje miCanje = new Canje();
+                Canje miCanje = new Canje();
 
-            miCanje.ID_Cliente = idCliente;
-            miCanje.ID_Cupon = Convert.ToInt32(idCupon);
-            miCanje.FechaCanje = fecha;
-                      
-            db.Canje.Add(miCanje);
+                miCanje.ID_Cliente = idCliente;
+                miCanje.ID_Cupon = Convert.ToInt32(idCupon);
+                miCanje.FechaCanje = fecha;
+                miCanje.Log_Activo = 1;
+                db.Canje.Add(miCanje);
 
-            db.SaveChanges();
+                db.SaveChanges();
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
+        public static List<Canje> ObtenerCuponCanjeado(int idCanje)
+        {
+            if (idCanje != 0)
+            {
+                var db = new BD_EcomonedasContext();
+                //recordar el where para solo los activos
+                List<Canje> lista = ((List<Canje>)db.Canje.Where(x => x.ID == idCanje));
+                foreach (var item in lista)
+                {
+                    item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
+                    item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
+                }
+                return lista;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
     }

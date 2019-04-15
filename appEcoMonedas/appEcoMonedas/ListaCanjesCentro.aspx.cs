@@ -35,21 +35,40 @@ namespace appEcoMonedas
             Usuario us = (Usuario)Session["Usuario"];
             if (us != null)
             {
-                Centro centro = CentroLN.ObtenerCentroAdminCentro(us.Correo);
-                lblNombreCentroCabecera.Text = centro.Nombre;
-                lblNombreCentroInformacion.Text = centro.Nombre;
 
-                IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID, "");
-                if (lista != null)
+                if (us.ID_Rol != 2)
                 {
-                    grvCanjes.DataSource = lista.ToList();
-                    grvCanjes.DataBind();
+                    if (us.ID_Rol == 1)
+                    {
+                        Response.Redirect("InicioAdministrador.aspx");
+                    }
+                    else
+                    {
+                        if (us.ID_Rol == 3)
+                        {
+                            Response.Redirect("InicioCliente.aspx");
+                        }
+                    }
                 }
                 else
                 {
-                    lblMensaje.CssClass = "col-12 alert alert-dismissible alert-warning";
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = "Aún no se han realizado canjes en " + centro.Nombre;
+
+                    Centro centro = CentroLN.ObtenerCentroAdminCentro(us.Correo);
+                    lblNombreCentroCabecera.Text = centro.Nombre;
+                    lblNombreCentroInformacion.Text = centro.Nombre;
+
+                    IEnumerable<Enc_Transaccion> lista = TransaccionMaterialLN.ListaCanjesCentro(centro.ID, "");
+                    if (lista != null)
+                    {
+                        grvCanjes.DataSource = lista.ToList();
+                        grvCanjes.DataBind();
+                    }
+                    else
+                    {
+                        lblMensaje.CssClass = "col-12 alert alert-dismissible alert-warning";
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = "Aún no se han realizado canjes en " + centro.Nombre;
+                    }
                 }
             }
         }

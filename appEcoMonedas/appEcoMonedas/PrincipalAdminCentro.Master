@@ -67,7 +67,7 @@
                             <ul class="list-inline contact-info d-block d-md-none">
                             </ul>
                             <div class="login">
-                                <asp:LinkButton ID="btnCerrarSesion" CssClass="signup-btn" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
+                                <asp:LinkButton ID="btnCerrarSesion" CausesValidation="false" CssClass="signup-btn" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
                                     <span class="d-none d-md-inline-block">Cerrar Sesión</span></asp:LinkButton>
                             </div>
                             <ul class="social-custom list-inline">
@@ -155,11 +155,6 @@
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="Materiales.aspx" class="nav-link">Lista de Materiales</a></li>
                                     <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">Canjes Realizados</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Reportes <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="ListaCanjesCentro.aspx" class="nav-link">EcoMonedas Generadas</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>

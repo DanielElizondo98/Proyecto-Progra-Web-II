@@ -52,6 +52,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -79,6 +80,7 @@
     <Content Include="css\MaterialCSS.css" />
     <Content Include="Cupones.aspx" />
     <Content Include="DetalleCanjeCentro.aspx" />
+    <Content Include="DetalleCanjeUsuario.aspx" />
     <Content Include="fonts\dark-dashboard.svg" />
     <Content Include="imagenes\Provincias\Provincia1.png" />
     <Content Include="imagenes\Provincias\Provincia2.png" />
@@ -100,6 +102,7 @@
     <Content Include="img\Iconos\VidaReciclaje.gif" />
     <Content Include="img\Iconos\ReciclajeBackground.png" />
     <Content Include="img\no-image-icon-15.png" />
+    <Content Include="img\texture.jpg" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -107,6 +110,7 @@
     <Content Include="js\Custom.js" />
     <Content Include="js\filtroTablas.js" />
     <Content Include="ListaCanjesCentro.aspx" />
+    <Content Include="ListaCanjesUsuario.aspx" />
     <Content Include="MantenimientoCentro.aspx" />
     <Content Include="MantenimientoCupon.aspx" />
     <Content Include="MantenimientoMaterial.aspx" />
@@ -120,6 +124,7 @@
     <Content Include="PerfilCliente.aspx" />
     <Content Include="ProcesarCanje.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="ReporteEcomonedasGeneradas.aspx" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
     <Content Include="vendor\jquery.counterup\counterup.jquery.json" />
@@ -482,6 +487,13 @@
     <Compile Include="DetalleCanjeCentro.aspx.designer.cs">
       <DependentUpon>DetalleCanjeCentro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetalleCanjeUsuario.aspx.cs">
+      <DependentUpon>DetalleCanjeUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleCanjeUsuario.aspx.designer.cs">
+      <DependentUpon>DetalleCanjeUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -523,6 +535,13 @@
     </Compile>
     <Compile Include="ListaCanjesCentro.aspx.designer.cs">
       <DependentUpon>ListaCanjesCentro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCanjesUsuario.aspx.cs">
+      <DependentUpon>ListaCanjesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCanjesUsuario.aspx.designer.cs">
+      <DependentUpon>ListaCanjesUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoCentro.aspx.cs">
       <DependentUpon>MantenimientoCentro.aspx</DependentUpon>
@@ -637,6 +656,13 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteEcomonedasGeneradas.aspx.cs">
+      <DependentUpon>ReporteEcomonedasGeneradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteEcomonedasGeneradas.aspx.designer.cs">
+      <DependentUpon>ReporteEcomonedasGeneradas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contexto\Contexto.csproj">
@@ -651,6 +677,10 @@
   <ItemGroup>
     <Folder Include="imagenes\cupon\" />
     <Folder Include="imagenes\material\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CuponCanjeado.rdlc" />
+    <EmbeddedResource Include="ReporteEcomonedasGeneradas.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -100,8 +100,11 @@
                                     <li class="dropdown-item"><a href="MantenimientoCupon.aspx" class="nav-link">Cupones</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a href="InicioAdministrador.aspx" class="nav-link">Reportes</a>
+                            
+                            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Reportes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="ReporteEcomonedasGeneradas.aspx" class="nav-link">EcoMonedas Generadas</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">

@@ -56,5 +56,10 @@ namespace Contexto
         public virtual ICollection<Enc_Transaccion> Enc_Transaccion { get; set; }
 
         public virtual Rol Rol { get; set; }
+        
+        public override string ToString()
+        {
+            return Nombre + " " + Apellido1 + " " + Apellido2;
+        }
     }
 }
