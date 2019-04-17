@@ -59,6 +59,7 @@
     <Compile Include="Centro.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="Cupon.cs" />
+    <Compile Include="CuponCanjeado.cs" />
     <Compile Include="Det_Transaccion.cs" />
     <Compile Include="Enc_Transaccion.cs" />
     <Compile Include="Material.cs" />

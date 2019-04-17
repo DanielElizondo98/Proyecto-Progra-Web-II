@@ -79,10 +79,8 @@ namespace appEcoMonedas
                                 BilleteraLN.GuardarBilletera(bille.Ecomonedas_Generadas.ToString(),
                                                                 (bille.Ecomonedas_Gastadas + cup.Precio_Canje).ToString(),
                                                                 (bille.Ecomonedas_Disponible - cup.Precio_Canje).ToString(), usu.Correo);
-
-                                lblMensaje.Text = "El canje se ha realizado correctamente, para más detalles consulte su historial de canjes.";
-                                lblMensaje.CssClass = "alert alert-dismissible alert-info";
-                                lblMensaje.Visible = true;
+                                Session["IDCanje"] = id;
+                                Response.Redirect("DetalleCuponImprimir.aspx");
                             }
                             else
                             {

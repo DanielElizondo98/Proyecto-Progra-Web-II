@@ -64,11 +64,11 @@
                         <ItemTemplate>
                             <div class="card">
                                 <div role="tab" class="card-header">
-                                    <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="true" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
+                                    <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="false" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
                                     <h4><%#:Item.FechaCanje.ToShortDateString()%></h4>
                                 </div>
 
-                                <div id="<%#:Item.ID %>" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse show">
+                                <div id="<%#:Item.ID %>" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
