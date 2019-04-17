@@ -37,7 +37,7 @@ namespace appEcoMonedas
             {
                 string id = usu.Correo;
 
-                listaCanjes = CanjeLN.ObtenerListaCanjexUsuario(id).ToList();
+                listaCanjes = CanjeLN.ObtenerListaCanjexUsuario(id,1).ToList();
             }
             return listaCanjes;
         }
