@@ -79,6 +79,7 @@
     <Content Include="css\font.css" />
     <Content Include="css\MaterialCSS.css" />
     <Content Include="Cupones.aspx" />
+    <Content Include="CuponesUsuario.aspx" />
     <Content Include="DetalleCanjeCentro.aspx" />
     <Content Include="DetalleCanjeUsuario.aspx" />
     <Content Include="fonts\dark-dashboard.svg" />
@@ -103,6 +104,7 @@
     <Content Include="img\Iconos\ReciclajeBackground.png" />
     <Content Include="img\no-image-icon-15.png" />
     <Content Include="img\texture.jpg" />
+    <Content Include="ImprimirCupon.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -480,6 +482,13 @@
     <Compile Include="Cupones.aspx.designer.cs">
       <DependentUpon>Cupones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CuponesUsuario.aspx.cs">
+      <DependentUpon>CuponesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CuponesUsuario.aspx.designer.cs">
+      <DependentUpon>CuponesUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DetalleCanjeCentro.aspx.cs">
       <DependentUpon>DetalleCanjeCentro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -493,6 +502,13 @@
     </Compile>
     <Compile Include="DetalleCanjeUsuario.aspx.designer.cs">
       <DependentUpon>DetalleCanjeUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirCupon.aspx.cs">
+      <DependentUpon>ImprimirCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImprimirCupon.aspx.designer.cs">
+      <DependentUpon>ImprimirCupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

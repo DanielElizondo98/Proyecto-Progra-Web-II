@@ -14,7 +14,6 @@
             </p>
             <br />
         </div>
-        <%--<section class="bar background-pentagon no-mb">--%>
         <div class="container">
             <div class="row showcase text-center">
                 <div class="col-md-4 col-sm-4">
@@ -46,15 +45,46 @@
                         <p class="lead mb-0">Las Ecomonedas Gastadas son todas las ecomonedas que han sido intercambiadas por cupones.</p>
                     </div>
                 </div>
-                <%--<div class="col-md-3 col-sm-6">
-              <div class="item">
-                <div class="icon-outlined icon-sm icon-thin"><i class="fa fa-font"></i></div>
-                <h4><span class="h1 counter">923</span><br>Magazines and Brochures</h4>
-              </div>
-            </div>--%>
             </div>
         </div>
-        <%--</section>--%>
     </section>
+    <section>
 
+        <div class="row bar col-lg-10 offset-1">
+            <div class="panel-heading">
+                <h3>Recibo de Cupones Adquiridos</h3>
+            </div>
+            <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas.</p>
+
+            <div class="offset-1 col-md-10">
+                <div id="accordion" role="tablist" class="mb-5">
+                    <asp:ListView ID="lvRecibos" runat="server"
+                        ItemType="Contexto.Canje"
+                        SelectMethod="ObtenerCanjesUsuario">
+                        <ItemTemplate>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="true" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
+                                    <h4><%#:Item.FechaCanje.ToShortDateString()%></h4>
+                                </div>
+
+                                <div id="<%#:Item.ID %>" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse show">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <%--<asp:Image ID="imgCupon" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("Imagen", "~/imagenes/cupon/{0}")%>' />--%>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p><%#:Item.Cupon.Descripcion%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:ListView>
+                </div>
+            </div>
+        </div>
+    </section>
 </asp:Content>
