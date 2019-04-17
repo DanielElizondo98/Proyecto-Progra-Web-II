@@ -104,7 +104,7 @@
     <Content Include="img\Iconos\ReciclajeBackground.png" />
     <Content Include="img\no-image-icon-15.png" />
     <Content Include="img\texture.jpg" />
-    <Content Include="ImprimirCupon.aspx" />
+    <Content Include="DetalleCuponImprimir.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InicioSesion.aspx" />
     <Content Include="img\ecoBag.png" />
@@ -503,12 +503,12 @@
     <Compile Include="DetalleCanjeUsuario.aspx.designer.cs">
       <DependentUpon>DetalleCanjeUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ImprimirCupon.aspx.cs">
-      <DependentUpon>ImprimirCupon.aspx</DependentUpon>
+    <Compile Include="DetalleCuponImprimir.aspx.cs">
+      <DependentUpon>DetalleCuponImprimir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImprimirCupon.aspx.designer.cs">
-      <DependentUpon>ImprimirCupon.aspx</DependentUpon>
+    <Compile Include="DetalleCuponImprimir.aspx.designer.cs">
+      <DependentUpon>DetalleCuponImprimir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -696,6 +696,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CuponCanjeado.rdlc" />
+    <EmbeddedResource Include="ReporteCuponCanjeado.rdlc" />
     <EmbeddedResource Include="ReporteEcomonedasGeneradas.rdlc" />
   </ItemGroup>
   <PropertyGroup>

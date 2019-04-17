@@ -49,24 +49,38 @@ namespace LogicaNegocios
             }
         }
 
-        public static List<Canje> ObtenerCuponCanjeado(int idCanje)
+        //public static List<Canje> ObtenerCuponCanjeado(int idCanje)
+        //{
+        //    if (idCanje != 0)
+        //    {
+        //        var db = new BD_EcomonedasContext();
+        //        //recordar el where para solo los activos
+        //        List<Canje> lista = ((List<Canje>)db.Canje.Where(x => x.ID == idCanje));
+        //        foreach (var item in lista)
+        //        {
+        //            item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
+        //        }
+        //        return lista;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+
+        public static List<CuponCanjeado> ObtenerCuponCanjeado(Canje canje)
         {
-            if (idCanje != 0)
-            {
-                var db = new BD_EcomonedasContext();
-                //recordar el where para solo los activos
-                List<Canje> lista = ((List<Canje>)db.Canje.Where(x => x.ID == idCanje));
-                foreach (var item in lista)
-                {
-                    item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
-                    item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
-                }
-                return lista;
-            }
-            else
-            {
-                return null;
-            }
+            List<CuponCanjeado> lista = new List<CuponCanjeado>();
+            CuponCanjeado nuevoCupon = new CuponCanjeado();
+            nuevoCupon.DescCupon = canje.Cupon.Descripcion;
+            nuevoCupon.NombreCupon = canje.Cupon.Nombre;
+            nuevoCupon.Precio_Canje = canje.Cupon.Precio_Canje;
+            nuevoCupon.NombreCliente = String.Format("{0} {1} {2}", canje.Usuario.Nombre, canje.Usuario.Apellido1, canje.Usuario.Apellido2);
+            nuevoCupon.IDUnico = canje.ID;
+            nuevoCupon.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(canje.ID)));
+
+            lista.Add(nuevoCupon);
+            return lista;
         }
 
         public static Canje ObtenerCanje(int idCanje)
@@ -76,11 +90,11 @@ namespace LogicaNegocios
                 var db = new BD_EcomonedasContext();
                 //recordar el where para solo los activos
                 IEnumerable<Canje> lista = ((IEnumerable<Canje>)db.Canje.Where(x => x.ID == idCanje));
-                //foreach (var item in lista)
-                //{
-                //    item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
-                //    item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
-                //}
+                foreach (var item in lista)
+                {
+                    //item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
+                    item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
+                }
                 return lista.First();
             }
             else

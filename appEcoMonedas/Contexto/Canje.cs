@@ -24,11 +24,7 @@ namespace Contexto
         public virtual Cupon Cupon { get; set; }
 
         public virtual Usuario Usuario { get; set; }
-
         [NotMapped]
         public byte[] CodigoQR { get; set; }
-
-        [NotMapped]
-        public byte[] ImagenCupon { get; set; }
     }
 }

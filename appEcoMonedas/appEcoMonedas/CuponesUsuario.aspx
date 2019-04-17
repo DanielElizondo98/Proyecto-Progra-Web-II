@@ -42,8 +42,7 @@
                                 <div class="row" style="width: 100%;">
                                     <div class="col-md-3">
                                         <div class="image">
-                                            <asp:Image ID="imgCupon" runat="server" class="img-fluid" ImageUrl='<%#: Item.CodigoQR%>' />
-                                            <!-- Yo sé que no va a así jaja -->
+                                            <asp:Image ID="imgCupon" runat="server" class="img-fluid" ImageUrl='<%# Eval("Cupon.Imagen", "~/imagenes/cupon/{0}")%>' />
                                         </div>
                                     </div>
                                     <div class="col-md-9">
@@ -59,9 +58,8 @@
                                         </div>
 
                                         <p class="text-right">
-                                            <asp:HiddenField ID="HiddenField1" Value='<%# Eval("ID")%>' runat="server" />
-                                            <asp:HyperLink ID="Imprimir" runat="server" CssClass="btn btn-template-outlined"
-                                                NavigateUrl='<%#Eval("ID","~/ImprimirCupon.aspx?id={0}") %>'>Imprimir este Cupón  <i class="fa fa-chevron-right"></i></asp:HyperLink>
+                                            <asp:HiddenField ID="hfCanjeID" Value='<%# Eval("ID")%>' runat="server" />
+                                            <asp:LinkButton ID="btnImprimir" runat="server" CssClass="btn btn-template-outlined" OnClick="btnImprimir_Click1">Imprimir este Cupón  <i class="fa fa-chevron-right"></i></asp:LinkButton>
                                         </p>
                                     </div>
                                 </div>
@@ -73,6 +71,10 @@
                             </div>
                         </LayoutTemplate>
                     </asp:ListView>
+                </div>
+
+                <div class="row">
+                    <hr />
                 </div>
 
                 <div class="col col-md-3">
@@ -119,12 +121,11 @@
                                 <div class="row" style="width: 100%;">
                                     <div class="col-md-3">
                                         <div class="image">
-                                            <asp:Image ID="imgCupon" runat="server" class="img-fluid" ImageUrl='<%#: Item.CodigoQR%>' />
-                                            <!-- Yo sé que no va a así jaja -->
+                                            <asp:Image ID="imgCupon" runat="server" class="img-fluid" ImageUrl='<%# Eval("Cupon.Imagen", "~/imagenes/cupon/{0}")%>' />
                                         </div>
                                     </div>
                                     <div class="col-md-9">
-                                        <asp:Label ID="Label1" runat="server" CssClass="h3 text-secondary float-lg-left"><i class="fa fa-calendar"> <%#:Item.FechaCanje%>  </i></asp:Label>
+                                        <asp:Label ID="Label1" runat="server" CssClass="h3 text-secondary float-lg-left"><i class="fa fa-calendar"> <%#:Item.FechaCanje.ToShortDateString()%>  </i></asp:Label>
                                         <br />
                                         <br />
 
