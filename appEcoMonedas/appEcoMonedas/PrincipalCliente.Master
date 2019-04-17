@@ -103,7 +103,7 @@
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="BilleteraVirtual.aspx" class="nav-link">Billetera</a></li>
-                                    <li class="dropdown-item"><a href="InicioCliente.aspx" class="nav-link">Historial de Cupones</a></li>
+                                    <li class="dropdown-item"><a href="CuponesUsuario.aspx" class="nav-link">Historial de Cupones</a></li>
                                     <li class="dropdown-item"><a href="ListaCanjesUsuario.aspx" class="nav-link">Ingreso por Materiales</a></li>
                                     <li class="dropdown-item"><a href="PerfilCliente.aspx" class="nav-link">Editar Perfil</a></li>
                                 </ul>

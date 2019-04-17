@@ -9,18 +9,18 @@ namespace LogicaNegocios
 {
     public class CanjeLN
     {
-        public static IQueryable QueryListaCanjesxUsuario(int idCliente)
+        public static IQueryable QueryListaCanjesxUsuario(string idCliente, int estado)
         {
             var db = new BD_EcomonedasContext();
-            IQueryable query = db.Canje.Where(x => x.ID_Cliente.Equals(idCliente));
+            IQueryable query = db.Canje.Where(x => x.ID_Cliente.Equals(idCliente) && x.Log_Activo == estado);
             return query;
         }
 
-        public static IEnumerable<Canje> ObtenerListaCanjexUsuario(int idCliente)
+        public static IEnumerable<Canje> ObtenerListaCanjexUsuario(string idCliente, int estado)
         {
             //recordar el where para solo los activos
             var db = new BD_EcomonedasContext();
-            IEnumerable<Canje> lista = (IEnumerable<Canje>)CanjeLN.QueryListaCanjesxUsuario(idCliente);
+            IEnumerable<Canje> lista = (IEnumerable<Canje>)CanjeLN.QueryListaCanjesxUsuario(idCliente, estado);
             return lista;
         }
 
@@ -66,6 +66,46 @@ namespace LogicaNegocios
             else
             {
                 return null;
+            }
+        }
+
+        public static Canje ObtenerCanje(int idCanje)
+        {
+            if (idCanje != 0)
+            {
+                var db = new BD_EcomonedasContext();
+                //recordar el where para solo los activos
+                IEnumerable<Canje> lista = ((IEnumerable<Canje>)db.Canje.Where(x => x.ID == idCanje));
+                //foreach (var item in lista)
+                //{
+                //    item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
+                //    item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
+                //}
+                return lista.First();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool CambiarEstadoCanje(int id)
+        {
+            if (id > 0)
+            {
+                var db = new BD_EcomonedasContext();
+                Canje miCanje = new Canje();
+
+                miCanje = db.Canje.Where(x => x.ID == id).First<Canje>();
+
+                miCanje.Log_Activo = 0;
+
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

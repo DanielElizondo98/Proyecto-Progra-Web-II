@@ -22,10 +22,24 @@ namespace appEcoMonedas
         public void llenaBilletera()
         {
             Billetera miBilletera = BilleteraLN.ObtenerBilletera(((Usuario)Session["Usuario"]).Correo);
-            
+
             lblGeneradas.Text = miBilletera.Ecomonedas_Generadas.ToString();
             lblDisponibles.Text = miBilletera.Ecomonedas_Disponible.ToString();
             lblGastadas.Text = miBilletera.Ecomonedas_Gastadas.ToString();
+        }
+
+        public List<Canje> ObtenerCanjesUsuario()
+        {
+            List<Canje> listaCanjes = new List<Canje>();
+
+            Usuario usu = (Usuario)Session["Usuario"];
+            if (usu!=null)
+            {
+                string id = usu.Correo;
+
+                listaCanjes = CanjeLN.ObtenerListaCanjexUsuario(id,1).ToList();
+            }
+            return listaCanjes;
         }
     }
 }

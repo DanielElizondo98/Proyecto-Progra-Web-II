@@ -10,42 +10,24 @@
 namespace appEcoMonedas {
     
     
-    public partial class BilleteraVirtual {
+    public partial class CuponesUsuario {
         
         /// <summary>
-        /// Control lblGeneradas.
+        /// Control lvCuponesCanjear.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGeneradas;
+        protected global::System.Web.UI.WebControls.ListView lvCuponesCanjear;
         
         /// <summary>
-        /// Control lblDisponibles.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDisponibles;
-        
-        /// <summary>
-        /// Control lblGastadas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastadas;
-        
-        /// <summary>
-        /// Control lvRecibos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvRecibos;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }
