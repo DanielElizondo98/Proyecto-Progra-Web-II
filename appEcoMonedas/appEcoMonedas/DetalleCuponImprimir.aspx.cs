@@ -56,6 +56,7 @@ namespace appEcoMonedas
                 lblNombreUsuario.Text = miCanje.Usuario.Nombre;
                 lblCorreo.Text = miCanje.ID_Cliente;
                 lblFechaCompra.Text = miCanje.FechaCanje.ToShortDateString();
+                txtFechaImprime.Text = DateTime.Now.ToShortDateString();
                 imgCupon.ImageUrl = String.Format("~/imagenes/cupon/{0}", miCanje.Cupon.Imagen);
             }
             else

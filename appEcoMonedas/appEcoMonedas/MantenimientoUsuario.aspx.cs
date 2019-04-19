@@ -123,6 +123,8 @@ namespace appEcoMonedas
             txtApellido1.Text = us.Apellido1;
             txtApellido2.Text = us.Apellido2;
             txtCorreo.Text = us.Correo;
+            txtCorreo.ReadOnly = true;
+            txtCorreo.Enabled = false;
             txtDireccion.Text = us.Direccion;
             txtTelefono.Text = us.Telefono.ToString();
             ddlRol.SelectedValue = Convert.ToString(us.ID_Rol);
@@ -140,6 +142,8 @@ namespace appEcoMonedas
             txtTelefono.Text = "";
             hiddenCorreo.Value = "";
             chkGenerarContrasenia.Enabled = false;
+            txtCorreo.ReadOnly = false;
+            txtCorreo.Enabled = true;
         }
 
         private void limpiaMensaje()
@@ -161,6 +165,8 @@ namespace appEcoMonedas
                     if (confirmacion)
                     {
                         string accion = "estado";
+                        txtCorreo.ReadOnly = false;
+                        txtCorreo.Enabled = true;
                         Response.Redirect("MantenimientoUsuario.aspx?accion=" + accion);
                     }
                     else

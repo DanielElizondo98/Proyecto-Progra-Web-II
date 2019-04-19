@@ -70,7 +70,7 @@
                                 <br />
                                 <div>
                                     <asp:Label runat="server" ID="lblFechaImprime" CssClass="heading-light h4"><strong>Fecha de Impresión:</strong></asp:Label>
-                                    <asp:Label runat="server" ID="txtFechaImprime" CssClass="h4 text-secondary"><%#:DateTime.Now.ToShortDateString() %>  <i class="fa fa-calendar"></i></asp:Label>
+                                    <asp:Label runat="server" ID="label3" CssClass="h4 text-secondary"><asp:Label ID="txtFechaImprime" CssClass="h4 text-secondary" runat="server" Text=""></asp:Label>  <i class="fa fa-calendar"></i></asp:Label>
                                 </div>
                             </div>
 
