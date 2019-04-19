@@ -691,6 +691,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CuponesDescargados\" />
     <Folder Include="imagenes\cupon\" />
     <Folder Include="imagenes\material\" />
   </ItemGroup>

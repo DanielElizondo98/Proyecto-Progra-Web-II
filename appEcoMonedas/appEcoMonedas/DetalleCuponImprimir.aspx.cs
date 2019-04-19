@@ -3,6 +3,7 @@ using LogicaNegocios;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.ModelBinding;
@@ -77,8 +78,46 @@ namespace appEcoMonedas
                 String idCanje = (String)Session["IDCanje"].ToString();
                 if (!idCanje.Trim().Equals(""))
                 {
-                    CanjeLN.CambiarEstadoCanje(Convert.ToInt32(idCanje));
-                    ReportViewer1.LocalReport.Refresh();
+                    try
+                    {
+                        CanjeLN.CambiarEstadoCanje(Convert.ToInt32(idCanje));
+                        List<CuponCanjeado> cupon = CanjeLN.ObtenerCuponCanjeado(Convert.ToInt32(idCanje));
+
+                        ReportDataSource rds = new ReportDataSource("DataSet1", cupon);
+
+                        LocalReport reporte = new LocalReport();
+                        reporte.DataSources.Add(rds);
+
+                        reporte.ReportPath = Server.MapPath("~/ReporteCuponCanjeado.rdlc");
+                        reporte.EnableExternalImages = true;
+
+                        reporte.Refresh();
+
+                        String fileName = "CuponCanjeado.pdf";
+                        String extension;
+                        String encoding;
+                        String mimeType;
+                        String[] streams;
+                        Warning[] warnings;
+
+                        Byte[] myBytes = reporte.Render("PDF", null, out extension, out encoding, out mimeType, out streams, out warnings);
+                        using (FileStream fs = File.Create(Server.MapPath("~/CuponesDescargados/") + fileName))
+                        {
+                            fs.Write(myBytes, 0, myBytes.Length);
+                        }
+                        Response.Buffer = true;
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-disposition", "inline;filename=" + fileName + ".pdf");
+                        Response.WriteFile(Server.MapPath(Path.Combine("~/CuponesDescargados/" + fileName)));
+                        Response.End();
+                    }
+                    catch (Exception)
+                    {
+                        lblMensaje.Text = "OH NO¡¡ Ha ocurrido un error, no se ha detectado Cupón a Imprimir.";
+                        lblMensaje.CssClass = "alert alert-dismissible alert-danger";
+                        lblMensaje.Visible = true;
+                    }
+
                 }
                 else
                 {

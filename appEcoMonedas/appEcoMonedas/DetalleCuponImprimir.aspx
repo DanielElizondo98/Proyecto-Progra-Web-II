@@ -100,36 +100,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                    <div class="panel-heading">
-                        <h3>Cupon Imprimible</h3>
-                    </div>
-                    <div class="w-100">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <div class="table-responsive" id="divReporte" runat="server">
-                                    <rsweb:ReportViewer ID="ReportViewer1" ZoomMode="PageWidth" Width="100%" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-                                        <LocalReport ReportPath="ReporteCuponCanjeado.rdlc">
-                                            <DataSources>
-                                                <rsweb:ReportDataSource Name="DataSet1" DataSourceId="ObjectDataSource1"></rsweb:ReportDataSource>
-                                            </DataSources>
-                                        </LocalReport>
-                                    </rsweb:ReportViewer>
-
-                                    <asp:ObjectDataSource runat="server" SelectMethod="ObtenerCuponCanjeado" TypeName="LogicaNegocios.CanjeLN" ID="ObjectDataSource1">
-                                        <SelectParameters>
-                                            <asp:SessionParameter DefaultValue="0" Name="idCanje" SessionField="IDCanje" Type="Int32"></asp:SessionParameter>
-                                        </SelectParameters>
-                                    </asp:ObjectDataSource>
-                                </div>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="btnAceptar" EventName="Click" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
