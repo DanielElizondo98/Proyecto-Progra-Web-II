@@ -61,13 +61,13 @@
                                 <label for="archivoImagen" class="control-label col-12">Imagen</label>
                                 <asp:Image ID="imgMaterial" CssClass="col-12 img-fluid img-thumbnail" AlternateText="Imagen del Cupón" Height="16em" runat="server" />
                                 <asp:FileUpload ID="archivoImagen" CssClass="form-control-file" runat="server" />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Debe seleccionar la imagen representativa del Cupón" ControlToValidate="archivoImagen" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rqvArchivoImagen" runat="server" ErrorMessage="* Debe seleccionar la imagen representativa del Cupón" ControlToValidate="archivoImagen" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group row">
                                 <asp:HiddenField ID="hiddenID" runat="server" />
                                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary mr-2" runat="server"
                                     Text="Guardar" OnClick="btnGuardar_Click" />
-                                <asp:Button ID="btnLimpiar" CssClass="btn btn-secondary" runat="server"
+                                <asp:Button ID="btnLimpiar" CssClass="btn btn-secondary" runat="server" CausesValidation="false"
                                     Text="Limpiar" OnClick="btnLimpiar_Click" />
                             </div>
                         </div>
@@ -107,6 +107,11 @@
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                                                 <asp:BoundField DataField="Descripcion" HeaderText="Descripción"></asp:BoundField>
                                                 <asp:BoundField DataField="Precio_Canje" HeaderText="Precio"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Estado">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Convert.ToInt32(Eval("Log_Activo"))==0? "Inactivo":"Activo" %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                                 <asp:CommandField ShowSelectButton="true" HeaderText="Modificar" SelectText="Modificar" />
                                                 <asp:CommandField ShowEditButton="true" HeaderText="Cambiar el Estado" EditText="Cambiar Estado" />
                                             </Columns>

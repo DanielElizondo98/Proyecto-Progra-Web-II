@@ -9,6 +9,9 @@
                 <div id="customer-account" class="col-lg-9 clearfix">
                     <p class="lead">Edita tus datos personales o cambia tu contraseña.</p>
                     <div class="box mt-5">
+                        <div class="row">
+                            <asp:Label ID="lblMensajeContrasenia" runat="server" Visible="false" Width="100%" CssClass="alert alert-dismissible alert-info" Text=""></asp:Label>
+                        </div>
                         <div class="heading">
                             <h3 class="text-uppercase">Cambiar contraseña <i class="fa fa-lock"></i></h3>
                         </div>
@@ -48,7 +51,10 @@
                             <asp:LinkButton ID="btnGuardarContraseña" OnClick="btnGuardarContraseña_Click" ValidationGroup="validaContra" CssClass="btn btn-template-outlined" runat="server"><i class="fa fa-save"></i> Guardar nueva contraseña</asp:LinkButton>
                         </div>
                     </div>
-                    <div class="bo3">
+                    <div class="box">
+                        <div class="row">
+                            <asp:Label ID="lblMensajeDatos" runat="server" Visible="false" Width="100%" CssClass="alert alert-dismissible alert-info" Text=""></asp:Label>
+                        </div>
                         <div class="heading">
                             <h3 class="text-uppercase">Detalles personales <i class="fa fa-id-card-o"></i></h3>
                         </div>
@@ -73,9 +79,9 @@
                                     <asp:Label ID="lblNombreEdita" AssociatedControlID="txtNombreEdita" runat="server" Text="Nombre"></asp:Label>
                                     <asp:TextBox ID="txtNombreEdita" placeholder="Ingrese su nombre" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
-                                         ErrorMessage="* Debe indicar su nombre" ValidationGroup="ValidaDetallesPersonales"
-                                         ControlToValidate="txtNombreEdita" SetFocusOnError="true"
-                                         ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        ErrorMessage="* Debe indicar su nombre" ValidationGroup="ValidaDetallesPersonales"
+                                        ControlToValidate="txtNombreEdita" SetFocusOnError="true"
+                                        ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
                                         runat="server" ValidationGroup="ValidaDetallesPersonales"
                                         ErrorMessage="* El nombre debe de ser maximo de 30 letras."
@@ -91,9 +97,9 @@
                                     <asp:Label ID="lblApellido1Edita" AssociatedControlID="txtApellido1Edita" runat="server" Text="Primer Apellido"></asp:Label>
                                     <asp:TextBox ID="txtApellido1Edita" placeholder="Ingrese su primer apellido" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"
-                                         ErrorMessage="* Debe indicar su primer apellido" ValidationGroup="ValidaDetallesPersonales"
-                                         ControlToValidate="txtApellido1Edita" SetFocusOnError="true"
-                                         ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        ErrorMessage="* Debe indicar su primer apellido" ValidationGroup="ValidaDetallesPersonales"
+                                        ControlToValidate="txtApellido1Edita" SetFocusOnError="true"
+                                        ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3"
                                         runat="server" ValidationGroup="ValidaDetallesPersonales"
                                         ErrorMessage="* El primer apellido debe de ser maximo de 30 letras."
@@ -107,9 +113,9 @@
                                     <asp:Label ID="lblApellido2Edita" AssociatedControlID="txtApellido2Edita" runat="server" Text="Segundo Apellido"></asp:Label>
                                     <asp:TextBox ID="txtApellido2Edita" placeholder="Ingrese su segundo apellido" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
-                                         ErrorMessage="* Debe indicar su segundo apellido" ValidationGroup="ValidaDetallesPersonales"
-                                         ControlToValidate="txtApellido2Edita" SetFocusOnError="true"
-                                         ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        ErrorMessage="* Debe indicar su segundo apellido" ValidationGroup="ValidaDetallesPersonales"
+                                        ControlToValidate="txtApellido2Edita" SetFocusOnError="true"
+                                        ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4"
                                         runat="server" ValidationGroup="ValidaDetallesPersonales"
                                         ErrorMessage="* El segundo apellido debe de ser maximo de 30 letras."
@@ -124,10 +130,10 @@
                                 <div class="form-group">
                                     <asp:Label ID="lblTelefonoEdita" AssociatedControlID="txtTelefonoEdita" runat="server" Text="Teléfono"></asp:Label>
                                     <asp:TextBox ID="txtTelefonoEdita" placeholder="Ingrese su teléfono" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                                        ErrorMessage="* Debe digitar el número de teléfono de contacto" 
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server"
+                                        ErrorMessage="* Debe digitar el número de teléfono de contacto"
                                         ControlToValidate="txtTelefonoEdita" ValidationGroup="ValidaDetallesPersonales"
-                                         SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5"
                                         runat="server" ValidationGroup="ValidaDetallesPersonales"
                                         ErrorMessage="* El teléfono solo debe contener números (Sin guiones)."
@@ -142,10 +148,10 @@
                                 <div class="form-group">
                                     <asp:Label ID="lblDireccionEdita" AssociatedControlID="txtDireccionEdita" runat="server" Text="Dirección"></asp:Label>
                                     <asp:TextBox ID="txtDireccionEdita" placeholder="Ingrese su dirección" TextMode="MultiLine" Rows="3" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
-                                        ErrorMessage="* Debe digitar una breve descripcion sobre su ubicacion de residencia" 
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server"
+                                        ErrorMessage="* Debe digitar una breve descripcion sobre su ubicacion de residencia"
                                         ControlToValidate="txtDireccionEdita" ValidationGroup="ValidaDetallesPersonales"
-                                         SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -163,10 +169,10 @@
                         </div>
                         <div class="panel-body">
                             <ul class="nav nav-pills flex-column text-sm">
-                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link active"><i class="fa fa-id-card-o"></i> Editar Perfil</a></li>
-                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i> Billetera</a></li>
-                                <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-exchange"></i> Historial de canjes</a></li>                         
-                                <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>Canjes de materiales</a></li>
+                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link active"><i class="fa fa-id-card-o"></i>  Editar Perfil</a></li>
+                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i>  Billetera</a></li>
+                                <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-file-o"></i>  Historial de Cupones Canjeados</a></li>
+                                <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>  Canjes de materiales</a></li>
                                 <li class="nav-item">
                                     <asp:LinkButton ID="btnCerrarSesion" CssClass="nav-link" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
                                     <span class="d-none d-md-inline-block">Cerrar Sesión</span></asp:LinkButton></li>

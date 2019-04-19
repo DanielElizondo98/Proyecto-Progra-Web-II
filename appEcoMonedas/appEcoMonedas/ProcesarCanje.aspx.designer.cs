@@ -148,15 +148,6 @@ namespace appEcoMonedas {
         protected global::System.Web.UI.WebControls.HiddenField hiddenIDCentro;
         
         /// <summary>
-        /// Control btnProcesar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnProcesar;
-        
-        /// <summary>
         /// Control btnVolverCarrito.
         /// </summary>
         /// <remarks>
@@ -164,6 +155,15 @@ namespace appEcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink btnVolverCarrito;
+        
+        /// <summary>
+        /// Control btnProcesar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnProcesar;
         
         /// <summary>
         /// Control RequiredFieldValidator2.

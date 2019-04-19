@@ -43,7 +43,7 @@ namespace appEcoMonedas
             if (!IsPostBack)
             {
                 Session["estadoCarga"] = 1;
-                
+
                 CargarListadoCuponesGrid();
             }
         }
@@ -61,12 +61,11 @@ namespace appEcoMonedas
             lblMensaje.Text = "";
             lblMensaje.CssClass = "alert alert-dismissible alert-danger";
         }
-
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             limpiaMensaje();
             Boolean archivoOK = false;
-            String path = Server.MapPath("~/imagenes/");
+            String fileName = "";
             if (archivoImagen.HasFile)
             {
                 String fileExtension = System.IO.Path.GetExtension(archivoImagen.FileName).ToLower();
@@ -78,42 +77,44 @@ namespace appEcoMonedas
                         archivoOK = true;
                     }
                 }
-            }
-
-            if (archivoOK)
-            {
-                try
+                if (archivoOK)
                 {
-                    archivoImagen.PostedFile.SaveAs(path + "cupon/" + archivoImagen.FileName);
-                }
-                catch (Exception ex)
-                {
-                    lblMensaje.Visible = true;
-                    lblMensaje.Text = ex.Message;
-                }
-
-                bool confirmar = CuponLN.GuardarCupon(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, hiddenID.Value);
-                if (confirmar)
-                {
-
-                    // Recargar la pagina
-                    string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
-                    Response.Redirect("MantenimientoCupon.aspx?accion=" + accion);
-
+                    try
+                    {
+                        String path = Server.MapPath("~/imagenes/");
+                        archivoImagen.PostedFile.SaveAs(path + "cupon/" + archivoImagen.FileName);
+                        fileName = archivoImagen.FileName;
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMensaje.Visible = true;
+                        lblMensaje.Text = ex.Message;
+                    }
                 }
                 else
                 {
                     lblMensaje.Visible = true;
-                    lblMensaje.Text = "No se puede agregar un nuevo Cupon";
+                    lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
+                    return;
                 }
+            }
+            bool confirmar = CuponLN.GuardarCupon(txtNombre.Text, txtDescripcion.Text, txtPrecio.Text, archivoImagen.FileName, hiddenID.Value);
+            if (confirmar)
+            {
+
+                // Recargar la pagina
+                string accion = (hiddenID.Value == "" || hiddenID.Value == "0") ? "nuevo" : "actu";
+                rqvArchivoImagen.Enabled = true;
+                Response.Redirect("MantenimientoCupon.aspx?accion=" + accion);
+
             }
             else
             {
-
                 lblMensaje.Visible = true;
-                lblMensaje.Text = "No se puede aceptar el tipo de archivo.";
+                lblMensaje.Text = "No se puede agregar un nuevo Cupon";
             }
         }
+
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -136,6 +137,7 @@ namespace appEcoMonedas
             txtPrecio.Text = cup.Precio_Canje.ToString();
             imgMaterial.ImageUrl = "~/imagenes/cupon/" + cup.Imagen;
             hiddenID.Value = cup.ID.ToString();
+            rqvArchivoImagen.Enabled = false;
         }
 
         protected void grvListado_RowEditing(object sender, GridViewEditEventArgs e)
