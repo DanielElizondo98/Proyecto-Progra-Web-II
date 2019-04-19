@@ -31,28 +31,32 @@
             <div class="row d-flex align-items-stretch same-height">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="box-simple box-white same-height">
-                        <div class="icon"><i class="fa fa-desktop"></i></div>
+                        <div class="icon" style="margin-bottom:0";>
+                            <img src="img/Iconos/miuser.png" class="img-fluid" style="width:2.5em"/></div>
                         <h4>Usuario</h4>
                         <p>En este mantenimiento usted podrá agregar nuevos administradores de centro de acopio y gestionar usuarios existentes.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="box-simple box-white same-height">
-                        <div class="icon"><i class="fa fa-print"></i></div>
+                        <div class="icon">
+                            <img src="img/Iconos/micentro.png" class="img-fluid" style="width:2em"/></div>
                         <h4>Centros de Acopio</h4>
                         <p>En este mantenimiento usted podrá ingresar, editar y deshabilitar centros de acopio pertenecientes al proyecto Eco-monedas.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="box-simple box-white same-height">
-                        <div class="icon"><i class="fa fa-globe"></i></div>
+                        <div class="icon" style="margin-bottom:0";>
+                            <img src="img/Iconos/mimaterial.png" class="img-fluid" style="width:2.5em"/></div>
                         <h4>Materiales</h4>
                         <p>En este mantenimiento usted podrá ingresar, editar y deshabilitar materiales utilizados por los centros de acopio.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="box-simple box-white same-height">
-                        <div class="icon"><i class="fa fa-globe"></i></div>
+                        <div class="icon">
+                            <img src="img/Iconos/canjee.png" class="img-fluid" style="width:2em"/></div>
                         <h4>Cupones</h4>
                         <p>En este mantenimiento usted podrá ingresar, editar y deshabilitar los cupones que ofrece el proyecto Eco-monedas a cambio de los materiales reciclables.</p>
                     </div>

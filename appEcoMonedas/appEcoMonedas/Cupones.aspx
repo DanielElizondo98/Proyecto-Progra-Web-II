@@ -17,6 +17,7 @@
     <div id="content">
         <div class="container">
             <div class="row bar">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="col-12 alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
 
                 <div id="blog-listing-medium" class="col-md-9">
                     <asp:ListView ID="lvCupones" runat="server"
@@ -86,9 +87,9 @@
                     <div class="panel">
                         <div class="panel-body">
                             <ul class="nav nav-pills flex-column text-sm">
-                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i>  Billetera</a></li>
-                                <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-file-o"></i>  Historial de Cupones Canjeados</a></li>
-                                <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>  Canjes de materiales</a></li>
+                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i>Billetera</a></li>
+                                <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-file-o"></i>Historial de Cupones Canjeados</a></li>
+                                <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>Canjes de materiales</a></li>
                             </ul>
                         </div>
                     </div>

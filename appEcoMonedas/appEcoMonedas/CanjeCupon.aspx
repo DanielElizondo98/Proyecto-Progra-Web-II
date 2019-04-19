@@ -28,8 +28,7 @@
                         <h3>Datos del Cupón</h3>
                     </div>
                     <asp:ListView ID="gvCupon" runat="server"
-                        ItemType="Contexto.Cupon"
-                        SelectMethod="ObtenerCupon">
+                        ItemType="Contexto.Cupon">
                         <ItemTemplate>
 
                             <div class="box" style="margin-top: 1em; margin-bottom: 1em;">

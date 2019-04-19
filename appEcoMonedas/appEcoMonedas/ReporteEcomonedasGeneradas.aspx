@@ -18,8 +18,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total de clientes</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">15 clientes</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><asp:Label runat="server" ID="lblTotalClientes"></asp:Label></div>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total de clientes activos</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fa fa-user fa-2x text-gray-300"></i>
@@ -33,8 +33,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total de centros de acopio</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">12 Centros</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><asp:Label runat="server" ID="lblTotalCentros"></asp:Label></div>
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total de centros de acopio activos</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fa fa-home fa-2x text-gray-300"></i>
@@ -48,8 +48,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total de materiales</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">12 Centros</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><asp:Label runat="server" ID="lblTotalMats"></asp:Label></div>
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total de materiales canjeables</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fa fa-recycle fa-2x text-gray-300"></i>
@@ -63,8 +63,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de cupones canjeables</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18 cupones</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><asp:Label runat="server" ID="lblTotalCupones"></asp:Label></div>
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de cupones disponibles</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fa fa-qrcode fa-2x text-gray-300"></i>

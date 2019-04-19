@@ -118,7 +118,7 @@
                             <div class="row">
                                 <div class="col-12">
                                 <asp:HiddenField ID="hiddenIDCentro" runat="server" />
-                                    <asp:HyperLink ID="btnVolverCarrito" CssClass="btn btn-default text-dark" NavigateUrl="~/Carrito.aspx" runat="server">Volver al carrito <i class="fa fa-chevron-left"></i></asp:HyperLink>
+                                    <asp:HyperLink ID="btnVolverCarrito" CssClass="btn btn-default text-dark" NavigateUrl="~/Carrito.aspx" runat="server"><i class="fa fa-chevron-left">  </i>  Volver al carrito </asp:HyperLink>
                                     <asp:LinkButton ID="btnProcesar" ValidationGroup="validaProcesado" OnClick="btnProcesar_Click" CssClass="btn btn-primary text-white" runat="server"><i class="fa fa-recycle gly-rotate-45"></i>  Procesar Canje</asp:LinkButton>
                                 </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Debe buscar un cliente antes de realizar el canje. Proceda a buscar el cliente para efectuar el canje" ValidationGroup="validaProcesado" ControlToValidate="txtCorreoCliente" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
