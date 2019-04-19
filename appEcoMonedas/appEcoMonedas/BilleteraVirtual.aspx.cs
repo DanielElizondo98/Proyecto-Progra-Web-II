@@ -13,9 +13,13 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            Usuario usu = (Usuario)Session["Usuario"];
+            if (usu != null)
             {
-                llenaBilletera();
+                if (!IsPostBack)
+                {
+                    llenaBilletera();
+                }
             }
         }
 
@@ -33,11 +37,11 @@ namespace appEcoMonedas
             List<Canje> listaCanjes = new List<Canje>();
 
             Usuario usu = (Usuario)Session["Usuario"];
-            if (usu!=null)
+            if (usu != null)
             {
                 string id = usu.Correo;
 
-                listaCanjes = CanjeLN.ObtenerListaCanjexUsuario(id,0).ToList();
+                listaCanjes = CanjeLN.ObtenerListaCanjexUsuario(id, 0).ToList();
             }
             return listaCanjes;
         }

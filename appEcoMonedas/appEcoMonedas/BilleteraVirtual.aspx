@@ -56,26 +56,39 @@
             </div>
             <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas.</p>
 
-            <div class="offset-1 col-md-10">
+            <div class="col-md-7">
                 <div id="accordion" role="tablist" class="mb-5">
                     <asp:ListView ID="lvRecibos" runat="server"
                         ItemType="Contexto.Canje"
                         SelectMethod="ObtenerCanjesUsuario">
+                        <EmptyDataTemplate>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <asp:Label ID="lblMensaje" runat="server" Width="100%" 
+                                        CssClass="alert alert-dismissible alert-info" Text="No hay cupones consumidos hasta el momento. Consulte el Historial de Cupones"></asp:Label>
+                                </div>
+                            </div>
+                        </EmptyDataTemplate>
                         <ItemTemplate>
                             <div class="card">
                                 <div role="tab" class="card-header">
                                     <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="false" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
-                                    <h4><%#:Item.FechaCanje.ToShortDateString()%></h4>
+                                    <h4 class="text-secondary"><%#:Item.FechaCanje.ToShortDateString()%></h4>
                                 </div>
 
                                 <div id="<%#:Item.ID %>" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <%--<asp:Image ID="imgCupon" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("Imagen", "~/imagenes/cupon/{0}")%>' />--%>
+                                            <div class="col-md-3">
+                                                <asp:Image ID="imgCupon" runat="server" CssClass="img-fluid" ImageUrl='<%# Eval("Cupon.Imagen", "~/imagenes/cupon/{0}")%>' />
                                             </div>
-                                            <div class="col-md-8">
-                                                <p><%#:Item.Cupon.Descripcion%></p>
+                                            <div class="col-md-5">
+                                                <h4 class="h4" style="color: #4fbfa8">Descripción del Cupón:</h2>
+                                                <p class="h5 text-secondary"><%#:Item.Cupon.Descripcion%></p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h4 class="h4" style="color: #4fbfa8">EcoMonedas Gastadas:</h2>
+                                                <p class="h5 text-secondary"><%#:String.Format("‎{0:N2} Ecomonedas", Item.Cupon.Precio_Canje)%></p>
                                             </div>
                                         </div>
                                     </div>
@@ -84,6 +97,18 @@
                         </ItemTemplate>
                     </asp:ListView>
                 </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel mx-auto">
+                    <div class="panel-body">
+                        <ul class="nav nav-pills flex-column text-sm">
+                            <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-file-o"></i>  Historial de Cupones Canjeados</a></li>
+                            <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>  Canjes de materiales</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <asp:Image ID="imgCupon" runat="server" CssClass="img-fluid" ImageUrl="img/Iconos/ecoFriendly2.png" />
             </div>
         </div>
     </section>

@@ -95,9 +95,6 @@
                                 <a href="InicioCliente.aspx" class="nav-link">Inicio</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="InicioCliente.aspx" class="nav-link">¿Qué Reciclamos?</a>
-                            </li>
-                            <li class="nav-item dropdown">
                                 <a href="Cupones.aspx" class="nav-link">Cupones</a>
                             </li>
                             <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Perfil <b class="caret"></b></a>

@@ -30,7 +30,13 @@ namespace appEcoMonedas
             txtTelefonoEdita.Text = us.Telefono.ToString();
 
         }
-
+        private void limpiarMensajes()
+        {
+            lblMensajeContrasenia.Text = "";
+            lblMensajeContrasenia.Visible = false;
+            lblMensajeDatos.Text = "";
+            lblMensajeDatos.Visible = false;
+        }
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
@@ -39,6 +45,7 @@ namespace appEcoMonedas
 
         protected void btnGuardarContraseña_Click(object sender, EventArgs e)
         {
+            limpiarMensajes();
             if (Page.IsValid)
             {
                 Usuario us = (Usuario)Session["Usuario"];
@@ -47,14 +54,19 @@ namespace appEcoMonedas
                 us.Contrasenia = txtContraseniaNueva.Text;
                 Session["Usuario"] = us;
                 LimpiarFormularioContrasenia();
+                lblMensajeContrasenia.Visible = true;
+                lblMensajeContrasenia.Text = "Contraseña actualizada correctamente.";
             }
         }
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            limpiarMensajes();
             Usuario us = (Usuario)Session["Usuario"];
             ActualizarDetallesUsuario(us);
             UsuarioLN.GuardarUsuario(us);
+            lblMensajeDatos.Visible = true;
+            lblMensajeDatos.Text = "Se han realizado cambios en tus datos personales correctamente.";
         }
 
         private void LimpiarFormularioContrasenia()

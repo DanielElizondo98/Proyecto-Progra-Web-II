@@ -9,6 +9,9 @@
                 <div id="customer-account" class="col-lg-9 clearfix">
                     <p class="lead">Edita tus datos personales o cambia tu contraseña.</p>
                     <div class="box mt-5">
+                        <div class="row">
+                            <asp:Label ID="lblMensajeContrasenia" runat="server" Visible="false" Width="100%" CssClass="alert alert-dismissible alert-info" Text=""></asp:Label>
+                        </div>
                         <div class="heading">
                             <h3 class="text-uppercase">Cambiar contraseña <i class="fa fa-lock"></i></h3>
                         </div>
@@ -48,7 +51,10 @@
                             <asp:LinkButton ID="btnGuardarContraseña" OnClick="btnGuardarContraseña_Click" ValidationGroup="validaContra" CssClass="btn btn-template-outlined" runat="server"><i class="fa fa-save"></i> Guardar nueva contraseña</asp:LinkButton>
                         </div>
                     </div>
-                    <div class="bo3">
+                    <div class="box">
+                        <div class="row">
+                            <asp:Label ID="lblMensajeDatos" runat="server" Visible="false" Width="100%" CssClass="alert alert-dismissible alert-info" Text=""></asp:Label>
+                        </div>
                         <div class="heading">
                             <h3 class="text-uppercase">Detalles personales <i class="fa fa-id-card-o"></i></h3>
                         </div>
@@ -163,10 +169,10 @@
                         </div>
                         <div class="panel-body">
                             <ul class="nav nav-pills flex-column text-sm">
-                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link active"><i class="fa fa-id-card-o"></i>Editar Perfil</a></li>
+                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link active"><i class="fa fa-id-card-o"></i>  Editar Perfil</a></li>
                                 <li class="nav-item">
                                     <asp:LinkButton ID="btnCerrarSesion" CssClass="nav-link" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>
-                                    <span class="d-none d-md-inline-block">Cerrar Sesión</span></asp:LinkButton></li>
+                                    <span class="d-none d-md-inline-block">  Cerrar Sesión</span></asp:LinkButton></li>
                             </ul>
                         </div>
                     </div>

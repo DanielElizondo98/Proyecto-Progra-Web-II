@@ -13,13 +13,14 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-homepage.png" alt="" class="img-fluid" />
+                                    <img src="img/Iconos/Recolecte.png" alt="" class="img-fluid" style="margin: auto; margin-top: 0em; width: 20em;"/>
                                 </div>
                                 <div class="col-md-5">
-                                    <h1>Multipurpose responsive theme</h1>
+                                    <h1>Recolecte Los Materiales</h1>
                                     <p>
-                                        Business. Corporate..<br />
-                                        Portfolio. Blog. E-commerce.
+                                        Recolecte residuos como plástico, cartón, aluminio, metales, etc.<br />
+                                        Recuerde separarlos correctamente para agilizar el proceso de reciclaje.<br />
+                                        Además de asegurarse de que que los mismos se encuentren limpios sin residuos de comida o similares.
                                     </p>
                                 </div>
                             </div>
@@ -27,15 +28,14 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7 text-center">
-                                    <img src="img/template-mac.png" alt="" class="img-fluid" />
+                                    <img src="img/Iconos/centroAcopio.png" alt="" class="img-fluid" style="margin: auto; margin-top: 0em; width: 26em;"/>
                                 </div>
                                 <div class="col-md-5">
-                                    <h2>46 HTML pages full of features</h2>
+                                    <h2>Entregue al Centro de Acopio</h2>
                                     <ul class="list-unstyled">
-                                        <li>Sliders and carousels</li>
-                                        <li>4 Header variations</li>
-                                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                                        <li>+ 11 extra pages showing template features</li>
+                                        <li>Entregue sus materiales al centro de acopio más cercano.</li>
+                                        <li>Muchos de ellos ofrecen servicio de transporte de los materiales, 
+                                            consulte con el administrador del centro de acopio.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -43,15 +43,14 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-easy-customize.png" alt="" class="img-fluid" />
+                                    <img src="img/Iconos/genere.png" alt="" class="img-fluid" style="margin: auto; margin-top: 0em; width: 20em;"/>
                                 </div>
                                 <div class="col-md-5">
-                                    <h1>Design</h1>
+                                    <h1>Genere y Ahorre</h1>
                                     <ul class="list-unstyled">
-                                        <li>Clean and elegant design</li>
-                                        <li>Full width and boxed mode</li>
-                                        <li>Easily readable Roboto font and awesome icons</li>
-                                        <li>7 preprepared colour variations</li>
+                                        <li>Con cada transacción realizada generará EcoMonedas</li>
+                                        <li>Las mismas podrán ser acumuladas en su Billetera Virtual para compras futuras.</li>
+                                        <li>Cada transacción generará una cantidad de EcoMonedas relativa a lo que usted recicle.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -59,13 +58,27 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <img src="img/template-easy-code.png" alt="" class="img-fluid" />
+                                    <img src="img/Iconos/canjee.png" alt="" class="img-fluid" style="margin: auto; margin-top: 0em; width: 20em;"/>
                                 </div>
                                 <div class="col-md-5">
-                                    <h1>Easy to customize</h1>
+                                    <h1>Canjee sus Ecomonedas por Cupones</h1>
                                     <ul class="list-unstyled">
-                                        <li>7 preprepared colour variations.</li>
-                                        <li>Easily to change fonts</li>
+                                        <li>Con las EcoMonedas que usted genere podrá acceder a la compra de una gran cantidad de Cupones</li>
+                                        <li>Elija entre las muchas opciones los cupones que le resulten más atractivos e intercámbielos por sus EcoMonedas disponibles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <img src="img/Iconos/compre.png" alt="" class="img-fluid" style="margin: auto; margin-top: 0em; width: 20em;"/>
+                                </div>
+                                <div class="col-md-5">
+                                    <h1>Presente sus Cupones en los Establecimientos Asociados</h1>
+                                    <ul class="list-unstyled">
+                                        <li>Cada cupón que adquiera le brindará diversas opciones, algunas de ellas son servicios y descuentos</li>
+                                        <li>Otros los podrá intercambiar por productos en los establecimientos Asociados a nuestro Programa</li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,13 +92,20 @@
     <section class="bar bg-gray no-mb padding-big text-md-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="text-uppercase">¿Qué es el proyecto Eco-Monedas?</h2>
-                    <p class="lead mb-small">Un proyecto amigable con el ambiente</p>
-                    <p class="mb-small"><strong>Eco-monedas es una iniciativa que busca promover el reciclaje, de forma adecuada, con el fin de ayudar al medio ambiente, recibiendo a cambio una bonificación por una buena acción</strong></p>
+                <div class="col-md-8">
+                    <h2 class="text-uppercase">¿Por qué es importante el Reciclaje?</h2>
+                    <p class="lead mb-small">Un Hogar Limpio y Sano para Todos</p>
+                    <p class="mb-small"><strong>Cada día se producen miles de toneladas de desechos en todo el planeta, 
+                        la mayoría de estos desechos acaban contaminando el suelo, el aire y el agua, 
+                        todo esto causado por el egoísmo de las sociedades capitalistas y todas esas personas cegadas por la ignorancia. 
+                        En un planeta donde el contaminar es lo normal el reciclar se vuelve en un acto rebelde y de valentía, 
+                        estamos fomentanto nuestra propia extinción. Entonces la verdadera pregunta es ¿Por qué no hacerlo?, 
+                        si es la solución al creciente problema de exceso de residuos contaminantes, ¿Qué nos detiene?</strong></p>
+                    <p class="mb-small"><strong>Con el proyecto EcoMonedas buscamos fomentar esa rebeldía y valentía de la que hablamos, 
+                        un envase a la vez. Al crear este programa queremos premiar a todas esas personas que fomentan realmente al cambio.</strong></p>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="img/template-easy-customize.png" alt="" class="img-fluid" />
+                <div class="col-md-4 text-center">
+                    <img src="img/Iconos/recycling.png" alt="" class="img-fluid" />
                 </div>
             </div>
         </div>
@@ -93,13 +113,18 @@
     <section class="bar no-mb color-white padding-big text-md-center bg-primary">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="img/template-easy-code.png" alt="" class="img-fluid" />
+                <div class="col-md-4 text-center">
+                    <img src="img/Iconos/personas4.jpg" alt="" class="img-fluid" />
                 </div>
-                <div class="col-md-6">
-                    <h2 class="text-uppercase">¿Cómo nació el programa Eco-Monedas?</h2>
-                    <p class="lead mb-small">Menos desechos, ganancia para todos</p>
-                    <p class="mb-small"><strong>Nació como solución, ante la creciente problemática relacionada con el exceso de desechos inorgánicos, y el abstencionismo de los costarricense en lo que a materia de reciclaje se refiere.</strong></p>
+                <div class="col-md-8">
+                    <h2 class="text-uppercase">Acerca del Proceso pre-Entrega</h2>
+                    <p class="lead mb-small">¿Cómo clasificar y tratar los residuos?</p>
+                    <p class="mb-small"><strong>Los Materiales que usted vaya a entregar 
+                        al centro de acopio deberán ir sin rastros de comida u otros desechos, 
+                        es decir deben ir limpios y secos en el caso que se hayan lavado, 
+                        esto con el fin de agilizar el proceso de reciclaje. 
+                        deberán también ir correctamente clasificados por tipo, 
+                        según lo indica la lista de materiales aceptados en nuestros Centro de Acopio</strong></p>
                 </div>
             </div>
         </div>

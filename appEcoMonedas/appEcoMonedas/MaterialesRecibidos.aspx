@@ -71,7 +71,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 banner mb-small text-center">
-                            <img src="img/banner2.jpg" alt="" class="img-fluid" />
+                            <img src="img/Iconos/EnFamilia_60.jpg" alt="" class="img-fluid" />
                         </div>
                     </div>
                 </div>

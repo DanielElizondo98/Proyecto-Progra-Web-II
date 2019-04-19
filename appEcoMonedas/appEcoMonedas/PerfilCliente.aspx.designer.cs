@@ -13,6 +13,15 @@ namespace appEcoMonedas {
     public partial class PerfilCliente {
         
         /// <summary>
+        /// Control lblMensajeContrasenia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensajeContrasenia;
+        
+        /// <summary>
         /// Control lblContraseniaActual.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace appEcoMonedas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnGuardarContraseña;
+        
+        /// <summary>
+        /// Control lblMensajeDatos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensajeDatos;
         
         /// <summary>
         /// Control lblCorreoEdita.
