@@ -24,7 +24,7 @@ namespace LogicaNegocios
             return lista;
         }
 
-        public static bool GuardarCanje(string idCliente, string idCupon, DateTime fecha)
+        public static int GuardarCanje(string idCliente, string idCupon, DateTime fecha)
         {
             try
             {
@@ -40,9 +40,9 @@ namespace LogicaNegocios
 
                 db.SaveChanges();
 
-                return true;
+                return miCanje.ID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -55,7 +55,7 @@ namespace LogicaNegocios
         //    {
         //        var db = new BD_EcomonedasContext();
         //        //recordar el where para solo los activos
-        //        List<Canje> lista = ((List<Canje>)db.Canje.Where(x => x.ID == idCanje));
+        //        List<Canje> lista = ((List<Canje>)db.Canje.Where(x => x.ID == idCanje).ToList());
         //        foreach (var item in lista)
         //        {
         //            item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
@@ -68,8 +68,9 @@ namespace LogicaNegocios
         //    }
         //}
 
-        public static List<CuponCanjeado> ObtenerCuponCanjeado(Canje canje)
+        public static List<CuponCanjeado> ObtenerCuponCanjeado(int idCanje)
         {
+            Canje canje = CanjeLN.ObtenerCanje(idCanje);
             List<CuponCanjeado> lista = new List<CuponCanjeado>();
             CuponCanjeado nuevoCupon = new CuponCanjeado();
             nuevoCupon.DescCupon = canje.Cupon.Descripcion;
