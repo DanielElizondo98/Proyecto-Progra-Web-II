@@ -720,11 +720,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CuponesDescargados\" />
     <Folder Include="imagenes\cupon\" />
     <Folder Include="imagenes\material\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CuponCanjeado.rdlc" />
     <EmbeddedResource Include="ReporteCuponCanjeado.rdlc" />
     <EmbeddedResource Include="ReporteEcomonedasGeneradas.rdlc" />
   </ItemGroup>

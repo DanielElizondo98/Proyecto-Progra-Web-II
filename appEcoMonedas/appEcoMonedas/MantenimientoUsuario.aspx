@@ -138,11 +138,11 @@
                                             OnSelectedIndexChanged="grvListado_SelectedIndexChanged" OnRowEditing="grvListado_RowEditing" ShowHeaderWhenEmpty="true">
 
                                             <Columns>
-                                                <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
-                                                <asp:BoundField DataField="Apellido1" HeaderText="Primer Apellido"></asp:BoundField>
-                                                <asp:BoundField DataField="Apellido2" HeaderText="Segundo Apellido"></asp:BoundField>
-
-                                                <asp:BoundField DataField="Rol.Descripcion" HeaderText="Rol"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Nombre Completo">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblEstado" runat="server" Text=''><%# String.Format("{0} {1} {2}", Item.Nombre, Item.Apellido1, Item.Apellido2) %></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                                 <asp:BoundField DataField="Correo" HeaderText="Correo"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Estado">
                                                     <ItemTemplate>

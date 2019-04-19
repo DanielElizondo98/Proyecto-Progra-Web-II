@@ -30,6 +30,7 @@ namespace appEcoMonedas
                 Billetera billetera = BilleteraLN.ObtenerBilletera(usu.Correo);
                 Session["Billetera"] = billetera;
                 //System.Drawing.Image img = System.Drawing.Image.FromFile(imgCupon.ImageUrl);
+                //Probar con un DataBinding o con un prerender
                 lblNombreUsuario.Text = usu.Nombre + " " + usu.Apellido1 + " " + usu.Apellido2;
                 txtCorreo.Text = usu.Correo;
                 txtDireccion.Text = usu.Direccion;
@@ -73,13 +74,22 @@ namespace appEcoMonedas
                             Cupon cup = CuponLN.ObtenerCupon(id);
                             if (bille.Ecomonedas_Disponible >= cup.Precio_Canje)
                             {
-                                CanjeLN.GuardarCanje(usu.Correo, id.ToString(), DateTime.Now);
+                                try
+                                {
+                                    int IDCanje = CanjeLN.GuardarCanje(usu.Correo, id.ToString(), DateTime.Now);
 
-                                BilleteraLN.GuardarBilletera(bille.Ecomonedas_Generadas.ToString(),
-                                                                (bille.Ecomonedas_Gastadas + cup.Precio_Canje).ToString(),
-                                                                (bille.Ecomonedas_Disponible - cup.Precio_Canje).ToString(), usu.Correo);
-                                Session["IDCanje"] = id;
-                                Response.Redirect("DetalleCuponImprimir.aspx");
+                                    BilleteraLN.GuardarBilletera(bille.Ecomonedas_Generadas.ToString(),
+                                                                    (bille.Ecomonedas_Gastadas + cup.Precio_Canje).ToString(),
+                                                                    (bille.Ecomonedas_Disponible - cup.Precio_Canje).ToString(), usu.Correo);
+                                    Session["IDCanje"] = IDCanje;
+                                    Response.Redirect("DetalleCuponImprimir.aspx");
+                                }
+                                catch (Exception)
+                                {
+                                    lblMensaje.Text = "OH NO!!, Ha ocurrido un error.";
+                                    lblMensaje.CssClass = "alert alert-dismissible alert-secondary";
+                                    lblMensaje.Visible = true;
+                                }
                             }
                             else
                             {
