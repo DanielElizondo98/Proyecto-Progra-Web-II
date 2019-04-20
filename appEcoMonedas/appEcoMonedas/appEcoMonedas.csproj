@@ -76,6 +76,7 @@
     <Content Include="BilleteraVirtual.aspx" />
     <Content Include="CanjeCupon.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="css\font.css" />
     <Content Include="css\MaterialCSS.css" />
     <Content Include="Cupones.aspx" />
@@ -507,6 +508,13 @@
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoLN\Carrito.cs" />
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cupones.aspx.cs">
       <DependentUpon>Cupones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
