@@ -8,7 +8,8 @@
         <div class="container">
             <div class="row bar" style="padding-top:.5em;">
                 <div class="col-lg-12">
-                    <asp:Label ID="lblfecha" runat="server" CssClass="h3 text-secondary float-lg-right" ><i class="fa fa-calendar">   </i></asp:Label>           
+                    <asp:Label ID="lblfecha" runat="server" CssClass="h3 text-secondary float-lg-right" >
+                        <i class="fa fa-calendar">   </i></asp:Label>           
                 </div>
                 <br />
                 <div class="panel-heading">
