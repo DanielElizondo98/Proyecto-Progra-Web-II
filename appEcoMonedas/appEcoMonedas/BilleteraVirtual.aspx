@@ -54,7 +54,7 @@
             <div class="panel-heading">
                 <h3>Recibo de Cupones Adquiridos</h3>
             </div>
-            <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas.</p>
+            <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas y ya han sido consumidos.</p>
 
             <div class="col-md-7">
                 <div id="accordion" role="tablist" class="mb-5">
