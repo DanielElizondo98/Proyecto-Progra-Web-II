@@ -226,8 +226,6 @@
     <Content Include="css\style.violet.css" />
     <Content Include="img\Logo-Ico.png" />
     <Content Include="img\person-2.jpg" />
-    <Content Include="img\apple-touch-icon-114x114.png" />
-    <Content Include="img\apple-touch-icon-120x120.png" />
     <Content Include="img\apple-touch-icon-144x144.png" />
     <Content Include="img\apple-touch-icon-152x152.png" />
     <Content Include="img\apple-touch-icon-57x57.png" />
