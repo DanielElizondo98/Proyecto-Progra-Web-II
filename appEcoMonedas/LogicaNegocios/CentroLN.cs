@@ -82,7 +82,7 @@ namespace LogicaNegocios
 
                 if (esNumero || idCentro > 0)
                 {
-                    miCentro = db.Centro.Where(x => x.ID == idCentro).First<Centro>();
+                    miCentro = db.Centro.Where(x => x.ID == idCentro).FirstOrDefault<Centro>();
                 }
 
                 miCentro.Nombre = nombre;

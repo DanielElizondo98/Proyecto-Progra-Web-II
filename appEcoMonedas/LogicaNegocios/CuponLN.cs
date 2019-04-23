@@ -37,11 +37,11 @@ namespace LogicaNegocios
         public static Cupon ObtenerCupon(int id)
         {
             var db = new BD_EcomonedasContext();
-            Cupon cup = db.Cupon.Where(x => x.ID == id).First<Cupon>();
+            Cupon cup = db.Cupon.Where(x => x.ID == id).FirstOrDefault<Cupon>();
             return cup;
         }
 
-        public static bool GuardarCupon(string nombre, string descripcion, string precio, string imagen, string id = "")
+        public static bool GuardarCupon(string nombre, string descripcion, string precio, string imagen = "", string id = "")
         {
             var db = new BD_EcomonedasContext();
 
@@ -58,7 +58,8 @@ namespace LogicaNegocios
             miCupon.Nombre = nombre;
             miCupon.Descripcion = descripcion;
             miCupon.Precio_Canje = Convert.ToDouble(precio);
-            miCupon.Imagen = imagen;
+            if (!imagen.Equals(""))
+                miCupon.Imagen = imagen;
             miCupon.Log_Activo = 1;
 
             if (id.Equals("") || !esNumero)

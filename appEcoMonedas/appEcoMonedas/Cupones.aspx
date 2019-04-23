@@ -17,6 +17,7 @@
     <div id="content">
         <div class="container">
             <div class="row bar">
+                <asp:Label ID="lblMensaje" runat="server" CssClass="col-12 alert alert-dismissible alert-danger" Visible="false" Text=""></asp:Label>
 
                 <div id="blog-listing-medium" class="col-md-9">
                     <asp:ListView ID="lvCupones" runat="server"
@@ -83,16 +84,13 @@
                             <p>Los cupones que se muestran en la lista están disponibles para ser canjeados por ecomonedas en su cuenta, cada uno posee un precio diferente que se encuentra detallado el la información del cupón. No todos los cupones (cupones de vales en establecimientos) son para cualquier establecimiento, tienda o local, es por ello que debe leer cuidadosamente en qué local puede canjear el cupón. Los productos serán enviados a la dirección detallada en su perfil o llegarán directamente al centro de acopio más cercano.</p>
                         </div>
                     </div>
-                    <div class="panel panel-default sidebar-menu">
-                        <div class="panel-heading">
-                            <h3 class="h4 panel-title">Buscar</h3>
-                        </div>
+                    <div class="panel">
                         <div class="panel-body">
-                            <div class="input-group">
-                                <input type="text" placeholder="Buscar" class="form-control" /><span class="input-group-btn">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
-                                </span>
-                            </div>
+                            <ul class="nav nav-pills flex-column text-sm">
+                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i>Billetera</a></li>
+                                <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-file-o"></i>Historial de Cupones Canjeados</a></li>
+                                <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>Canjes de materiales</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

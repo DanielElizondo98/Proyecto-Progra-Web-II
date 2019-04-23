@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrincipalCliente.Master" AutoEventWireup="true" CodeBehind="DetalleCanjeUsuario.aspx.cs" Inherits="appEcoMonedas.DetalleCanjeUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -79,11 +80,11 @@
                             <h3 class="h4 panel-title">Canje de Materiales</h3>
                         </div>
                         <div class="panel-body">
-                            
+
                             <ul class="nav nav-pills flex-column text-sm">
-                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link"><i class="fa fa-id-card-o"></i> Editar Perfil</a></li>
-                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i> Billetera</a></li>
-                                <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-exchange"></i> Historial de canjes</a></li>                         
+                                <li class="nav-item"><a href="PerfilCliente.aspx" class="nav-link"><i class="fa fa-id-card-o"></i>Editar Perfil</a></li>
+                                <li class="nav-item"><a href="BilleteraVirtual.aspx" class="nav-link"><i class="fa fa-money"></i>Billetera</a></li>
+                                <li class="nav-item"><a href="CuponesUsuario.aspx" class="nav-link"><i class="fa fa-exchange"></i>Historial de Cupones Canjeados</a></li>
                                 <li class="nav-item"><a href="ListaCanjesUsuario.aspx" class="nav-link active"><i class="fa fa-exchange"></i>Canjes de materiales</a></li>
                                 <li class="nav-item">
                                     <asp:LinkButton ID="btnCerrarSesion" CssClass="nav-link" OnClick="btnCerrarSesion_Click" runat="server"><i class="fa fa-sign-out"></i>

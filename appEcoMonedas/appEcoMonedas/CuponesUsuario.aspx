@@ -73,10 +73,6 @@
                     </asp:ListView>
                 </div>
 
-                <div class="row">
-                    <hr />
-                </div>
-
                 <div class="col col-md-3">
                     <div class="panel panel-default sidebar-menu">
                         <div class="panel-heading">

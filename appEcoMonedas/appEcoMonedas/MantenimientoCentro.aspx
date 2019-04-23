@@ -94,7 +94,11 @@
                                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"></asp:BoundField>
                                                 <asp:BoundField DataField="Usuario.Nombre" HeaderText="Administrador"></asp:BoundField>
                                                 <asp:BoundField DataField="Provincia.Descripcion" HeaderText="Provincia"></asp:BoundField>
-                                                <asp:BoundField DataField="Otras_Senias" HeaderText="Otras señas"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Estado">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Convert.ToInt32(Eval("Log_Activo"))==0? "Inactivo":"Activo" %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                                 <asp:CommandField ShowSelectButton="true" HeaderText="Modificar" SelectText="Modificar" />
                                                 <asp:CommandField ShowEditButton="true" HeaderText="Cambiar el Estado" EditText="Cambiar Estado" />
                                             </Columns>
