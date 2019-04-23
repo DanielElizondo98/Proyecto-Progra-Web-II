@@ -33,14 +33,17 @@ namespace appEcoMonedas
             Usuario us = (Usuario)Session["Usuario"];
             if(us != null)
             {
-                lblTotal.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
-                CantActual.InnerText = CarritoLN.Carrito.Instancia.totalCantidad().ToString();
+                if (us.ID_Rol == 2)
+                {
+                    lblTotal.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                    CantActual.InnerText = CarritoLN.Carrito.Instancia.totalCantidad().ToString();
 
-                //Resumen del canje
-                lblCentroDeAcopio.Text = CentroLN.ObtenerCentroAdminCentro(us.Correo).Nombre;
-                lblNombreAdminCentro.Text = String.Format("{0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
-                lblSubtotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
-                lblTotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                    //Resumen del canje
+                    lblCentroDeAcopio.Text = CentroLN.ObtenerCentroAdminCentro(us.Correo).Nombre;
+                    lblNombreAdminCentro.Text = String.Format("{0} {1} {2}", us.Nombre, us.Apellido1, us.Apellido2);
+                    lblSubtotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                    lblTotalCanje.Text = CarritoLN.Carrito.Instancia.GetTotal().ToString() + " EcoMonedas";
+                }
             }
         }
 

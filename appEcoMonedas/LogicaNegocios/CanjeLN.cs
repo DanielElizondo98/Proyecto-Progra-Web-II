@@ -96,7 +96,7 @@ namespace LogicaNegocios
                     //item.ImagenCupon = GeneradorQRLN.SerializarImagen(System.Drawing.Image.FromFile("~/imagenes/cupon/" + item.Cupon.Imagen));
                     item.CodigoQR = GeneradorQRLN.SerializarImagen(GeneradorQRLN.GenerarQR(Convert.ToString(item.ID)));
                 }
-                return lista.First();
+                return lista.FirstOrDefault();
             }
             else
             {
@@ -111,7 +111,7 @@ namespace LogicaNegocios
                 var db = new BD_EcomonedasContext();
                 Canje miCanje = new Canje();
 
-                miCanje = db.Canje.Where(x => x.ID == id).First<Canje>();
+                miCanje = db.Canje.Where(x => x.ID == id).FirstOrDefault<Canje>();
 
                 miCanje.Log_Activo = 0;
 

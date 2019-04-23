@@ -37,7 +37,7 @@ namespace LogicaNegocios
         public static Cupon ObtenerCupon(int id)
         {
             var db = new BD_EcomonedasContext();
-            Cupon cup = db.Cupon.Where(x => x.ID == id).First<Cupon>();
+            Cupon cup = db.Cupon.Where(x => x.ID == id).FirstOrDefault<Cupon>();
             return cup;
         }
 

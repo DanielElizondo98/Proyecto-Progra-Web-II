@@ -64,8 +64,9 @@
                                 <br />
                                 <div>
                                     <asp:Label runat="server" ID="label6" CssClass="heading-light h4"><strong>Fecha de Compra:</strong></asp:Label>
-                                    <span>
-                                        <asp:Label ID="lblFechaCompra" CssClass="h4 text-secondary" runat="server" Text="Label"></asp:Label><i class="fa fa-calendar"></i></span>
+                                    
+                                    <asp:Label runat="server" ID="label4" CssClass="h4 text-secondary"><asp:Label ID="lblFechaCompra" CssClass="h4 text-secondary" runat="server" Text="Label"></asp:Label>  <i class="fa fa-calendar"></i></asp:Label>
+                                        
                                 </div>
                                 <br />
                                 <div>

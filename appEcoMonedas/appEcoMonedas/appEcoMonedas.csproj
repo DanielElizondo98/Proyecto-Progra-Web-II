@@ -76,6 +76,7 @@
     <Content Include="BilleteraVirtual.aspx" />
     <Content Include="CanjeCupon.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="css\font.css" />
     <Content Include="css\MaterialCSS.css" />
     <Content Include="Cupones.aspx" />
@@ -114,6 +115,9 @@
     <Content Include="img\Iconos\Mantenimientos.png" />
     <Content Include="img\Iconos\medioambiente.jpg" />
     <Content Include="img\Iconos\memoria-sostenibilidad-2017-266x176.png" />
+    <Content Include="img\Iconos\micentro.png" />
+    <Content Include="img\Iconos\mimaterial.png" />
+    <Content Include="img\Iconos\miuser.png" />
     <Content Include="img\Iconos\personas 2.jpg" />
     <Content Include="img\Iconos\personas.jpg" />
     <Content Include="img\Iconos\personas3 .jpg" />
@@ -222,8 +226,6 @@
     <Content Include="css\style.violet.css" />
     <Content Include="img\Logo-Ico.png" />
     <Content Include="img\person-2.jpg" />
-    <Content Include="img\apple-touch-icon-114x114.png" />
-    <Content Include="img\apple-touch-icon-120x120.png" />
     <Content Include="img\apple-touch-icon-144x144.png" />
     <Content Include="img\apple-touch-icon-152x152.png" />
     <Content Include="img\apple-touch-icon-57x57.png" />
@@ -504,6 +506,13 @@
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoLN\Carrito.cs" />
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cupones.aspx.cs">
       <DependentUpon>Cupones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

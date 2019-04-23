@@ -14,9 +14,44 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            string ID_Canje = Request.QueryString["id"];
+            int id = 0;
+            bool esNumero = int.TryParse(ID_Canje, out id);
+            if (esNumero || id > 0)
             {
-                LlenaDatosUsuario();
+                if (!IsPostBack)
+                {
+                    LlenaDatosUsuario();
+                    try
+                    {
+
+                        cargarDatosCanje(id);
+                    }
+                    catch (Exception)
+                    {
+                        Response.Redirect("Cupones.aspx?Error=NoEncontrado");
+                    }
+                }
+            }
+            else
+            {
+                Response.Redirect("Cupones.aspx?Error=NoEncontrado");
+            }
+        }
+
+        private void cargarDatosCanje(int cuponId)
+        {
+            Cupon cup = CuponLN.ObtenerCupon(cuponId);
+            List<Cupon> listaCupon = new List<Cupon>();
+            if (cup != null)
+            {
+                listaCupon.Add(cup);
+                gvCupon.DataSource = listaCupon;
+                gvCupon.DataBind();
+            }else
+            {
+
+                Response.Redirect("Cupones.aspx?Error=NoEncontrado");
             }
         }
 
@@ -39,18 +74,25 @@ namespace appEcoMonedas
 
         }
 
-        public List<Cupon> ObtenerCupon([QueryString("id")] int? cuponId)
-        {
-            List<Cupon> listaCupon = new List<Cupon>();
-            if (cuponId.HasValue && cuponId > 0)
-            {
-                int id = 0;
-                id = Convert.ToInt32(cuponId);
+        //public List<Cupon> ObtenerCupon([QueryString("id")] int? cuponId)
+        //{
+        //    if(cuponId != null)
+        //    {
+        //        List<Cupon> listaCupon = new List<Cupon>();
+        //        if (cuponId.HasValue && cuponId > 0)
+        //        {
+        //            int id = 0;
+        //            id = Convert.ToInt32(cuponId);
 
-                listaCupon.Add(CuponLN.ObtenerCupon(id));
-            }
-            return listaCupon;
-        }
+        //            listaCupon.Add(CuponLN.ObtenerCupon(id));
+        //        }
+        //        return listaCupon;
+        //    }else
+        //    {
+        //        Response.Redirect("Cupones.aspx?Error=NoEncontrado");
+        //        return null;
+        //    }
+        //}
 
         protected void btnConfirmaCanje_Click(object sender, EventArgs e)
         {

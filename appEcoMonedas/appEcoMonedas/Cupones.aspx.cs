@@ -13,6 +13,17 @@ namespace appEcoMonedas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string error = Request.QueryString["Error"];
+            switch (error)
+            {
+                case "NoEncontrado":
+                    lblMensaje.CssClass = "col-12 alert alert-dismissible alert-danger";
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "Lo sentimos, pero no se ha encontrado el cupón seleccionado";
+                    break;
+                default:
+                    break;
+            }
         }
 
         public IEnumerable<Cupon> ListadoCupones()
