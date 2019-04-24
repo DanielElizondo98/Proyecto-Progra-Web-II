@@ -30,7 +30,7 @@ namespace appEcoMonedas
                         lblMensaje.Visible = true;
                         break;
                     case "desactiva":
-                        lblMensaje.Text = "Centro desactivado satisfactoriamente!";
+                        lblMensaje.Text = "El estado del centro ha cambiado satisfactoriamente!";
                         lblMensaje.CssClass = "row alert alert-dismissible alert-secondary";
                         lblMensaje.Visible = true;
                         break;

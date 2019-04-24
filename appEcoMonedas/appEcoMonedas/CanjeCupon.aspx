@@ -15,7 +15,7 @@
                 <div class="panel-heading">
                     <h3>Canje de Cupón</h3>
                 </div>
-                <p class="lead">En esta página se le muestra información acerca del canje del cupón seleccionado, verifique dicha información sea correcta y que los sus datos peronales (principalmente la dirección) esté actualizada.</p>
+                <p class="lead">En esta página se le muestra información acerca del canje del cupón seleccionado, verifique dicha información sea correcta y que sus datos personales (principalmente la dirección) estén actualizados.</p>
                 <div class="row" style="margin-bottom:1em;">
                     <div class="col-lg-12">
                         <asp:Label ID="lblMensaje" runat="server" CssClass="alert alert-dismissible alert-warning" Visible="false" Text=""></asp:Label>

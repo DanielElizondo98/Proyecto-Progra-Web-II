@@ -73,27 +73,7 @@ namespace appEcoMonedas
             }
 
         }
-
-        //public List<Cupon> ObtenerCupon([QueryString("id")] int? cuponId)
-        //{
-        //    if(cuponId != null)
-        //    {
-        //        List<Cupon> listaCupon = new List<Cupon>();
-        //        if (cuponId.HasValue && cuponId > 0)
-        //        {
-        //            int id = 0;
-        //            id = Convert.ToInt32(cuponId);
-
-        //            listaCupon.Add(CuponLN.ObtenerCupon(id));
-        //        }
-        //        return listaCupon;
-        //    }else
-        //    {
-        //        Response.Redirect("Cupones.aspx?Error=NoEncontrado");
-        //        return null;
-        //    }
-        //}
-
+        
         protected void btnConfirmaCanje_Click(object sender, EventArgs e)
         {
             Usuario usu = (Usuario)Session["Usuario"];
@@ -129,28 +109,28 @@ namespace appEcoMonedas
                                 catch (Exception)
                                 {
                                     lblMensaje.Text = "OH NO!!, Ha ocurrido un error.";
-                                    lblMensaje.CssClass = "alert alert-dismissible alert-secondary";
+                                    lblMensaje.CssClass = "alert alert-dismissible alert-danger";
                                     lblMensaje.Visible = true;
                                 }
                             }
                             else
                             {
                                 lblMensaje.Text = "OH NO!!, No cuenta con las Ecomonedas necesarias para este canje.";
-                                lblMensaje.CssClass = "alert alert-dismissible alert-secondary";
+                                lblMensaje.CssClass = "alert alert-dismissible alert-warning";
                                 lblMensaje.Visible = true;
                             }
                         }
                         else
                         {
                             lblMensaje.Text = "OH NO¡¡ Ha ocurrido un error";
-                            lblMensaje.CssClass = "alert alert-dismissible alert-secondary";
+                            lblMensaje.CssClass = "alert alert-dismissible alert-danger";
                             lblMensaje.Visible = true;
                         }
                     }
                     else
                     {
                         lblMensaje.Text = "OH NO¡¡ Ha ocurrido un error, no se ha detectado un Cupón a Canjear.";
-                        lblMensaje.CssClass = "alert alert-dismissible alert-danger";
+                        lblMensaje.CssClass = "alert alert-dismissible alert-warning";
                         lblMensaje.Visible = true;
                     }
                 }

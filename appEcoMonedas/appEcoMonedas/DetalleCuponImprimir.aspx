@@ -13,11 +13,12 @@
                     <h3>Impresión del Cupón</h3>
                 </div>
                 <p class="lead">
-                    En esta página se le muestra información acerca del cupón seleccionado para ser impreso,
+                    En esta página se le muestra información acerca del cupón seleccionado para ser impreso (<strong>este cupón ya ha sido comprado pero no ha sido consumido</strong>),
                      el cupón se imprime con el fin de presentarlo en los respectivos centros 
                     (tiendas, establecimientos y servicios) asociados al programa ECO-Monedas, 
                     en los cuales usted podrá consumirlos o intercambiarlos por el artículo detallado en la descripción del cupón. 
                     Verifique que la información aquí brindada sea correcta ya que una vez impreso dicho cupón no podrá cambiarlo.
+                    <br /><strong>NOTA: </strong> Recuerde descargar el pdf al que será dirigido al presionar   <strong><i>"Imprimir" </i></strong>   ya que luego no podrá volver a imprimirlo. Si no desea imprimirlo todavía haga click en el botón   <strong><i>"Volver al Historial de Cupones"</i></strong>.
                 </p>
                 <div class="row" style="margin-bottom: 1em; width: 100%">
                     <div class="col-lg-12">
