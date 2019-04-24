@@ -44,17 +44,17 @@
                                 <ItemTemplate>
                                     <div class="col-lg-3 col-md-4">
                                         <div class="product">
-                                            <div class="card-header <%#Item.Color.ClaseCss%>">
+                                            <div class="card-header <%#Item.Color.ClaseCss%>" style="height: 3.5em;">
                                                 <h4 class="my-0 font-weight-normal" style="font-weight: 800 !important;"><%#:Item.Nombre%></h4>
                                             </div>
                                             <div class="image" style="border: 1px solid;">
                                                 <div class="aClass">
-                                                    <asp:Image ID="Image2" runat="server" CssClass="img-fluid image1" ImageUrl='<%# Eval("Imagen", "~/imagenes/material/{0}")%>' />
+                                                    <asp:Image ID="Image2" runat="server" CssClass="img-fluid image1" ImageUrl='<%# Eval("Imagen", "~/imagenes/material/{0}")%>' Width="90%" />
                                                 </div>
                                             </div>
                                             <div class="text">
                                                 <h3 class="h5">
-                                                    <div class="aClass <%#Item.Color.ClaseCss%> p-1"><%#:Item.Nombre%></div>
+                                                    <div class="aClass <%#Item.Color.ClaseCss%> p-1" style="height: 3em;"><%#:Item.Nombre%></div>
                                                 </h3>
                                                 <p class="price">Precio <strong><%#:String.Format("‎{0:N2} Ecomonedas", Item.Precio)%></a></strong></p>
                                                 <p>
