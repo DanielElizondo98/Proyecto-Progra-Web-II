@@ -25,9 +25,13 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Debe ingresar el nombre del material" ControlToValidate="txtNombre" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                                     runat="server"
-                                    ErrorMessage="El nombre solo puede contener letras"
+                                    ErrorMessage='El nombre solo puede contener letras y algunos carácteres especiales (.-_"()). No debe exceder una longitud de 100 carácteres.'
                                     ControlToValidate="txtNombre"
-                                    ValidationExpression="[ A-Za-zñÑäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ-]+"></asp:RegularExpressionValidator>
+                                    ValidationExpression='[ A-Za-zñÑäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ,.\-_"]{1,100}'
+                                    ForeColor="Red" 
+                                    Display="Dynamic"
+                                    SetFocusOnError="true"
+                                    ></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group row">
                                 <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario"></asp:Label>
