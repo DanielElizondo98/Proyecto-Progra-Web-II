@@ -33,10 +33,5 @@ namespace Contexto
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Canje> Canje { get; set; }
-
-        public override string ToString()
-        {
-            return Nombre + "Precio: " + Precio_Canje;
-        }
     }
 }

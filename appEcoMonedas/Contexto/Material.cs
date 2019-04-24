@@ -20,7 +20,7 @@ namespace Contexto
         public double Precio { get; set; }
 
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string Nombre { get; set; }
 
         [Required]
