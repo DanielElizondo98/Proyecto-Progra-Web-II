@@ -50,31 +50,31 @@
         </div>
     </section>
 
-    <div class="row bar col-lg-10 offset-1">
-        <div class="panel-heading">
-            <h3>Recibo de Cupones Adquiridos</h3>
-        </div>
-        <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas.</p>
+        <div class="row bar col-lg-10 offset-1">
+            <div class="panel-heading">
+                <h3>Recibo de Cupones Adquiridos</h3>
+            </div>
+            <p class="lead">En esta parte se le muestra la lista de todos los recibos de los cupones que ha adquirido con sus ecomonedas y ya han sido consumidos.</p>
 
-        <div class="col-md-7">
-            <div id="accordion" role="tablist" class="mb-5">
-                <asp:ListView ID="lvRecibos" runat="server"
-                    ItemType="Contexto.Canje"
-                    SelectMethod="ObtenerCanjesUsuario">
-                    <EmptyDataTemplate>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <asp:Label ID="lblMensaje" runat="server" Width="100%"
-                                    CssClass="alert alert-dismissible alert-info" Text="No hay cupones consumidos hasta el momento. Consulte el Historial de Cupones"></asp:Label>
+            <div class="col-md-7">
+                <div id="accordion" role="tablist" class="mb-5">
+                    <asp:ListView ID="lvRecibos" runat="server"
+                        ItemType="Contexto.Canje"
+                        SelectMethod="ObtenerCanjesUsuario">
+                        <EmptyDataTemplate>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <asp:Label ID="lblMensaje" runat="server" Width="100%" 
+                                        CssClass="alert alert-dismissible alert-info" Text="No hay cupones consumidos hasta el momento. Consulte el Historial de Cupones"></asp:Label>
+                                </div>
                             </div>
-                        </div>
-                    </EmptyDataTemplate>
-                    <ItemTemplate>
-                        <div class="card">
-                            <div role="tab" class="card-header">
-                                <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="false" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
-                                <h4 class="text-secondary"><%#:Item.FechaCanje.ToShortDateString()%></h4>
-                            </div>
+                        </EmptyDataTemplate>
+                        <ItemTemplate>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h5 class="mb-0"><a data-toggle="collapse" href="#<%#:Item.ID %>" aria-expanded="false" aria-controls="collapseOne"><%#:Item.Cupon.Nombre %> </a></h5>
+                                    <h4 class="text-secondary"><%#:Item.FechaCanje.ToShortDateString()%></h4>
+                                </div>
 
                             <div id="<%#:Item.ID %>" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                 <div class="card-body">

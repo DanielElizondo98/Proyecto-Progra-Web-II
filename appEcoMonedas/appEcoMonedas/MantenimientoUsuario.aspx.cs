@@ -144,6 +144,7 @@ namespace appEcoMonedas
             chkGenerarContrasenia.Enabled = false;
             txtCorreo.ReadOnly = false;
             txtCorreo.Enabled = true;
+            limpiaMensaje();
         }
 
         private void limpiaMensaje()

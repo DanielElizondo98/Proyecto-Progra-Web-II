@@ -269,6 +269,7 @@ namespace appEcoMonedas
             hiddenID.Value = "";
             archivoImagen.Dispose();
             rqvArchivoImagen.Enabled = true;
+            limpiaMensaje();
         }
 
         protected void grvListado_RowDataBound(object sender, GridViewRowEventArgs e)
