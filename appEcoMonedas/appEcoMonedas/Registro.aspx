@@ -154,7 +154,11 @@
 
                                     </div>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Debe digitar una contraseña" ControlToValidate="txtConfirmaContrasenia" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    <asp:CustomValidator ID="cvConfirmarContrasenia" runat="server" ErrorMessage="* Las contraseñas no coinciden" ControlToValidate="txtConfirmaContrasenia" ForeColor="Red" SetFocusOnError="true" Display="Dynamic" OnServerValidate="cvConfirmarContrasenia_ServerValidate"></asp:CustomValidator>
+                                    <asp:CompareValidator ID="CompareValidator1" runat="server"
+                                        ControlToValidate="txtConfirmaContrasenia"
+                                        CssClass="ValidationError" SetFocusOnError="true" ForeColor="Red" Display="Dynamic"
+                                        ControlToCompare="txtContrasenia"
+                                        ErrorMessage="* Las contraseñas no coinciden" />
                                 </div>
                             </div>
                         </div>

@@ -73,6 +73,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Error\400.aspx" />
+    <Content Include="Error\404.aspx" />
     <Content Include="BilleteraVirtual.aspx" />
     <Content Include="CanjeCupon.aspx" />
     <Content Include="Carrito.aspx" />
@@ -83,6 +85,7 @@
     <Content Include="CuponesUsuario.aspx" />
     <Content Include="DetalleCanjeCentro.aspx" />
     <Content Include="DetalleCanjeUsuario.aspx" />
+    <Content Include="Error\500.aspx" />
     <Content Include="fonts\dark-dashboard.svg" />
     <Content Include="imagenes\Provincias\Provincia1.png" />
     <Content Include="imagenes\Provincias\Provincia2.png" />
@@ -402,6 +405,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Error\400.aspx.cs">
+      <DependentUpon>400.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\400.aspx.designer.cs">
+      <DependentUpon>400.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BilleteraVirtual.aspx.cs">
       <DependentUpon>BilleteraVirtual.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -465,6 +482,13 @@
     </Compile>
     <Compile Include="DetalleCuponImprimir.aspx.designer.cs">
       <DependentUpon>DetalleCuponImprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
